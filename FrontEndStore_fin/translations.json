@@ -1,0 +1,14 @@
+{
+    "es": {
+        "title": "Nosotros",
+        "description": "Nam nec metus a risus auctor congue nec non felis."
+    },
+    "en": {
+        "title": "About Us",
+        "description": "We are dedicated to providing the best service."
+    },
+    "fr": {
+        "title": "À Propos de Nous",
+        "description": "Nous nous consacrons à fournir le meilleur service."
+    }
+}

@@ -1,14 +1,29 @@
 {
     "es": {
         "title": "Nosotros",
-        "description": "Nam nec metus a risus auctor congue nec non felis."
+        "description": "Nam nec metus a risus auctor congue nec non felis.",
+        "buyTitle": "¿Porqué Comprar con nosotros?",
+        "bestPrice": "El Mejor Precio",
+        "forDevs": "Para Devs",
+        "freeShipping": "Envío Gratis",
+        "bestQuality": "La Mejor Calidad"
     },
     "en": {
         "title": "About Us",
-        "description": "We are dedicated to providing the best service."
+        "description": "We are dedicated to providing the best service.",
+        "buyTitle": "Why Buy from Us?",
+        "bestPrice": "Best Price",
+        "forDevs": "For Developers",
+        "freeShipping": "Free Shipping",
+        "bestQuality": "Best Quality"
     },
     "fr": {
         "title": "À Propos de Nous",
-        "description": "Nous nous consacrons à fournir le meilleur service."
+        "description": "Nous nous consacrons à fournir le meilleur service.",
+        "buyTitle": "Pourquoi Acheter chez Nous?",
+        "bestPrice": "Meilleur Prix",
+        "forDevs": "Pour Développeurs",
+        "freeShipping": "Expédition Gratuite",
+        "bestQuality": "Meilleure Qualité"
     }
 }

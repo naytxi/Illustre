@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
 </head>
 <body>
     <header class="header">
@@ -17,6 +16,7 @@
             <img class="header__logo" src="../fonts/Imagenes/ILLUSTRE.png" alt="Logotipo">
         </a>
     </header>
+
     <div class="language-selector">
         <select id="language-select">
             <option selected disabled>Idioma</option>
@@ -25,6 +25,7 @@
             <option value="fr">Français</option>
         </select>
     </div>
+
     <nav class="navegacion">
         <a class="navegacion__enlace navegacion__enlace--activo" href="nosotros.html">Home</a>
         <a class="navegacion__enlace" href="index.html">Store</a>
@@ -35,69 +36,72 @@
 
         <div class="nosotros">
             <div class="nosotros__contenido">
-                <p data-translate="description">Nam nec metus a risus auctor congue nec non felis. Donec eu diam facilisis, semper nisl sed, ultricies ligula. Duis convallis tortor eu mi interdum feugiat. Pellentesque diam dolor, dignissim sit amet metus vitae, viverra dapibus odio. Mauris lobortis odio nisi, ut pulvinar nisl accumsan non. Aliquam vitae diam elementum ipsum gravida mattis. Nulla facilisi. Etiam eu urna at arcu dignissim tempor. Vestibulum ultrices ex ante, quis gravida metus vehicula nec. Donec interdum ultricies diam, congue dictum libero auctor quis. </p>
+                <p data-translate="description">Nam nec metus a risus auctor congue nec non felis. Donec eu diam facilisis, semper nisl sed, ultricies ligula. Duis convallis tortor eu mi interdum feugiat. Pellentesque diam dolor, dignissim sit amet metus vitae, viverra dapibus odio. Mauris lobortis odio nisi, ut pulvinar nisl accumsan non. Aliquam vitae diam elementum ipsum gravida mattis. Nulla facilisi. Etiam eu urna at arcu dignissim tempor. Vestibulum ultrices ex ante, quis gravida metus vehicula nec. Donec interdum ultricies diam, congue dictum libero auctor quis.</p>
 
-                <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin porta pretium felis, ac semper nulla pellentesque sed. Morbi condimentum mauris orci. In blandit et dolor vel consequat. Cras urna odio, euismod sit amet mauris a, varius dignissim neque. 
-                </p>
+                <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin porta pretium felis, ac semper nulla pellentesque sed. Morbi condimentum mauris orci. In blandit et dolor vel consequat. Cras urna odio, euismod sit amet mauris a, varius dignissim neque.</p>
             </div>
             <img class="nosotros__imagen" src="../fonts/Imagenes/Quintessence.png" alt="imagen nosotros">
         </div>
     </main>
 
     <section class="contenedor comprar">
-        <h2 class="comprar__titulo">¿Porqué Comprar con nosotros?</h2>
+        <h2 data-translate="buyTitle" class="comprar__titulo">¿Porqué Comprar con nosotros?</h2>
 
         <div class="bloques">
             <div class="bloque">
                 <img class="bloque__imagen" src="img/icono_1.png" alt="porque comprar">
-                <h3 class="bloque__titulo">El Mejor Precio</h3>
-                <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin porta pretium felis</p>
-            </div> <!--.bloque-->
+                <h3 data-translate="bestPrice" class="bloque__titulo">El Mejor Precio</h3>
+                <p data-translate='bestPriceDescription'>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin porta pretium felis.</p>
+            </div>
 
             <div class="bloque">
                 <img class="bloque__imagen" src="img/icono_2.png" alt="porque comprar">
-                <h3 class="bloque__titulo">Para Devs</h3>
-                <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin porta pretium felis</p>
-            </div> <!--.bloque-->
+                <h3 data-translate='forDevs' class='bloque__titulo'>Para Devs</h3>
+                <p data-translate='forDevsDescription'>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin porta pretium felis.</p>
+            </div>
 
             <div class="bloque">
                 <img class="bloque__imagen" src="img/icono_3.png" alt="porque comprar">
-                <h3 class="bloque__titulo">Envío Gratis</h3>
-                <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin porta pretium felis</p>
-            </div> <!--.bloque-->
+                <h3 data-translate='freeShipping' class='bloque__titulo'>Envío Gratis</h3>
+                <p data-translate='freeShippingDescription'>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin porta pretium felis.</p>
+            </div>
 
             <div class="bloque">
                 <img class="bloque__imagen" src="img/icono_4.png" alt="porque comprar">
-                <h3 class="bloque__titulo">La Mejor Calidad</h3>
-                <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin porta pretium felis</p>
-            </div> <!--.bloque-->
-        </div><!--.bloques-->
+                <h3 data-translate='bestQuality' class='bloque__titulo'>La Mejor Calidad</h3>
+                <p data-translate='bestQualityDescription'>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin porta pretium felis.</p>
+            </div>
+        </div>
     </section> 
 
     <footer class="footer">
         <div class="footer__contenedor">
             <div class="footer__seccion">
-                <h3 class="footer__titulo">Redes Sociales</h3>
-                    <div class="footer__iconos">
-                        <ul class="list-unstyled social-icons">
-                            <li><a href="#" target="_blank"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
-                            <li class="twitter"><a href="#" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
-                            <li><a href="#" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
-                            <li><a href="#" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
-                          </ul>
-                    </div>
+                <h3 data-translate='socialMediaTitle' class='footer__titulo'>Redes Sociales</h3>
+                <div class='footer__iconos'>
+                    <ul class='list-unstyled social-icons'>
+                        <li><a href="#" target="_blank"><i class='fa-brands fa-facebook'></i> Facebook</a></li>
+                        <li><a href="#" target="_blank"><i class='fab fa-twitter'></i> Twitter</a></li>
+                        <li><a href="#" target="_blank"><i class='fab fa-instagram'></i> Instagram</a></li>
+                        <li><a href="#" target="_blank"><i class='fab fa-linkedin'></i> LinkedIn</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer__seccion">
-                <h3 class="footer__titulo">Contacto</h3>
-                <p class="footer__texto"><i class="fas fa-phone"></i> +1 234 567 890</p>
-                <p class="footer__texto"><i class="fas fa-envelope"></i> info@frontendstore.com</p>
+
+            <div class='footer__seccion'>
+                <h3 data-translate='contactTitle' class='footer__titulo'>Contacto</h3>
+                <p data-translate='contactPhone' class='footer__texto'><i class='fas fa-phone'></i> +1 234 567 890</p>
+                <p data-translate='contactEmail' class='footer__texto'><i class='fas fa-envelope'></i> info@frontendstore.com</p>
             </div>
-            <div class="footer__seccion">
-                <h3 class="footer__titulo">Dirección</h3>
-                <p class="footer__texto"><i class="fas fa-map-marker-alt"></i> 123 Calle Principal, Ciudad, País</p>
+
+            <div class='footer__seccion'>
+                <h3 data-translate='addressTitle' class='footer__titulo'>Dirección</h3>
+                <p data-translate='addressText' class='footer__texto'><i class='fas fa-map-marker-alt'></i> 123 Calle Principal, Ciudad, País</p>
             </div>
         </div>
-        <p class="footer__derechos">Todos los derechos Reservados © 2025</p>
+
+        <!-- Derechos reservados -->
+        <p data-translate='rightsText' class='footer__derechos'>Todos los derechos Reservados © 2025</p>
         <script src="../js/script.js"></script>
     </footer>
     

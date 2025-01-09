@@ -128,7 +128,7 @@ h3 {
     line-height: 1.2;
 }
 
-/** Graficos **/
+/** Graficos 
 .grafico {
     min-height: 30rem;
     background-repeat: no-repeat;
@@ -142,7 +142,7 @@ h3 {
 .grafico--node {
     background-image: url(../img/grafico2.jpg);
     grid-row: 8 / 9;
-}
+}**/
 
 @media (min-width: 768px) {
     .grafico--node {
@@ -164,10 +164,13 @@ h3 {
 }
 .nosotros__imagen {
     grid-row: 1 / 2;
+    width: 40rem;
+    margin: 0 auto;
 }
 @media (min-width: 768px) {
     .nosotros__imagen {
        grid-column: 2 / 3;
+       width: 50rem;
     }
 }
 

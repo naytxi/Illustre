@@ -17,19 +17,25 @@
             <img class="header__logo" src="../fonts/Imagenes/ILLUSTRE.png" alt="Logotipo">
         </a>
     </header>
-
+    <div class="language-selector">
+        <select id="language-select">
+            <option selected disabled>Idioma</option>
+            <option value="es">Español</option>
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+        </select>
+    </div>
     <nav class="navegacion">
         <a class="navegacion__enlace navegacion__enlace--activo" href="nosotros.html">Home</a>
         <a class="navegacion__enlace" href="index.html">Store</a>
-        
     </nav>
 
     <main class="contenedor">
-        <h1>Nosotros</h1>
+        <h1 data-translate="title">Nosotros</h1>
 
         <div class="nosotros">
             <div class="nosotros__contenido">
-                <p>Nam nec metus a risus auctor congue nec non felis. Donec eu diam facilisis, semper nisl sed, ultricies ligula. Duis convallis tortor eu mi interdum feugiat. Pellentesque diam dolor, dignissim sit amet metus vitae, viverra dapibus odio. Mauris lobortis odio nisi, ut pulvinar nisl accumsan non. Aliquam vitae diam elementum ipsum gravida mattis. Nulla facilisi. Etiam eu urna at arcu dignissim tempor. Vestibulum ultrices ex ante, quis gravida metus vehicula nec. Donec interdum ultricies diam, congue dictum libero auctor quis. </p>
+                <p data-translate="description">Nam nec metus a risus auctor congue nec non felis. Donec eu diam facilisis, semper nisl sed, ultricies ligula. Duis convallis tortor eu mi interdum feugiat. Pellentesque diam dolor, dignissim sit amet metus vitae, viverra dapibus odio. Mauris lobortis odio nisi, ut pulvinar nisl accumsan non. Aliquam vitae diam elementum ipsum gravida mattis. Nulla facilisi. Etiam eu urna at arcu dignissim tempor. Vestibulum ultrices ex ante, quis gravida metus vehicula nec. Donec interdum ultricies diam, congue dictum libero auctor quis. </p>
 
                 <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin porta pretium felis, ac semper nulla pellentesque sed. Morbi condimentum mauris orci. In blandit et dolor vel consequat. Cras urna odio, euismod sit amet mauris a, varius dignissim neque. 
                 </p>
@@ -92,6 +98,7 @@
             </div>
         </div>
         <p class="footer__derechos">Todos los derechos Reservados © 2025</p>
+        <script src="../js/script.js"></script>
     </footer>
     
 </body>

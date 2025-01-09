@@ -96,10 +96,12 @@ h3 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+    margin: auto 3rem;
 }
 @media (min-width: 768px) {
     .grid {
         grid-template-columns: repeat(3, 1fr);
+        margin: auto 3rem;
     }
 }
 

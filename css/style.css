@@ -91,6 +91,24 @@ h3 {
     color: var(--secundario);
 }
 
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 3rem;
+}
+
+
+
+.language-selector {
+    position: absolute;
+    right: -190%;
+    top: 5%;
+    transform: translateY(-50%);
+}
+
+
 /** Grid **/
 .grid {
     display: grid;

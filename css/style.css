@@ -57,11 +57,54 @@ h3 {
 /** Header **/
 .header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between; 
+    align-items: center;
+    width: 100%;
+    margin: 0 auto; 
+    padding: 1rem; 
 }
+
+.lema {
+    margin-right: 1rem;
+    flex: 1;
+    color: var(--secundario);
+    font-size: 3.6rem;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-right: 5rem;
+}
+
+.lema2 {
+    margin-left: 1rem;
+    flex: 1;
+    color: var(--secundario);
+    font-size: 3.6rem;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-left: 1rem;
+}
+
 .header__logo {
-    margin: 3rem 0;
+    text-align: center; 
+    margin: 0,2 rem;
+    width: 20rem;
 }
+
+.icons {
+    display: flex;
+    gap: 1rem;
+}
+
+  .icon {
+    color: var(--secundario);
+    font-size: 3rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    margin-right: 2rem;
+  }
+  
+  .icon:hover {
+    color: var(--primario);
+  }
+
 /** Footer **/
 .footer {
     background-color: var(--primarioOscuro);
@@ -192,6 +235,12 @@ h3 {
     height: auto;
     object-fit: cover;
 }
+
+.producto__imagen:hover {
+    transform: scale(1.1);
+    transition: 2s;
+}
+
 .producto__nombre {
     font-size: 4rem;
 }

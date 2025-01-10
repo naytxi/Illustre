@@ -57,42 +57,98 @@ h3 {
 /** Header **/
 .header {
     display: flex;
-    justify-content: space-between; 
+    justify-content: center;
+    flex-direction: row;
     align-items: center;
     width: 100%;
-    margin: 0 auto; 
-    padding: 1rem; 
-}
-
-.lema {
-    margin-right: 1rem;
-    flex: 1;
-    color: var(--secundario);
+    margin: 0 auto;
+    padding: 1rem;
+    position: relative; 
+  }
+  
+  /* Estilo para los lemas */
+  .lema, .lema2 {
     font-size: 3.6rem;
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    margin-right: 5rem;
-}
-
-.lema2 {
-    margin-left: 1rem;
-    flex: 1;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: var(--secundario);
-    font-size: 3.6rem;
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    margin-left: 1rem;
-}
-
-.header__logo {
-    text-align: center; 
-    margin: 0,2 rem;
+    flex: 1;
+    text-align: center;
+  }
+  
+  .lema {
+    text-align: left;
+    margin-right: 2rem; 
+  }
+  
+  .lema2 {
+    text-align: right;
+    margin-left: 2rem; 
+  }
+  
+  /* Logo */
+  .header__logo {
+    text-align: center;
+    margin: 0;
     width: 20rem;
-}
-
-.icons {
+  }
+  
+  /* Contenedor de los iconos y selector de idioma */
+  .header-right {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;  /* Alinea a la derecha */
+    position: relative;
+  }
+  
+  /* Botón de selector de idioma */
+  .language-selector {
+    position: absolute;
+    top: -50px;  
+    right: 0;
+    z-index: 1;  
+  }
+  
+  #language-select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: var(--primarioOscuro);
+    border: 2px solid var(--secundario);
+    border-radius: 20px;
+    padding: 8px 30px 8px 15px;
+    font-size: 16px;
+    color: var(--blanco);
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+  
+  #language-select:hover {
+    background-color: var(--secundario);
+  }
+  
+  /* Estilo del selector de idioma (la flecha) */
+  .language-selector::after {
+    content: '\25BC';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: var(--blanco);
+    pointer-events: none;
+    font-size: 12px;
+  }
+  
+  #language-select option {
+    background-color: var(--primarioOscuro);
+    color: var(--blanco);
+  }
+  
+  /* Iconos */
+  .icons {
     display: flex;
     gap: 1rem;
-}
-
+  }
+  
   .icon {
     color: var(--secundario);
     font-size: 3rem;
@@ -104,7 +160,6 @@ h3 {
   .icon:hover {
     color: var(--primario);
   }
-
 /** Footer **/
 .footer {
     background-color: var(--primarioOscuro);
@@ -134,56 +189,7 @@ h3 {
     color: var(--secundario);
 }
 
-.logo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    margin-top: 3rem;
-}
 
-
-
-.language-selector {
-    position: absolute;
-    right: -190%;
-    top: 5%;
-    transform: translateY(-50%);
-}
-
-#language-select {
-    appearance: none;
-    -webkit-appearance: none;
-    background-color: var(--primarioOscuro);
-    border: 2px solid var(--secundario);
-    border-radius: 20px;
-    padding: 8px 30px 8px 15px;
-    font-size: 16px;
-    color: var(--blanco);
-    cursor: pointer;
-    outline: none;
-    transition: all 0.3s ease;
-}
-
-#language-select:hover {
-    background-color: var(--secundario);
-}
-
-.language-selector::after {
-    content: '\25BC';
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    color: var(--blanco);
-    pointer-events: none;
-    font-size: 12px;
-}
-
-#language-select option {
-    background-color: var(--primarioOscuro);
-    color: var(--blanco);
-}
 
 /** Grid **/
 .grid {

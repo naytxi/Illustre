@@ -108,6 +108,39 @@ h3 {
     transform: translateY(-50%);
 }
 
+#language-select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: var(--primarioOscuro);
+    border: 2px solid var(--secundario);
+    border-radius: 20px;
+    padding: 8px 30px 8px 15px;
+    font-size: 16px;
+    color: var(--blanco);
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#language-select:hover {
+    background-color: var(--secundario);
+}
+
+.language-selector::after {
+    content: '\25BC';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: var(--blanco);
+    pointer-events: none;
+    font-size: 12px;
+}
+
+#language-select option {
+    background-color: var(--primarioOscuro);
+    color: var(--blanco);
+}
 
 /** Grid **/
 .grid {

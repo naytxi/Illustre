@@ -24,3 +24,5 @@ loadTranslations().then(translations => {
 }).catch(error => {
     console.error(error);
 });
+
+//Página de productos

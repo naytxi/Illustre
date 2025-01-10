@@ -224,7 +224,7 @@ h3 {
 
 /** Pagina del Producto **/
 @media (min-width: 768px) {
-    .camisa {
+    .producto_info {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         column-gap: 2rem;

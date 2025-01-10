@@ -59,34 +59,51 @@ h3 {
     display: flex;
     justify-content: space-between; 
     align-items: center;
-    width: 90rem;
+    width: 100%;
     margin: 0 auto; 
     padding: 1rem; 
 }
 
 .lema {
-    text-align: left;
-    margin-right: 5rem;
+    margin-right: 1rem;
     flex: 1;
     color: var(--secundario);
-    font-size: 2.5rem;
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+    font-size: 3.6rem;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-right: 5rem;
 }
 
 .lema2 {
-    text-align: right;
-    margin-left: 5rem;
+    margin-left: 1rem;
     flex: 1;
     color: var(--secundario);
-    font-size: 2.5rem;
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+    font-size: 3.6rem;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-left: 1rem;
 }
 
 .header__logo {
     text-align: center; 
     margin: 0,2 rem;
-    width: 15rem;
+    width: 20rem;
 }
+
+.icons {
+    display: flex;
+    gap: 1rem;
+}
+
+  .icon {
+    color: var(--secundario);
+    font-size: 3rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    margin-right: 2rem;
+  }
+  
+  .icon:hover {
+    color: var(--primario);
+  }
 
 /** Footer **/
 .footer {

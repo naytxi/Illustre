@@ -66,9 +66,8 @@ h3 {
     position: relative; 
   }
   
-  /* Estilo para los lemas */
   .lema, .lema2 {
-    font-size: 3.6rem;
+    font-size: 3rem;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: var(--secundario);
     flex: 1;
@@ -77,30 +76,25 @@ h3 {
   
   .lema {
     text-align: left;
-    margin-right: 2rem; 
   }
   
   .lema2 {
     text-align: right;
-    margin-left: 2rem; 
   }
   
-  /* Logo */
   .header__logo {
     text-align: center;
     margin: 0;
     width: 20rem;
   }
   
-  /* Contenedor de los iconos y selector de idioma */
   .header-right {
     display: flex;
     flex-direction: row;
-    align-items: flex-end;  /* Alinea a la derecha */
+    align-items: flex-end;
     position: relative;
   }
   
-  /* Botón de selector de idioma */
   .language-selector {
     position: absolute;
     top: -50px;  
@@ -126,7 +120,6 @@ h3 {
     background-color: var(--secundario);
   }
   
-  /* Estilo del selector de idioma (la flecha) */
   .language-selector::after {
     content: '\25BC';
     position: absolute;
@@ -243,7 +236,7 @@ h3 {
 }
 
 .producto__imagen:hover {
-    transform: scale(1.1);
+    transform: scale(1.04);
     transition: 2s;
 }
 

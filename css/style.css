@@ -227,6 +227,7 @@ h3 {
     background-color: var(--primarioOscuro);
     padding: 1rem;
     border-radius: 1rem;
+    padding: 1.8rem;
 }
 
 .producto__imagen {
@@ -238,6 +239,10 @@ h3 {
 .producto__imagen:hover {
     transform: scale(1.04);
     transition: 2s;
+}
+.producto__informacion {
+    background-color: var(--blanco); /*Prueba de color para fondo de la descripcion*/
+    border-radius: 1rem;
 }
 
 .producto__nombre {

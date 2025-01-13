@@ -24,13 +24,8 @@ loadTranslations().then(translations => {
 }).catch(error => {
     console.error(error);
 });
-<<<<<<< HEAD
 // display con fecha y hora
 
-=======
-
-//parte calendario
->>>>>>> 86d5a0a (commit to pull)
 function updateDateTime() {
     const dateTimeDisplay = document.getElementById("dateTimeDisplay");
     const now = new Date();

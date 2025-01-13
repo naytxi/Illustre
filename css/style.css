@@ -73,11 +73,14 @@ h3 {
     flex: 1;
     text-align: center;
   }
-  
+  .dateTimeDisplay{
+
+    flex-direction: column;
+  }
   .lema {
     text-align: left;
   }
-  
+
   .lema2 {
     text-align: right;
   }

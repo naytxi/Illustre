@@ -153,6 +153,8 @@ h3 {
   .icon:hover {
     color: var(--primario);
   }
+
+ 
 /** Footer **/
 .footer {
     background-color: var(--primarioOscuro);

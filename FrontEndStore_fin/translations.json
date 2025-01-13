@@ -1,5 +1,7 @@
 {
     "es": {
+        "daysOfWeek": ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"],
+        "monthsOfYear": ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
         "derechos":"Todos los derechos Reservados",
         "store-titulo": "Tienda",
         "titulo-nav": "Inicio",
@@ -26,6 +28,8 @@
         "store": "Tienda"
     },
     "en": {
+        "daysOfWeek": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "monthsOfYear": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
         "derechos": "All Rights Reserved © 2025",
         "store-titulo": "Store",
         "titulo-nav": "Home",
@@ -52,6 +56,8 @@
         "store": "Store"
     },
     "fr": {
+        "daysOfWeek": ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"],
+        "monthsOfYear": ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
         "derechos": "Tous Droits Réservés © 2025",
         "store-titulo": "Boutique",
         "titulo-nav": "Accueil",
@@ -78,6 +84,8 @@
         "store": "Boutique"
     },
     "eu": {
+        "daysOfWeek": ["Igandea", "Astelehena", "Asteartea", "Asteazkena", "Osteguna", "Ostirala", "Larunbata"],
+        "monthsOfYear": ["Urtarrila", "Otsaila", "Martxoa", "Apirila", "Maiatza", "Ekaina", "Uztaila", "Abuztua", "Iraila", "Urria", "Azaroa", "Abendua"],
         "derechos": "Eskubide Guztiak Erreserbatuta © 2025",
         "store-titulo": "Denda",
         "titulo-nav": "Hasiera",

@@ -1,37 +1,20 @@
-// Cargar traducciones desde un archivo JSON
+let globalTranslations;
+
 async function loadTranslations() {
     const response = await fetch('translations.json');
-    
     if (!response.ok) {
         throw new Error('Error al cargar las traducciones');
     }
-
-    return await response.json();
+    globalTranslations = await response.json();
+    return globalTranslations;
 }
-
-loadTranslations().then(translations => {
-    document.getElementById('language-select').addEventListener('change', function() {
-        const selectedLanguage = this.value;
-
-        // Actualizar el contenido basado en la selección
-        for (const key in translations[selectedLanguage]) {
-            const elements = document.querySelectorAll(`[data-translate="${key}"]`);
-            elements.forEach(element => {
-                element.textContent = translations[selectedLanguage][key];
-            });
-        }
-    });
-}).catch(error => {
-    console.error(error);
-});
-// display con fecha y hora
 
 function updateDateTime() {
     const dateTimeDisplay = document.getElementById("dateTimeDisplay");
     const now = new Date();
 
-    const daysOfWeek = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"];
-    const monthsOfYear = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Augosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+    const currentLanguage = localStorage.getItem('language') || 'es';
+    const { daysOfWeek, monthsOfYear } = globalTranslations[currentLanguage];
 
     const day = daysOfWeek[now.getDay()];
     const date = now.getDate(); 
@@ -41,10 +24,36 @@ function updateDateTime() {
     const minutes = String(now.getMinutes()).padStart(2, '0');
 
     dateTimeDisplay.textContent = `${day}, ${hours}:${minutes} - ${date} ${month} ${year}`;
-  }
-  updateDateTime();
-  setInterval(updateDateTime, 60000);
-  
+}
+
+function updateTranslations(selectedLanguage) {
+    for (const key in globalTranslations[selectedLanguage]) {
+        const elements = document.querySelectorAll(`[data-translate="${key}"]`);
+        elements.forEach(element => {
+            element.textContent = globalTranslations[selectedLanguage][key];
+        });
+    }
+    updateDateTime();
+}
+
+loadTranslations().then(() => {
+    updateDateTime();
+    setInterval(updateDateTime, 60000);
+
+    document.getElementById('language-select').addEventListener('change', function() {
+        const selectedLanguage = this.value;
+        localStorage.setItem('language', selectedLanguage);
+        updateTranslations(selectedLanguage);
+    });
+
+    // Aplicar traducciones iniciales
+    const initialLanguage = localStorage.getItem('language') || 'es';
+    updateTranslations(initialLanguage);
+}).catch(error => {
+    console.error(error);
+});
+
+
 //Página de productos
 document.addEventListener('DOMContentLoaded', function() {
     // Seleccionamos todos los enlaces de productos

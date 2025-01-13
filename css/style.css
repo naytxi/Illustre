@@ -74,6 +74,24 @@ h3 {
     text-align: center;
   }
   
+ .contenedor-comprar {
+
+    justify-content: space-around;
+ }
+ .contenedor-comprar h3 {
+    color: #ec598cff;
+ }
+
+ .contenedor-comprar p {
+     font-size: 2rem;
+    color: var(--secundarioOscuro);
+    width: 65%;
+    margin-right: 15rem;
+    margin-left: 10rem;
+    margin-bottom: 10rem;
+ }
+
+
    /** Fromulario de contacto **/ 
 .form {
     display: flex;

@@ -99,6 +99,10 @@ document.addEventListener('DOMContentLoaded', function() {
 const loginButton = document.getElementById('loginButton');
 const loginPopup = document.getElementById('loginPopup');
 const closePopup = document.getElementById('loginClose');
+let contrasena =document.getElementById("password");
+const cartButton = document.getElementById('cartButton');
+const cartPopup = document.getElementById('cartPopup');
+const cartClose = document.getElementById('cartClose');
 
 loginButton.addEventListener('click', () => {
     loginPopup.style.display = 'block';
@@ -108,4 +112,26 @@ loginButton.addEventListener('click', () => {
     loginPopup.style.display = 'none';
   });
 
-  
+  ojito.addEventListener('click', function() {
+
+    if (contrasena.type === "password") {
+        contrasena.type = "text";
+        imagen.src ="../fonts/Imagenes/ojoAbierto1.jpg" ;
+
+    } 
+    else {
+        contrasena.type = "password";
+        imagen.src="../fonts/Imagenes/ojoCerrado1.jpg" ;
+    }
+})
+
+// POPUP CARRITO//
+cartButton.addEventListener('click', () => {
+    cartPopup.style.display = 'block';
+});
+
+
+cartClose.addEventListener('click', () => {
+    cartPopup.style.display = 'none';
+});
+

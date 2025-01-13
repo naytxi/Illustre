@@ -62,20 +62,21 @@ h3 {
     align-items: center;
     width: 100%;
     margin: 0 auto;
-    padding: 1rem;
-    position: relative; 
+    padding: 2rem;
+    position: relative;
+    gap:5rem;
   }
   
   .lema, .lema2 {
     font-size: 3rem;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: var(--secundario);
-    flex: 1;
     text-align: center;
   }
   
   .lema {
     text-align: left;
+
   }
   
   .lema2 {

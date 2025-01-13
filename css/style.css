@@ -75,6 +75,7 @@ h3 {
   .dateTimeDisplay{
       color: white;
   }
+  
   @media (min-width: 600px) {
       .header {
         justify-content: center;

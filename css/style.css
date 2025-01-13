@@ -148,6 +148,7 @@ h3 {
     background-color: var(--primarioOscuro);
     color: var(--blanco);
   }
+ 
   
   /* Iconos */
   .icons {
@@ -223,7 +224,14 @@ h3 {
     font-size: 2rem;
     cursor: pointer;
   }
-  
+
+  #ojito { 
+    position: absolute;
+    width: 5rem;
+    top: 10px;
+    left: 10px;
+}
+
   .close {
     position: absolute;
     top: 10px;
@@ -232,6 +240,22 @@ h3 {
     color: var(--secundario);
     cursor: pointer;
   }
+
+.popup-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.popup-content li {
+    margin: 1rem 0;
+    font-size: 1.5rem;
+}
+
+.total {
+    margin-top: 2rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
 
 /** Footer **/
 .footer {

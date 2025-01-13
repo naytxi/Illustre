@@ -45,14 +45,22 @@
                     
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password" required>
-                    
+                    <button id ="ojito" ><img id ="imagen" src="../fonts/Imagenes/ojoCerrado1.jpg" /></button>
                     <button id="Submit" type="submit">Submit</button>
                   </form>
                 </div>
               </div>
-            <button href="/store" class="icon"><i class="fas fa-shopping-cart"></i></button>
-          </div>
-        </div>
+            <button id="cartButton" href="/store" class="icon"><i class="fas fa-shopping-cart"></i></button>
+            <div id="cartPopup" class="popup">
+                <div class="popup-content">
+                    <span id="cartClose" class="close">&times;</span>
+                    <h2>Cart</h2>
+                    <ul id="cartItems"></ul>
+                    <div class="total">
+                        <p>Total: <span id="totalPrice">0€</span></p>
+                    </div>
+                </div>
+            </div>
       </header>
     <nav class="navegacion">
         <a class="navegacion__enlace" href="nosotros.html" data-translate="titulo-nav">Inicio</a>

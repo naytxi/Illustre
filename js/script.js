@@ -24,6 +24,8 @@ loadTranslations().then(translations => {
 }).catch(error => {
     console.error(error);
 });
+// display con fecha y hora
+
 function updateDateTime() {
     const dateTimeDisplay = document.getElementById("dateTimeDisplay");
     const now = new Date();
@@ -46,6 +48,7 @@ function updateDateTime() {
 
   // Actualizar la hora cada minuto
   setInterval(updateDateTime, 60000);
+  
 //Página de productos
 document.addEventListener('DOMContentLoaded', function() {
     // Seleccionamos todos los enlaces de productos

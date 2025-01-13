@@ -73,8 +73,7 @@ h3 {
     text-align: center;
   }
   .dateTimeDisplay{
-
-    flex-direction: column;
+      color: white;
   }
   @media (min-width: 600px) {
       .header {

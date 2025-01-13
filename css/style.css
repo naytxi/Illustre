@@ -73,6 +73,9 @@ h3 {
     flex: 1;
     text-align: center;
   }
+  .dateTimeDisplay{
+      color: white;
+  }
   @media (min-width: 600px) {
       .header {
         justify-content: center;
@@ -88,7 +91,7 @@ h3 {
   .lema {
     text-align: left;
   }
-  
+
   .lema2 {
     text-align: right;
   }

@@ -58,22 +58,22 @@ h3 {
 /** Header **/
 .header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-direction: row;
     align-items: center;
     width: 100%;
-    margin: 0 auto;
     padding: 1rem;
-    position: relative; 
+    position: relative;
+    gap:5rem;
   }
-  
+
   .lema, .lema2 {
-    display: none;
     font-size: 3rem;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: var(--secundario);
-    flex: 1;
     text-align: center;
   }
+<<<<<<< HEAD
  
 
   @media (min-width: 600px) {
@@ -87,11 +87,14 @@ h3 {
         margin-right: 1rem;
       }
   }
+=======
+>>>>>>> 4ebc7bf (problemas login)
   
   .lema {
     text-align: left;
-  }
 
+  }
+  
   .lema2 {
     text-align: right;
   }
@@ -154,7 +157,6 @@ h3 {
   .icons {
     display: flex;
     gap: 1rem;
-    margin-top: 2rem;
   }
   
   .icon {
@@ -170,9 +172,7 @@ h3 {
   .icon:hover {
     color: var(--primario);
   }
-<<<<<<< HEAD
-=======
-  
+
 /*Popup Login*/
   .popup {
     display: none;
@@ -237,7 +237,6 @@ h3 {
     cursor: pointer;
   }
 
->>>>>>> 4cde385 (agrego popup de Login)
 /** Footer **/
 .footer {
     background-color: var(--primarioOscuro);

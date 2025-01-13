@@ -57,28 +57,40 @@ h3 {
 /** Header **/
 .header {
     display: flex;
-    justify-content: center;
-    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin: 0 auto;
     padding: 1rem;
-    position: relative; 
+    position: relative;
+    gap:5rem;
   }
-  
+
   .lema, .lema2 {
+    display: none;
     font-size: 3rem;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: var(--secundario);
-    flex: 1;
     text-align: center;
   }
   .dateTimeDisplay{
 
     flex-direction: column;
   }
+  @media (min-width: 600px) {
+      .header {
+        justify-content: center;
+        flex-direction: row;
+      }
+      .lema, .lema2 {
+        display: flex;
+        margin-left: 3rem;
+        margin-right: 1rem;
+      }
+  }
+  
   .lema {
     text-align: left;
+
   }
 
   .lema2 {
@@ -143,6 +155,7 @@ h3 {
   .icons {
     display: flex;
     gap: 1rem;
+    margin-top: 2rem;
   }
   
   .icon {

@@ -85,3 +85,18 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('producto_descripcion').textContent = `Este es el producto ${nombre}. Precio: ${precio}`;
     }
 });
+
+// SCRIPT LOGIN //
+const loginButton = document.getElementById('loginButton');
+const loginPopup = document.getElementById('loginPopup');
+const closePopup = document.getElementById('loginClose');
+
+loginButton.addEventListener('click', () => {
+    loginPopup.style.display = 'block';
+  });
+
+  closePopup.addEventListener('click', () => {
+    loginPopup.style.display = 'none';
+  });
+
+  

@@ -33,8 +33,23 @@
           </div>
       
           <div class="icons">
-            <a href="/login" class="icon"><i class="fas fa-user"></i></a>
-            <a href="/store" class="icon"><i class="fas fa-shopping-cart"></i></a>
+            <button id="loginButton" href="/login" class="icon"><i class="fas fa-user"></i></button>
+            <div id="loginPopup" class="popup">
+                <div class="popup-content">
+                  <span id ="loginClose" class="close">&times;</span>
+                  <h2>Login</h2>
+                  <form id="loginForm">
+                    <label for="username">User</label>
+                    <input type="text" id="username" name="username" required>
+                    
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                    
+                    <button id="Submit" type="submit">Submit</button>
+                  </form>
+                </div>
+              </div>
+            <button href="/store" class="icon"><i class="fas fa-shopping-cart"></i></button>
           </div>
         </div>
       </header>

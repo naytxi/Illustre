@@ -12,16 +12,47 @@
 </head>
 <body>
     <header class="header">
-        <h2 class ="lema">PETITE TOCHE</h2>
+        <div class="lema">PETITE TOCHE</div>
+        
         <a href="index.html">
-            <img class="header__logo" src="../fonts/Imagenes/ILLUSTRE.png" alt="Logotipo">
+          <img class="header__logo" src="../fonts/Imagenes/ILLUSTRE.png" alt="Logotipo">
         </a>
-        <h2 class = "lema2">BELLES HISTOIRIES</h2>
-        <div class="icons">
-            <a href="/login" class="icon"><i class="fas fa-user"></i></a>
-            <a href="/store" class="icon"><i class="fas fa-shopping-cart"></i></a>
+        
+        <div class="lema2">BELLES HISTOIRIES</div>
+      
+        <div class="header-right">
+       
+          <div class="language-selector">
+            <select id="language-select">
+                <option selected disabled>Idioma</option>
+                <option value="es">Español</option>
+                <option value="eu">Euskara</option>
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+            </select>
           </div>
-    </header>
+      
+          <div class="icons">
+            <button id="loginButton" href="/login" class="icon"><i class="fas fa-user"></i></button>
+            <div id="loginPopup" class="popup">
+                <div class="popup-content">
+                  <span id ="loginClose" class="close">&times;</span>
+                  <h2>Login</h2>
+                  <form id="loginForm">
+                    <label for="username">User</label>
+                    <input type="text" id="username" name="username" required>
+                    
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                    
+                    <button id="Submit" type="submit">Submit</button>
+                  </form>
+                </div>
+              </div>
+            <button href="/store" class="icon"><i class="fas fa-shopping-cart"></i></button>
+          </div>
+        </div>
+      </header>
     <nav class="navegacion">
         <a class="navegacion__enlace navegacion__enlace--activo" href="index.html">Tienda</a>
         <a class="navegacion__enlace" href="nosotros.html">Nosotros</a>

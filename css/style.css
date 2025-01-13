@@ -38,6 +38,7 @@ img {
 .contenedor {
     max-width: 120rem;
     margin: 0 auto;
+    color: white;
 }
 h1, h2, h3 {
     text-align: center;
@@ -73,10 +74,8 @@ h3 {
     flex: 1;
     text-align: center;
   }
-  .dateTimeDisplay{
-      color: white;
-  }
-  
+ 
+
   @media (min-width: 600px) {
       .header {
         justify-content: center;

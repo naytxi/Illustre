@@ -34,7 +34,7 @@ function updateDateTime() {
     const monthsOfYear = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Augosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 
     const day = daysOfWeek[now.getDay()];
-    const date = now.getDate();
+    const date = now.getDate(); 
     const month = monthsOfYear[now.getMonth()];
     const year = now.getFullYear();
     const hours = String(now.getHours()).padStart(2, '0');
@@ -42,11 +42,7 @@ function updateDateTime() {
 
     dateTimeDisplay.textContent = `${day}, ${hours}:${minutes} - ${date} ${month} ${year}`;
   }
-
-  // Actualizar la fecha y hora al cargar
   updateDateTime();
-
-  // Actualizar la hora cada minuto
   setInterval(updateDateTime, 60000);
   
 //Página de productos

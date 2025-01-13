@@ -60,16 +60,17 @@ h3 {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    margin: 0 auto;
     padding: 1rem;
-    position: relative;
-    gap:5rem;
+    position: relative; 
   }
-
+  
   .lema, .lema2 {
     display: none;
     font-size: 3rem;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: var(--secundario);
+    flex: 1;
     text-align: center;
   }
   @media (min-width: 600px) {
@@ -86,7 +87,6 @@ h3 {
   
   .lema {
     text-align: left;
-
   }
   
   .lema2 {
@@ -165,8 +165,6 @@ h3 {
   .icon:hover {
     color: var(--primario);
   }
-
- 
 /** Footer **/
 .footer {
     background-color: var(--primarioOscuro);

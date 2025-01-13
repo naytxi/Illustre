@@ -1,5 +1,8 @@
 {
     "es": {
+        "derechos":"Todos los derechos Reservados",
+        "store-titulo": "Tienda",
+        "titulo-nav": "Inicio",
         "principal": "Nuestros Productos",
         "title": "Nosotros",
         "description": "Bienvenidos a Quintessence\n\nEn Quintessence, cada pieza cuenta una historia. Desde hace más de cinco años, hemos dedicado nuestro arte y pasión a la creación de joyas y complementos artesanales que reflejan la esencia de quienes las llevan. Diseñamos con cuidado, creamos con propósito y, sobre todo, respetamos el mundo que nos rodea.\n\nNuestro compromiso con el medio ambiente nos inspira a trabajar con materiales sostenibles y a diseñar piezas que perduren en el tiempo. Cada joya no es solo un accesorio, es una expresión única de tu personalidad, cuidadosamente elaborada por manos expertas.\n\nAhora, damos un paso hacia el futuro. Con esta web, queremos acercar nuestra esencia a todos aquellos que buscan más que una joya: un vínculo, una historia, una obra de arte que puedan llevar consigo.\n\nGracias por ser parte de nuestra historia.",
@@ -23,6 +26,9 @@
         "store": "Tienda"
     },
     "en": {
+        "derechos": "All Rights Reserved © 2025",
+        "store-titulo": "Store",
+        "titulo-nav": "Home",
         "principal": "Our Products",
         "title": "About Us",
         "description": "Welcome to Quintessence\n\nAt Quintessence, every piece tells a story. For over five years, we have dedicated our art and passion to creating handcrafted jewelry and accessories that reflect the essence of those who wear them. We design with care, create with purpose, and above all, respect the world around us.\n\nOur commitment to the environment inspires us to work with sustainable materials and design pieces that stand the test of time. Each piece of jewelry is not just an accessory, it's a unique expression of your personality, carefully crafted by expert hands.\n\nNow, we're taking a step into the future. With this website, we want to bring our essence closer to all those who are looking for more than just jewelry: a connection, a story, a work of art they can carry with them.\n\nThank you for being part of our story.",
@@ -46,6 +52,9 @@
         "store": "Store"
     },
     "fr": {
+        "derechos": "Tous Droits Réservés © 2025",
+        "store-titulo": "Boutique",
+        "titulo-nav": "Accueil",
         "principal": "Nos produits",
         "title": "À Propos de Nous",
         "description": "Bienvenue chez Quintessence\n\nChez Quintessence, chaque pièce raconte une histoire. Depuis plus de cinq ans, nous consacrons notre art et notre passion à la création de bijoux et d'accessoires artisanaux qui reflètent l'essence de ceux qui les portent. Nous concevons avec soin, créons avec un but précis et, surtout, respectons le monde qui nous entoure.\n\nNotre engagement envers l'environnement nous inspire à travailler avec des matériaux durables et à concevoir des pièces qui résistent à l'épreuve du temps. Chaque bijou n'est pas seulement un accessoire, c'est une expression unique de votre personnalité, soigneusement élaborée par des mains expertes.\n\nMaintenant, nous faisons un pas vers l'avenir. Avec ce site web, nous voulons rapprocher notre essence de tous ceux qui recherchent plus qu'un simple bijou : un lien, une histoire, une œuvre d'art qu'ils peuvent porter avec eux.\n\nMerci de faire partie de notre histoire.",
@@ -69,6 +78,9 @@
         "store": "Boutique"
     },
     "eu": {
+        "derechos": "Eskubide Guztiak Erreserbatuta © 2025",
+        "store-titulo": "Denda",
+        "titulo-nav": "Hasiera",
         "principal": "gure produktuak",
         "title": "Guri buruz",
         "description": "Ongi etorri Quintessence-ra\n\nQuintessence-n, pieza bakoitzak istorio bat kontatzen du. Bost urte baino gehiagoz, gure artea eta pasioa eskaini diegu eramaten dituztenen esentzia islatzen duten eskuz egindako bitxiak eta osagarriak sortzeari. Arretaz diseinatzen dugu, helburu batekin sortzen dugu, eta, batez ere, inguruko mundua errespetatzen dugu.\n\nIngurumenarekiko dugun konpromisoak material jasangarriekin lan egitera eta denboraren proba gaindituko duten piezak diseinatzera bultzatzen gaitu. Bitxi bakoitza ez da osagarri bat bakarrik, zure nortasunaren adierazpen bakarra da, esku adituen eskutik arretaz landua.\n\nOrain, etorkizunerako urrats bat ematen ari gara. Webgune honekin, gure esentzia hurbildu nahi diegu bitxi bat baino gehiago bilatzen duten guztiei: lotura bat, istorio bat, beraiekin eraman dezaketen artelan bat.\n\nEskerrik asko gure istorioren parte izateagatik.",

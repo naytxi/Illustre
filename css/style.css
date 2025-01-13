@@ -57,8 +57,7 @@ h3 {
 /** Header **/
 .header {
     display: flex;
-    justify-content: center;
-    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
     padding: 1rem;
@@ -67,10 +66,22 @@ h3 {
   }
 
   .lema, .lema2 {
+    display: none;
     font-size: 3rem;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: var(--secundario);
     text-align: center;
+  }
+  @media (min-width: 600px) {
+      .header {
+        justify-content: center;
+        flex-direction: row;
+      }
+      .lema, .lema2 {
+        display: flex;
+        margin-left: 3rem;
+        margin-right: 1rem;
+      }
   }
   
   .lema {
@@ -140,6 +151,7 @@ h3 {
   .icons {
     display: flex;
     gap: 1rem;
+    margin-top: 2rem;
   }
   
   .icon {

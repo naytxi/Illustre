@@ -8,6 +8,23 @@ async function loadTranslations() {
     globalTranslations = await response.json();
     return globalTranslations;
 }
+//script date
+function updateDateTime() {
+    const dateTimeDisplay = document.getElementById("dateTimeDisplay");
+    const now = new Date();
+
+    const currentLanguage = localStorage.getItem('language') || 'es';
+    const { daysOfWeek, monthsOfYear } = globalTranslations[currentLanguage];
+
+    const day = daysOfWeek[now.getDay()];
+    const date = now.getDate(); 
+    const month = monthsOfYear[now.getMonth()];
+    const year = now.getFullYear();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+
+    dateTimeDisplay.textContent = `${day}, ${hours}:${minutes} - ${date} ${month} ${year}`;
+}
 
 function updateDateTime() {
     const dateTimeDisplay = document.getElementById("dateTimeDisplay");

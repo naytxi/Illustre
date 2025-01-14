@@ -67,46 +67,41 @@
         <a class="navegacion__enlace " href="contacto.html" data-translate="contact-titulo">Contacto</a>
     </nav>
   <main>
-    <h1>Contáctanos</h1>
-    <p>Estamos aquí para ayudarte. Escríbenos para resolver cualquier duda o consulta.</p>
-
-    <!-- Cuestionario de contacto -->
-    <form id="contact-form">
-      <label for="name">Nombre completo:</label>
-      <input type="text" id="name" name="name" required>
-
-      <label for="email">Correo electrónico:</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="phone">Teléfono (opcional):</label>
-      <input type="tel" id="phone" name="phone">
-
-      <label for="message">Mensaje:</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
-
-      <button type="submit">Enviar</button>
-    </form>
-
-    <!-- Información de contacto directa -->
-    <section>
-      <h2>Otras formas de contacto</h2>
-      <p><strong>Correo:</strong> <a href="mailto:correo@ejemplo.com">correo@ejemplo.com</a></p>
-      <p><strong>Teléfono:</strong> <a href="tel:+123456789">+123 456 789</a></p>
-      <p><strong>WhatsApp:</strong> <a href="https://wa.me/123456789" target="_blank">Enviar mensaje</a></p>
-      <p><strong>Ubicación:</strong> <a href="https://goo.gl/maps/link" target="_blank">Ver en Google Maps</a></p>
-    </section>
-
-    <!-- Redes sociales -->
-    <section>
-      <h2>Síguenos</h2>
-      <a href="https://facebook.com" target="_blank">Facebook</a>
-      <a href="https://instagram.com" target="_blank">Instagram</a>
-      <a href="https://twitter.com" target="_blank">Twitter</a>
-    </section>
-
-    <!-- Botón de regreso al inicio -->
-    <button onclick="window.location.href='index.html'">Volver al inicio</button>
-
+    <div class="contact">
+      <h1>Contáctanos</h1>
+      <p>Nos encantaría saber de ti. Escríbenos o explora nuestras redes sociales.</p>
+  </div>
+  <div class="contact-layout">
+      <!-- Columna izquierda -->
+      <div class="left-column">
+          <a href="mailto:info@tuempresa.com">Correo: info@tuempresa.com</a>
+          <a href="tel:+123456789">Teléfono: +1 234 567 89</a>
+          <a href="https://wa.me/123456789">WhatsApp: Chat en WhatsApp</a>
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+          <a href="#">Twitter</a>
+      </div>
+      <!-- Columna derecha -->
+      <div class="right-column">
+          <h2>Formulario de Contacto</h2>
+          <form>
+              <label for="name">Nombre</label>
+              <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+              
+              <label for="email">Correo Electrónico</label>
+              <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required>
+              
+              <label for="message">Mensaje</label>
+              <textarea id="message" name="message" placeholder="Tu mensaje" required></textarea>
+              
+              <button type="submit">Enviar</button>
+          </form>
+      </div>
+  </div>
+  <div class="footer">
+      <button onclick="window.location.href='index.html';">Volver a Inicio</button>
+  </div>
+  
   </main>
   <footer class="footer">
     <div class="footer__contenedor">

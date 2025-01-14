@@ -360,7 +360,6 @@ h3 {
     transition: 2s;
 }
 .producto__informacion {
-    background-color: var(--blanco); /*Prueba de color para fondo de la descripcion*/
     border-radius: 1rem;
 }
 
@@ -773,4 +772,88 @@ h3 {
 
 .social-icons li {
     margin-bottom: 10px; 
+}
+
+
+
+
+/* David*/
+
+/** Productos **/
+.producto {
+  background: radial-gradient(#f588d8, #c0a3e5);
+  padding: 1rem;
+  border-radius: 1rem;
+  padding: 1.8rem;
+}
+
+.producto__imagen {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.producto__imagen:hover {
+  transform: scale(1.04);
+  transition: 2s;
+}
+.producto__informacion {
+  border-radius: 1rem;
+}
+
+.producto__nombre {
+  font-size: 4rem;
+}
+.producto__precio {
+  font-size: 2.8rem;
+  color: var(--secundario);
+}
+.producto__nombre,
+.producto__precio {
+  font-family: var(--fuentePrincipal);
+  margin: 1rem 0;
+  text-align: center;
+  line-height: 1.2;
+}
+.producto_inputs {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.producto_submit {
+  font-size: 1.5rem;
+  padding: 1rem;
+  border-radius: 1.3rem;
+  cursor: pointer;
+}
+.producto_color, .producto_submit {
+  background-color: var(--primario);
+}
+.producto_color, .producto_cantidad {
+  margin-bottom: 1.3rem;
+  padding: 0.4rem;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+}
+
+.producto__agregar-carrito {
+  background-color: var(--secundario);
+  color: var(--blanco);
+  padding: 10px;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.producto__agregar-carrito:hover {
+  background-color: var(--primario);
+}
+
+
+
+@media (min-width: 768px) {
+  .producto_inputs {
+     max-width: 65%;
+     font-size: 1.3rem;
+  }
 }

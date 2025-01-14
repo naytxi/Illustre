@@ -9,6 +9,23 @@ async function loadTranslations() {
     return globalTranslations;
 }
 
+function updateDateTime() {
+    const dateTimeDisplay = document.getElementById("dateTimeDisplay");
+    const now = new Date();
+
+    const currentLanguage = localStorage.getItem('language') || 'es';
+    const { daysOfWeek, monthsOfYear } = globalTranslations[currentLanguage];
+
+    const day = daysOfWeek[now.getDay()];
+    const date = now.getDate(); 
+    const month = monthsOfYear[now.getMonth()];
+    const year = now.getFullYear();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+
+    dateTimeDisplay.textContent = `${day}, ${hours}:${minutes} - ${date} ${month} ${year}`;
+}
+
 function updateTranslations(selectedLanguage) {
     for (const key in globalTranslations[selectedLanguage]) {
         const elements = document.querySelectorAll(`[data-translate="${key}"]`);
@@ -36,23 +53,6 @@ loadTranslations().then(() => {
     console.error(error);
 });
 
- //script date
-function updateDateTime() {
-    const dateTimeDisplay = document.getElementById("dateTimeDisplay");
-    const now = new Date();
-
-    const currentLanguage = localStorage.getItem('language') || 'es';
-    const { daysOfWeek, monthsOfYear } = globalTranslations[currentLanguage];
-
-    const day = daysOfWeek[now.getDay()];
-    const date = now.getDate(); 
-    const month = monthsOfYear[now.getMonth()];
-    const year = now.getFullYear();
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-
-    dateTimeDisplay.textContent = `${day}, ${hours}:${minutes} - ${date} ${month} ${year}`;
-}
 
 //Página de productos
 document.addEventListener('DOMContentLoaded', function() {
@@ -99,10 +99,6 @@ document.addEventListener('DOMContentLoaded', function() {
 const loginButton = document.getElementById('loginButton');
 const loginPopup = document.getElementById('loginPopup');
 const closePopup = document.getElementById('loginClose');
-let contrasena =document.getElementById("password");
-const cartButton = document.getElementById('cartButton');
-const cartPopup = document.getElementById('cartPopup');
-const cartClose = document.getElementById('cartClose');
 
 loginButton.addEventListener('click', () => {
     loginPopup.style.display = 'block';
@@ -112,26 +108,4 @@ loginButton.addEventListener('click', () => {
     loginPopup.style.display = 'none';
   });
 
-  ojito.addEventListener('click', function() {
-
-    if (contrasena.type === "password") {
-        contrasena.type = "text";
-        imagen.src ="../fonts/Imagenes/ojoAbierto1.jpg" ;
-
-    } 
-    else {
-        contrasena.type = "password";
-        imagen.src="../fonts/Imagenes/ojoCerrado1.jpg" ;
-    }
-})
-
-// POPUP CARRITO//
-cartButton.addEventListener('click', () => {
-    cartPopup.style.display = 'block';
-});
-
-
-cartClose.addEventListener('click', () => {
-    cartPopup.style.display = 'none';
-});
-
+  

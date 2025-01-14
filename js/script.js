@@ -8,7 +8,7 @@ async function loadTranslations() {
     globalTranslations = await response.json();
     return globalTranslations;
 }
-
+//display fecha
 function updateDateTime() {
     const dateTimeDisplay = document.getElementById("dateTimeDisplay");
     const now = new Date();

@@ -21,6 +21,7 @@ body {
 }
 /** Navegacion **/
 .navegacion {
+    width: 100%;
     background-color: var(--primarioOscuro);
     padding: 1rem 0;
     display: flex;
@@ -128,10 +129,25 @@ body {
 .right-column form button:hover {
     background-color: var(--secundarioOscuro);
 }
-
+.boton {
+    width: 20%;
+    background-color: var(--secundario);
+    color: var(--secundario);
+    border: none;
+    padding: 1rem;
+    font-size: 1.8rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  
+}
+.boton:hover {
+    background-color: var(--secundarioOscuro);
+    
+}
 /* Footer */
 .footer {
-    background-color: var(--secundario);
+    background-color: var(--primarioOscuro);
     color: var(--blanco);
     width: 100%;
     text-align: center;

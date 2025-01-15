@@ -875,7 +875,10 @@ h3 {
   justify-content: space-evenly;
   margin-left: 250px;
 }
-
+.contact p {
+ 
+margin-left: 600px;
+}
 
 /* Columna izquierda */
 .left-column {
@@ -955,19 +958,74 @@ h3 {
 .right-column form button:hover {
   background-color: var(--secundarioOscuro);
 }
-.boton {
-  width: 20%;
-  background-color: var(--secundario);
-  color: var(--secundario);
-  border: none;
-  padding: 1rem;
-  font-size: 1.8rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
 
+.boton {
+  display: inline-block; 
+  background-color: var(--secundario); 
+  color: var(--blanco);
+  padding: 1rem 2rem; 
+  text-align: center;
+  font-size: 1.6rem; 
+  border-radius: 5px; 
+  border: none; 
+  cursor: pointer; 
+  text-decoration: none; 
+  transition: background-color 0.3s ease; 
+  margin-left: 350px;
 }
+
+
 .boton:hover {
-  background-color: var(--secundarioOscuro);
-  
+  background-color: var(--secundarioOscuro); 
+}
+/* Media queries para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+  .contact-layout {
+    flex-direction: column; 
+    margin-left: 0;
+    padding: 1rem;
+  }
+
+  .left-column {
+    flex: unset;
+    text-align: center; 
+  }
+
+  .right-column {
+    flex: unset; 
+    margin: 0 auto;
+  }
+
+  .right-column h2 {
+    font-size: 2rem; 
+  }
+
+  .boton {
+    margin: 1rem auto; 
+    padding: 0.8rem 1.5rem; 
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .right-column {
+    padding: 1rem; 
+  }
+
+  .right-column h2 {
+    font-size: 1.8rem; 
+  }
+
+  .right-column form label {
+    font-size: 1.4rem; 
+  }
+
+  .right-column form input,
+  .right-column form textarea {
+    font-size: 1.4rem;
+    padding: 0.8rem; 
+  }
+
+  .boton {
+    font-size: 1.4rem; 
+  }
 }

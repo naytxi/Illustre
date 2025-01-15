@@ -169,3 +169,21 @@ document.getElementById("increment1").addEventListener("click", () => {
       counter1Display.textContent = counter1Value;
     }
   });
+
+
+  //script para la barra de NAVEGACION
+  document.addEventListener("DOMContentLoaded", () => {
+    const navegacion = document.querySelector(".navegacion");
+    const header = document.querySelector("header"); 
+
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY >= header.offsetHeight) {
+            // Si se ha desplazado más allá del header, fija la navegación
+            navegacion.classList.add("fija");
+        } else {
+            // Si está antes del header, posición inicial
+            navegacion.classList.remove("fija");
+        }
+    });
+});

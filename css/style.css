@@ -22,6 +22,8 @@ body {
     background-color: var(--primario);
     font-size: 1.6rem;
     line-height: 1.5;
+    margin: 0;
+    padding: 0;
 }
 p {
     font-size: 2rem;
@@ -344,12 +346,23 @@ h3 {
 }
 /** Navegacion **/
 .navegacion {
-    background-color: var(--primarioOscuro);
-    padding: 1rem 0;
-    display: flex;
-    justify-content: center;
-    gap: 2rem; 
+  background-color: var(--primarioOscuro);
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  position: relative; /* Posición inicial relativa */
+  z-index: 1000; /* Asegura que la barra esté visible */
+  transition: all 0.3s ease; /* Suaviza el cambio de posición */
 }
+
+.navegacion.fija {
+  position: fixed; /* Se fija al hacer scroll */
+  top: 0; /* Se adhiere a la parte superior */
+  width: 100%; /* Ancho completo */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para dar efecto flotante */
+}
+
 .navegacion__enlace {
     font-family: var(--fuentePrincipal);
     color: var(--blanco);

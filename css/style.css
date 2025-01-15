@@ -859,7 +859,7 @@ h3 {
 }
 
 /*layout contacto*/
-/* Layout de columnas */
+
 .contact-layout {
   display: flex;
   flex-wrap: wrap;
@@ -867,13 +867,15 @@ h3 {
   max-width: 1200px;
   width: 100%;
   padding: 2rem;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  margin-left: 250px;
 }
+
 
 /* Columna izquierda */
 .left-column {
   flex: 1;
-  min-width: 280px;
+  min-width: 250px;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;

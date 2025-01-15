@@ -971,7 +971,7 @@ margin-left: 600px;
     padding: 1rem;
   }
   .contact p {
-    margin: 2rem;
+   margin-left: 0%;
     }
   .left-column {
     flex: unset;

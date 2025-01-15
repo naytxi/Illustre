@@ -36,8 +36,9 @@ img {
     border-radius: 1rem;
 }
 .contenedor {
-    max-width: 120rem;
+    max-width: 100%;
     margin: 0 auto;
+    width: 95%;
     color: #ec598cff;
 }
 h1, h2, h3 {
@@ -61,7 +62,7 @@ h3 {
     justify-content: center;
     flex-direction: row;
     align-items: center;
-    width: 110%;
+    width: 100%;
     padding: 3.5rem;
     position: relative;
     gap:3rem;
@@ -85,9 +86,9 @@ h3 {
  .contenedor-comprar p {
     font-size: 2rem;
     color: var(--secundarioOscuro);
-    width: 65%;
-    margin-right: 15rem;
-    margin-left: 10rem;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
     margin-bottom: 10rem;
  }
 
@@ -113,9 +114,10 @@ h3 {
   }
   
   .header__logo {
+    max-width: 100%;
     text-align: center;
     margin: 0;
-    width: 30rem;
+    width: auto;
   }
   
   .header-right {
@@ -310,10 +312,13 @@ h3 {
     gap: 2rem;
     margin: auto 3rem;
 }
-@media (max-width: 380px) {
+@media (max-width: 600px) {
     .grid {
         grid-template-columns: 1fr;
         margin: auto 1rem;
+    }
+    .header {
+      flex-direction: column;
     }
 
     .producto__nombre {

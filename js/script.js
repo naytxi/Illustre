@@ -116,6 +116,9 @@ document.addEventListener('DOMContentLoaded', function() {
 const loginButton = document.getElementById('loginButton');
 const loginPopup = document.getElementById('loginPopup');
 const closePopup = document.getElementById('loginClose');
+const cartButton = document.getElementById('cartButton');
+const cartPopup = document.getElementById('cartPopup');
+const cartClose = document.getElementById('cartClose');
 
 loginButton.addEventListener('click', () => {
     loginPopup.style.display = 'block';
@@ -125,4 +128,12 @@ loginButton.addEventListener('click', () => {
     loginPopup.style.display = 'none';
   });
 
-  
+ //POPUP CARRITO
+cartButton.addEventListener('click', () => {
+    cartPopup.style.display = 'block';
+});
+
+
+cartClose.addEventListener('click', () => {
+    cartPopup.style.display = 'none';
+});

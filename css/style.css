@@ -1,8 +1,8 @@
 :root {
-    --primario: #ecbceeff;
-    --primarioOscuro: #e392a4ff;
-    --secundario: #ec598cff;
-    --secundarioOscuro: #7c7c7cff;
+    --primario:  #ecbceeff; /*#ffffff;*/
+    --primarioOscuro: #e392a4ff; /*#406565;*/
+    --secundario: #ec598cff;  /*#42cebb;*/
+    --secundarioOscuro: #7c7c7cff; /*#454b4b;*/
     --blanco: #FFF;
     --negro: #000;
     --fuentePrincipal: 'Staatliches', cursive;
@@ -38,6 +38,7 @@ img {
 .contenedor {
     max-width: 100%;
     margin: 0 auto;
+    color: var(--secundario);
     width: 95%;
     color: #ec598cff;
 }
@@ -80,10 +81,10 @@ h3 {
  }
 
  .contenedor-comprar h3 {
-    color: #ec598cff;
+    color: var(--secundario);
  }
 
- .contenedor-comprar p {
+ .contendor-comprar p {
     font-size: 2rem;
     color: var(--secundarioOscuro);
     width: 100%;
@@ -312,7 +313,7 @@ h3 {
     gap: 2rem;
     margin: auto 3rem;
 }
-@media (max-width: 600px) {
+@media (max-width: 380px) {
     .grid {
         grid-template-columns: 1fr;
         margin: auto 1rem;
@@ -418,7 +419,7 @@ h3 {
   flex-direction: column;
   gap: 10px;
   max-width: 550px;
-  background-color:  #ec598cff;
+  background-color: var(--secundario);
   padding: 20px;
   border-radius: 10px;
   margin-left: 700px;
@@ -443,7 +444,7 @@ h3 {
   width: 100%;
   padding: 10px 10px 0px 10px;
   outline: 0;
-  border: 1px solid  #ec598cff;
+  border: 1px solid var(--secundario);
   border-radius: 5px;
 }
 
@@ -476,7 +477,7 @@ h3 {
   width: 100%;
   padding: 10px 10px 20px 10px;
   outline: 0;
-  border: 1px solid  #ec598cff;
+  border: 1px solid  var(--secundario);
   border-radius: 5px;
 }
 
@@ -508,7 +509,7 @@ h3 {
 
 .fancy {
   background-color: white;
-  border: 2px solid  #ec598cff;
+  border: 2px solid var(--secundario);
   border-radius: 0px;
   box-sizing: border-box;
   color:  #7c7c7cff;
@@ -533,7 +534,7 @@ h3 {
   content: " ";
   width: 1.7rem;
   height: 2px;
-  background: #ec598cff;
+  background: var(--secundario);
   top: 50%;
   left: 1.5em;
   position: absolute;
@@ -562,7 +563,7 @@ h3 {
   top: -2px;
   left: 0.625rem;
   position: absolute;
-  background:  #ec598cff;
+  background: var(--secundario);
   transition: width 0.5s ease-out, left 0.3s ease-out;
 }
 
@@ -572,7 +573,7 @@ h3 {
   right: 1.875rem;
   bottom: -2px;
   position: absolute;
-  background:  #ec598cff;
+  background:  var(--secundario);
   transition: width 0.5s ease-out, right 0.3s ease-out;
 }
 
@@ -582,22 +583,22 @@ h3 {
   right: 0.625rem;
   bottom: -2px;
   position: absolute;
-  background:  #ec598cff;
+  background: var(--secundario);
   transition: width 0.5s ease-out, right 0.3s ease-out;
 }
 
 .fancy:hover {
-  color: #ec598cff;
+  color: var(--secundario);
   background: black;
 }
 
 .fancy:hover::before {
   width: 1.5rem;
-  background:  #ec598cff;
+  background: var(--secundario);
 }
 
 .fancy:hover .text {
-  color: #ec598cff;
+  color: var(--secundario);
   padding-left: 1.5em;
 }
 
@@ -770,7 +771,7 @@ h3 {
 
 /** Productos **/
 .producto {
-  background: radial-gradient(#f588d8, #c0a3e5);
+  background: radial-gradient(#f588d8, #c0a3e5); /*var(--secundario);*/
   padding: 1rem;
   border-radius: 1rem;
   padding: 1.8rem;

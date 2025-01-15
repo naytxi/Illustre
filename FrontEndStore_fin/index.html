@@ -19,17 +19,19 @@
         </a>
         
         <div class="lema2">BELLES HISTOIRIES</div>
+  
+      
         <div class="header-right">
        
-          <div class="language-selector">
-            <select id="language-select">
-                <option selected disabled>Idioma</option>
-                <option value="es">Español</option>
-                <option value="eu">Euskara</option>
-                <option value="en">English</option>
-                <option value="fr">Français</option>
-            </select>
-          </div>
+            <div class="language-selector">
+                <select id="language-select">
+                    <option selected disabled>Idioma</option>
+                    <option value="es">Español</option>
+                    <option value="eu">Euskara</option>
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                </select>
+            </div>            
       
           <div class="icons">
             <button id="loginButton" href="/login" class="icon"><i class="fas fa-user"></i></button>
@@ -49,11 +51,16 @@
                 </div>
               </div>
             <button id="cartButton" href="/store" class="icon"><i class="fas fa-shopping-cart"></i></button>
-            <div id="cartPopup" class="popup">
-                <div class="popup-content">
+            <div id="cartPopup" class="cartpopup">
+                <div class="popup-contentcart">
                     <span id="cartClose" class="close">&times;</span>
                     <h2>Cart</h2>
                     <ul id="cartItems"></ul>
+                    <div class="counter-controls">
+                        <button id="decrement1" class="counter-button decrement">-</button>
+                        <span id="counter1" class="counter-display">0</span>
+                        <button id="increment1" class="counter-button increment">+</button>
+                      </div>
                     <div class="total">
                         <p>Total: <span id="totalPrice">0€</span></p>
                     </div>

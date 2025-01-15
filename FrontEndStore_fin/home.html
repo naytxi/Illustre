@@ -50,11 +50,16 @@
                 </div>
               </div>
             <button id="cartButton" href="/store" class="icon"><i class="fas fa-shopping-cart"></i></button>
-            <div id="cartPopup" class="popup">
-                <div class="popup-content">
+            <div id="cartPopup" class="cartpopup">
+                <div class="popup-contentcart">
                     <span id="cartClose" class="close">&times;</span>
                     <h2>Cart</h2>
                     <ul id="cartItems"></ul>
+                    <div class="counter-controls">
+                        <button id="decrement1" class="counter-button decrement">-</button>
+                        <span id="counter1" class="counter-display">0</span>
+                        <button id="increment1" class="counter-button increment">+</button>
+                      </div>
                     <div class="total">
                         <p>Total: <span id="totalPrice">0€</span></p>
                     </div>

@@ -112,6 +112,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+
+
 // SCRIPT LOGIN //
 const loginButton = document.getElementById('loginButton');
 const loginPopup = document.getElementById('loginPopup');
@@ -119,6 +121,8 @@ const closePopup = document.getElementById('loginClose');
 const cartButton = document.getElementById('cartButton');
 const cartPopup = document.getElementById('cartPopup');
 const cartClose = document.getElementById('cartClose');
+let ojito = document.getElementById('ojito');
+const password = document.getElementById('password');
 
 loginButton.addEventListener('click', () => {
     loginPopup.style.display = 'block';
@@ -128,7 +132,23 @@ loginButton.addEventListener('click', () => {
     loginPopup.style.display = 'none';
   });
 
+ojito.addEventListener('click', function() {
+
+    if (password.type === "password") {
+        password.type = "text";
+        imagen.src = "../fonts/Imagenes/ojoAbierto1.jpg";
+
+    } 
+    else {
+        password.type = "password";
+        imagen.src = "../fonts/Imagenes/ojoCerrado1.jpg";
+    }
+})
+
  //POPUP CARRITO
+ const counter1Display = document.getElementById("counter1");
+ let counter1Value = 0;
+
 cartButton.addEventListener('click', () => {
     cartPopup.style.display = 'block';
 });
@@ -137,3 +157,15 @@ cartButton.addEventListener('click', () => {
 cartClose.addEventListener('click', () => {
     cartPopup.style.display = 'none';
 });
+
+document.getElementById("increment1").addEventListener("click", () => {
+    counter1Value++;
+    counter1Display.textContent = counter1Value;
+  });
+  
+  document.getElementById("decrement1").addEventListener("click", () => {
+    if (counter1Value > 0) {
+      counter1Value--;
+      counter1Display.textContent = counter1Value;
+    }
+  });

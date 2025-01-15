@@ -861,7 +861,8 @@ h3 {
   margin-left: 250px;
 }
 .contact p {
-margin-left: 600px;
+text-align: center;
+margin: 0%;
 }
 
 /* Columna izquierda */
@@ -963,44 +964,40 @@ margin-left: 600px;
   background-color: var(--secundarioOscuro); 
 }
 
-/* Media queries para pantallas pequeñas */
+/* Media queries para resolver problemas de alineación */
+@media screen and (max-width: 1366px) {
+  .contact p {
+    margin: 0 auto; /* Asegura que se mantenga centrado */
+    text-align: center; /* Refuerza el centrado */
+  }
+}
 
 @media screen and (max-width: 768px) {
   .contact-layout {
-    flex-direction: column; 
-    margin-left: 0;
+    flex-direction: column; /* Cambia a una columna en pantallas pequeñas */
+    margin: 0;
     padding: 1rem;
   }
-  .contact p {
-   margin-left: 0%;
 
-    }
+  .contact p {
+    margin: 1rem auto; /* Centra con un margen dinámico */
+    text-align: center;
+  }
+
   .left-column {
-    flex: unset;
     text-align: center; 
   }
 
   .right-column {
-    flex: unset; 
     margin: 0 auto;
-  }
-
-  .right-column h2 {
-    font-size: 2rem; 
-  }
-
-  .boton {
-    margin: 1rem auto; 
-    padding: 0.8rem 1.5rem; 
+    padding: 1rem;
   }
 }
 
 @media screen and (max-width: 480px) {
   .contact p {
-    margin: 2rem;
-    }
-  .right-column {
-    padding: 1rem; 
+    margin: 1rem auto; 
+    text-align: center;
   }
 
   .right-column h2 {
@@ -1019,5 +1016,6 @@ margin-left: 600px;
 
   .boton {
     font-size: 1.4rem; 
+    padding: 0.8rem 1.5rem;
   }
 }

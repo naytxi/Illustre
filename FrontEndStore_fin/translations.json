@@ -1,5 +1,6 @@
 {
     "es": {
+        "contacto": "contacto",
         "historial": "historial de pedidos",
         "daysOfWeek": ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"],
         "monthsOfYear": ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
@@ -29,6 +30,7 @@
         "store": "Tienda"
     },
     "en": {
+        "contacto": "contact",
         "historial": "Order History",
         "daysOfWeek": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
         "monthsOfYear": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
@@ -58,6 +60,7 @@
         "store": "Store"
     },
     "fr": { 
+        "contacto": "contacte",
         "historial": "Historique des Commandes",
         "daysOfWeek": ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"],
         "monthsOfYear": ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
@@ -87,6 +90,7 @@
         "store": "Boutique"
     },
     "eu": {
+        "contacto": "kontaktua",
         "historial": "Eskaeren Historia",
         "daysOfWeek": ["Igandea", "Astelehena", "Asteartea", "Asteazkena", "Osteguna", "Ostirala", "Larunbata"],
         "monthsOfYear": ["Urtarrila", "Otsaila", "Martxoa", "Apirila", "Maiatza", "Ekaina", "Uztaila", "Abuztua", "Iraila", "Urria", "Azaroa", "Abendua"],

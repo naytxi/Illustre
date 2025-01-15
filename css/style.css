@@ -876,7 +876,6 @@ h3 {
   margin-left: 250px;
 }
 .contact p {
- 
 margin-left: 600px;
 }
 
@@ -985,7 +984,7 @@ margin-left: 600px;
     margin-left: 0;
     padding: 1rem;
   }
-
+  
   .left-column {
     flex: unset;
     text-align: center; 

@@ -977,14 +977,18 @@ margin-left: 600px;
 .boton:hover {
   background-color: var(--secundarioOscuro); 
 }
+
 /* Media queries para pantallas pequeñas */
+
 @media screen and (max-width: 768px) {
   .contact-layout {
     flex-direction: column; 
     margin-left: 0;
     padding: 1rem;
   }
-  
+  .contact p {
+    margin: 2rem;
+    }
   .left-column {
     flex: unset;
     text-align: center; 
@@ -1006,6 +1010,9 @@ margin-left: 600px;
 }
 
 @media screen and (max-width: 480px) {
+  .contact p {
+    margin: 2rem;
+    }
   .right-column {
     padding: 1rem; 
   }

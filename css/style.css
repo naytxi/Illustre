@@ -76,6 +76,7 @@ h3 {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: var(--secundario);
     text-align: center;
+    display: none;
   }
   
  .contenedor-comprar {
@@ -105,6 +106,9 @@ h3 {
         margin-left: 3rem;
         margin-right: 1rem;
       }
+      #language-selec {
+        padding: 8px 30px 8px 15px;
+      }
   }
 
   .lema {
@@ -131,12 +135,12 @@ h3 {
   }
 
   /*selector idioma*/
-  .language-selector {
+  /* .language-selector {
     position: absolute;
     bottom: -50px;
     right: 0;
     z-index: 1;  
-  }
+  } */
   
   #language-select {
     appearance: none;
@@ -144,12 +148,24 @@ h3 {
     background-color: var(--primarioOscuro);
     border: 2px solid var(--secundario);
     border-radius: 20px;
-    padding: 8px 30px 8px 15px;
-    font-size: 16px;
+    padding: 4px 10px 4px 10px;
+    font-size: 13px;
     color: var(--blanco);
     cursor: pointer;
     outline: none;
     transition: all 0.3s ease;
+    margin-right: 8rem;
+  }
+  @media (min-width: 600px) {
+      #language-select {
+        padding: 8px 30px 8px 15px;
+        font-size: 16px;
+        margin-right: 0;
+      }
+      .language-selector::after {
+        right: 22px;
+        font-size: 16px;
+      }
   }
   
   #language-select:hover {
@@ -159,12 +175,33 @@ h3 {
   .language-selector::after {
     content: '\25BC';
     position: absolute;
-    top: 50%;
-    right: 10px;
+    top: 60%;
+    right: 176px;
     transform: translateY(-50%);
     color: var(--blanco);
     pointer-events: none;
-    font-size: 12px;
+    font-size: 10px;
+  }
+  @media (min-width: 380px) {
+    .language-selector {
+      position: absolute;
+      bottom: -50px;
+      right: 0;
+      z-index: 1;
+    }
+    #language-select {
+      margin-right: 0;
+    }
+    .language-selector::after {
+      content: '\25BC';
+      position: absolute;
+      top: 42%;
+      right: 8px;
+      transform: translateY(-50%);
+      color: var(--blanco);
+      pointer-events: none;
+      font-size: 12px;
+    }
   }
   
   #language-select option {

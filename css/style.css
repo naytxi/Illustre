@@ -519,6 +519,14 @@ h3 {
     }
 }
  /** Fromulario de contacto **/ 
+ .container-center {
+  display: flex;
+  justify-content: center; 
+  align-items: center;             
+  background-color: var(--primario); 
+  padding: 1rem;
+  box-sizing: border-box;
+}
  .formu-card1 {
   width: 400px;
   background-image: linear-gradient(163deg, #ecbceeff 0%,#ecbceeff 100%);
@@ -526,7 +534,7 @@ h3 {
   transition: all 0.3s;
   padding: 1em; 
   box-shadow: 0px 4px 20px #ec598cff(100, 255, 218, 0.2);
- margin-left: 700px;
+
 }
 
 .formu-card1:hover {

@@ -187,120 +187,6 @@ document.getElementById("increment1").addEventListener("click", () => {
         }
     });
 });
-<<<<<<< HEAD
-// cambio datos y contraseña usuario
-// Manejar la edición de datos personales
-document.getElementById('edit-form').addEventListener('submit', async function (e) {
-    e.preventDefault();
-  
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
-  
-    // Aquí envías los datos al servidor
-    const response = await fetch('/api/update-profile', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, phone }),
-    });
-  
-    if (response.ok) {
-      alert('Datos actualizados correctamente.');
-    } else {
-      alert('Hubo un error al actualizar los datos.');
-    }
-  });
-  
-  // Manejar el cambio de contraseña
-  document.getElementById('password-form').addEventListener('submit', async function (e) {
-    e.preventDefault();
-  
-    const currentPassword = document.getElementById('current-password').value;
-    const newPassword = document.getElementById('new-password').value;
-    const confirmPassword = document.getElementById('confirm-password').value;
-  
-    if (newPassword !== confirmPassword) {
-      alert('Las contraseñas no coinciden.');
-      return;
-    }
-  
-    // Aquí envías los datos al servidor
-    const response = await fetch('/api/change-password', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ currentPassword, newPassword }),
-    });
-  
-    if (response.ok) {
-      alert('Contraseña actualizada correctamente.');
-    } else {
-      alert('Hubo un error al actualizar la contraseña.');
-    }
-  });
-//subida y previsualizacion foto
-document.getElementById('upload-photo').addEventListener('change', function (e) {
-  const file = e.target.files[0];
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = function (event) {
-      document.getElementById('profile-picture').src = event.target.result;
-    };
-    reader.readAsDataURL(file);
-  }
-});
-
-document.getElementById('save-photo').addEventListener('click', async function () {
-  const photo = document.getElementById('profile-picture').src;
-
-  // Enviar la foto al servidor
-  const response = await fetch('/api/upload-photo', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ photo }),
-  });
-
-  if (response.ok) {
-    alert('Foto de perfil actualizada.');
-  } else {
-    alert('Hubo un error al actualizar la foto.');
-  }
-});
-
-
-//lista de deseos
-const wishlist = document.getElementById('wishlist');
-
-document.getElementById('add-to-wishlist').addEventListener('click', function () {
-  const item = document.getElementById('wishlist-item').value;
-  if (item) {
-    const li = document.createElement('li');
-    li.textContent = item;
-
-    const removeBtn = document.createElement('button');
-    removeBtn.textContent = 'Eliminar';
-    removeBtn.style.marginLeft = '10px';
-    removeBtn.addEventListener('click', () => li.remove());
-
-    li.appendChild(removeBtn);
-    wishlist.appendChild(li);
-
-    document.getElementById('wishlist-item').value = '';
-  }
-});
-
-// historial pedidos
-document.querySelectorAll('.orders ul li').forEach((order) => {
-  order.addEventListener('click', function () {
-    // Selecciona el bloque de detalles del pedido actual
-    const details = this.querySelector('.order-details');
-
-    // Alterna la clase "hidden" para mostrar/ocultar
-    if (details) {
-      details.classList.toggle('hidden');
-    }
-  });
-});
-=======
 
 //script para los FILTROS
 
@@ -361,4 +247,20 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   });
->>>>>>> 0d69453a00eb4c36cf8fc81d80419e2193a7f5d7
+
+// Selecciona todos los elementos <li> dentro de la lista de pedidos
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Código para alternar los detalles
+})
+document.querySelectorAll('.orders ul li').forEach((order) => {
+  order.addEventListener('click', function () {
+    // Selecciona el div de detalles asociado al pedido
+    const details = this.querySelector('.order-details');
+    
+    // Verifica que existan detalles y alterna la clase 'hidden'
+    if (details) {
+      details.classList.toggle('hidden');
+    }
+  });
+});

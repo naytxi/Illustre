@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Usuario</title>
+    <link rel="icon" href="../fonts/imagenes/favicon.ico" type="imagen.ico">
+
+    <title>Illustre</title>
 </head>
 <body>
     <header class="header">
@@ -57,6 +59,7 @@
             </div>
           </div>
       </header>
+
         <nav class="navegacion">
           <a class="navegacion__enlace" href="home.html" data-translate="titulo-nav">Inicio</a>
           <a class="navegacion__enlace" href="index.html" data-translate="store-titulo">Tienda</a>
@@ -65,9 +68,114 @@
         </nav>
 
 
-    <main class="contenedor">
-        </main>
-    <div id="dateTimeDisplay">Cargando...</div>
+          <main class="contenedor">
+            <div id="dateTimeDisplay">Cargando...</div>
+              </main>
+        
+
+
+        <div class="container">
+          <!-- Header -->
+          <div class="header">
+            <h1>Mi Cuenta</h1>
+          </div>
+
+          <!-- usuario -->
+          <div class="profile">
+            <img id="profile-picture" src="../fonts/Imagenes/user.jpeg" alt="Foto de perfil">
+            <h2>Marina Godoy</h2>
+            <input type="file" id="upload-photo" accept="image/*">
+            <button id="save-photo" class="button">Guardar Foto</button>
+          </div>
+          
+          <!-- informacion personal-->
+          <div class="section">
+            <h3>Datos Personales</h3>
+            <p><strong>Nombre:</strong> Marina Godoy</p>
+            <p><strong>Email:</strong> marinagodoy@gmail.com</p>
+            <p><strong>Teléfono:</strong> +34 600 123 456</p>
+            <p><strong>Direccion:</strong> C/ Gran via 80 2A Bilbao Vizcaya</p>
+         
+          </div>
+          <div class="section">
+            <h3>Datos Personales</h3>
+            <form id="edit-form">
+              <label for="name">Nombre:</label>
+              <input type="text" id="name" name="name" value="marina Godoy" required><br>
+          
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" value="marinagodoy@gmail.com" required><br>
+          
+              <label for="phone">Teléfono:</label>
+              <input type="tel" id="phone" name="phone" value="+34 600 123 456" required><br>
+          
+              <button type="submit" class="button">Guardar Cambios</button>
+            </form>
+          </div>
+          <div class="section">
+            <h3>Cambiar Contraseña</h3>
+            <form id="password-form">
+              <label for="current-password">Contraseña Actual:</label>
+              <input type="password" id="current-password" name="current-password" required><br>
+          
+              <label for="new-password">Nueva Contraseña:</label>
+              <input type="password" id="new-password" name="new-password" required><br>
+          
+              <label for="confirm-password">Confirmar Contraseña:</label>
+              <input type="password" id="confirm-password" name="confirm-password" required><br>
+          
+              <button type="submit" class="button">Actualizar Contraseña</button>
+            </form>
+          </div>
+       
+          <!--mis pedidos -->
+          <div class="section orders">
+            <h3>Historial de Pedidos</h3>
+            <ul>
+              <li>
+                <strong>Pedido #12345:</strong> Pendiente - Fecha: 12/01/2025
+                <div class="order-details hidden">
+                  <p>Producto: pendientes palmier</p>
+                  <p>Cantidad: 2</p>
+                  <p>Total: 24€</p>
+                </div>
+              </li>
+              <li>
+                <strong>Pedido #12344:</strong> Enviado - Fecha: 05/01/2025
+                <div class="order-details hidden">
+                  <p>Producto: pulsera flor</p>
+                  <p>Cantidad: 1</p>
+                  <p>Total: 6€</p>
+                </div>
+              </li>
+              <li>
+                <strong>Pedido #12343:</strong> Entregado - Fecha: 28/12/2024
+                <div class="order-details hidden">
+                  <p>Producto: Baldosa bilbao</p>
+                  <p>Cantidad: 3</p>
+                  <p>Total: 30€</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="section">
+            <h3>Lista de Deseos</h3>
+            <ul id="wishlist">
+              <!-- Productos dinámicos aquí -->
+            </ul>
+            <input type="text" id="wishlist-item" placeholder="Añadir producto">
+            <button id="add-to-wishlist" class="button">Añadir</button>
+          </div>
+
+          <!-- +opciones -->
+          <div class="section">
+            <h3>Opciones</h3>
+            <a href="#" class="button">Cerrar Sesión</a>
+          </div>
+
+        </div>
+
+
 
     <footer class="footer">
         <div class="footer__contenedor">

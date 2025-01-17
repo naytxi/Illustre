@@ -128,38 +128,52 @@
             </form>
           </div>
        
-          <!--mis pedidos -->
-          <div class="section orders">
-            <h3>Historial de Pedidos</h3>
-            <ul>
-              <li>
-                <strong>Pedido #12345:</strong> Pendiente - Fecha: 12/01/2025
-                <div class="order-details">
-                  <p>Producto: Gafas de sol</p>
-                  <p>Cantidad: 2</p>
-                  <p>Total: $50</p>
-                </div>
-              </li>
-              <li>
-                <strong>Pedido #12344:</strong> Enviado - Fecha: 05/01/2025
-                <div class="order-details">
-                  <p>Producto: Chaqueta</p>
-                  <p>Cantidad: 1</p>
-                  <p>Total: $75</p>
-                </div>
-              </li>
-              <li>
-                <strong>Pedido #12343:</strong> Entregado - Fecha: 28/12/2024
-                <div class="order-details">
-                  <p>Producto: Reloj</p>
-                  <p>Cantidad: 1</p>
-                  <p>Total: $120</p>
-                </div>
-              </li>
-            </ul>
-          </div>
-          
-          
+                  <!--mis pedidos -->
+                  
+        <div class="section orders">
+          <h3>Historial de Pedidos</h3>
+          <ul>
+            <li class="order">
+              <div class="order-summary">
+                <strong>Pedido #12345</strong>
+                <p>Fecha: 12/01/2025</p>
+                <p>Estado: Pendiente</p>
+                <button class="toggle-details">Ver detalles</button>
+              </div>
+              <div class="order-details">
+                <p><strong>Producto:</strong> Gafas de sol</p>
+                <p><strong>Cantidad:</strong> 2</p>
+                <p><strong>Total:</strong> $50</p>
+              </div>
+            </li>
+            <li class="order">
+              <div class="order-summary">
+                <strong>Pedido #12346</strong>
+                <p>Fecha: 05/01/2025</p>
+                <p>Estado: Enviado</p>
+                <button class="toggle-details">Ver detalles</button>
+              </div>
+              <div class="order-details">
+                <p><strong>Producto:</strong> Chaqueta</p>
+                <p><strong>Cantidad:</strong> 1</p>
+                <p><strong>Total:</strong> $75</p>
+              </div>
+            </li>
+            <li class="order">
+              <div class="order-summary">
+                <strong>Pedido #12347</strong>
+                <p>Fecha: 20/12/2024</p>
+                <p>Estado: Entregado</p>
+                <button class="toggle-details">Ver detalles</button>
+              </div>
+              <div class="order-details">
+                <p><strong>Producto:</strong> Reloj</p>
+                <p><strong>Cantidad:</strong> 1</p>
+                <p><strong>Total:</strong> $120</p>
+              </div>
+            </li>
+          </ul>
+        </div>
 
           <div class="section">
             <h3>Lista de Deseos</h3>
@@ -170,6 +184,8 @@
             <button id="add-to-wishlist" class="button">Añadir</button>
           </div>
 
+          
+
           <!-- +opciones -->
           <div class="section">
             <h3>Opciones</h3>
@@ -177,7 +193,7 @@
           </div>
 
         </div>
-
+        
 
 
     <footer class="footer">

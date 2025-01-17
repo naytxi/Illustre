@@ -248,18 +248,25 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-// Selecciona todos los elementos <li> dentro de la lista de pedidos
 
-document.addEventListener('DOMContentLoaded', function () {
-  // Seleccionamos todos los elementos <li> dentro de la lista de pedidos
-  document.querySelectorAll('.orders ul li').forEach((order) => {
-    order.addEventListener('click', function () {
-      // Seleccionamos el div de detalles asociado al pedido
-      const details = this.querySelector('.order-details');
-      
-      // Alterna la clase 'show' para mostrar u ocultar el contenido
-      if (details) {
-        details.classList.toggle('show');
+  //historial de pedidos
+
+ // Espera que el contenido de la página esté completamente cargado
+ document.addEventListener('DOMContentLoaded', function () {
+  const buttons = document.querySelectorAll('.toggle-details'); // Selecciona los botones
+
+  // Itera sobre cada botón
+  buttons.forEach(button => {
+    button.addEventListener('click', function () {
+      const details = this.closest('.order').querySelector('.order-details'); // Encuentra los detalles asociados
+
+      // Alterna la visibilidad
+      if (details.style.display === 'block') {
+        details.style.display = 'none'; // Oculta los detalles
+        this.textContent = 'Ver detalles'; // Cambia el texto del botón
+      } else {
+        details.style.display = 'block'; // Muestra los detalles
+        this.textContent = 'Ocultar detalles'; // Cambia el texto del botón
       }
     });
   });

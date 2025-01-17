@@ -187,6 +187,7 @@ document.getElementById("increment1").addEventListener("click", () => {
         }
     });
 });
+<<<<<<< HEAD
 // cambio datos y contraseña usuario
 // Manejar la edición de datos personales
 document.getElementById('edit-form').addEventListener('submit', async function (e) {
@@ -299,3 +300,65 @@ document.querySelectorAll('.orders ul li').forEach((order) => {
     }
   });
 });
+=======
+
+//script para los FILTROS
+
+document.addEventListener("DOMContentLoaded", function () {
+    const toggleButton = document.querySelector(".filters-tittle");
+    const filtersContainer = document.querySelector(".filter_container");
+  
+    toggleButton.addEventListener("click", () => {
+      filtersContainer.classList.toggle("hidden");
+      toggleButton.textContent = filtersContainer.classList.contains("hidden")
+        ? "Filtros"
+        : "Filtros";
+    });
+  });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const checkboxes = document.querySelectorAll(".filter-option");
+    const products = document.querySelectorAll(".producto");
+  
+    checkboxes.forEach((checkbox) => {
+      checkbox.addEventListener("change", filterProducts);
+    });
+  
+    function filterProducts() {
+      const selectedCategories = Array.from(checkboxes)
+        .filter((checkbox) => checkbox.checked)
+        .map((checkbox) => checkbox.value);
+  
+      products.forEach((product) => {
+        const category = product.getAttribute("data-category");
+        if (selectedCategories.length === 0 || selectedCategories.includes(category)) {
+          product.style.display = "block"; // Mostrar producto
+        } else {
+          product.style.display = "none"; // Ocultar producto
+        }
+      });
+    }
+  });
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    const priceRange = document.getElementById("price-range");
+    const priceValue = document.getElementById("price-value");
+    const products = document.querySelectorAll(".producto");
+  
+    // Actualiza el texto del precio al mover la barra
+    priceRange.addEventListener("input", function () {
+      const selectedPrice = priceRange.value;
+      priceValue.textContent = `${selectedPrice}€`;
+  
+      // Filtra los productos
+      products.forEach((product) => {
+        const productPrice = product.getAttribute("data-price");
+        if (productPrice === selectedPrice) {
+          product.style.display = "block"; // Muestra el producto
+        } else {
+          product.style.display = "none"; // Oculta el producto
+        }
+      });
+    });
+  });
+>>>>>>> 0d69453a00eb4c36cf8fc81d80419e2193a7f5d7

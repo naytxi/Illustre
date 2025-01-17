@@ -251,16 +251,16 @@ document.addEventListener("DOMContentLoaded", function () {
 // Selecciona todos los elementos <li> dentro de la lista de pedidos
 
 document.addEventListener('DOMContentLoaded', function () {
-  // Código para alternar los detalles
-})
-document.querySelectorAll('.orders ul li').forEach((order) => {
-  order.addEventListener('click', function () {
-    // Selecciona el div de detalles asociado al pedido
-    const details = this.querySelector('.order-details');
-    
-    // Verifica que existan detalles y alterna la clase 'hidden'
-    if (details) {
-      details.classList.toggle('hidden');
-    }
+  // Seleccionamos todos los elementos <li> dentro de la lista de pedidos
+  document.querySelectorAll('.orders ul li').forEach((order) => {
+    order.addEventListener('click', function () {
+      // Seleccionamos el div de detalles asociado al pedido
+      const details = this.querySelector('.order-details');
+      
+      // Alterna la clase 'show' para mostrar u ocultar el contenido
+      if (details) {
+        details.classList.toggle('show');
+      }
+    });
   });
 });

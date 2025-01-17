@@ -1180,32 +1180,17 @@ h3 {
     .button:hover {
       background: var(--primarioOscuro);
     }
-    .orders ul {
-      list-style-type: none;
-      padding: 0;
-    }
-    .orders ul li {
-      padding: 10px;
-      background: var(--primario);
-      margin-bottom: 10px;
-      border-radius: 5px;
-    }
-    .order-details {
-      margin-top: 5px;
-      padding-left: 20px;
-      font-size: 14px;
-      color: #555;
-    }
-    
-    .hidden {
-      display: none;
-    }
-    .order-details {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
-    }
-    
-    .order-details:not(.hidden) {
-      max-height: 200px; /* Ajusta según el contenido */
-    }
+   /* Estilos básicos para los detalles */
+   .order-details {
+    display: none;  /* Oculta los detalles por defecto */
+    margin-top: 5px;
+    padding-left: 20px;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  /* Al hacer clic, mostramos los detalles */
+  .order-details.show {
+    display: block;  /* Muestra los detalles */
+  }
+  

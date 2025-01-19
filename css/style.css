@@ -3,6 +3,7 @@
     --primarioOscuro: #e392a4ff; /*#406565;*/
     --secundario: #ec598cff;  /*#42cebb;*/
     --secundarioOscuro: #7c7c7cff; /*#454b4b;*/
+    --terciario: rgb(253, 243, 245);
     --blanco: #FFF;
     --negro: #000;
     --fuentePrincipal: 'Staatliches', 
@@ -1143,10 +1144,10 @@ h3 {
   }
 }
     .container {
-      max-width: 800px;
+      max-width: 900px;
       margin: 20px auto;
-      background:var(--blanco);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      background:var(--terciario);
+      box-shadow: 0 4px 8px rgba(0.9, 0, 0, 0.9);
       border-radius: 10px;
       overflow: hidden;
     }
@@ -1174,7 +1175,7 @@ h3 {
     }
     .section p, .section ul {
       margin: 0 0 10px;
-      padding: 0;
+  
     }
     .button {
       display: inline-block;
@@ -1185,12 +1186,12 @@ h3 {
       border-radius: 5px;
       text-decoration: none;
       cursor: pointer;
+      margin-left: 300px;
     }
     .button:hover {
       background: var(--primarioOscuro);
     }
-   /* Estilo básico para la lista de pedidos */
- /* Estilo básico para la lista de pedidos */
+ 
  .orders ul {
   list-style-type: none;
   padding: 0;

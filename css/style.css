@@ -3,7 +3,7 @@
     --primarioOscuro: #e392a4ff; /*#406565;*/
     --secundario: #ec598cff;  /*#42cebb;*/
     --secundarioOscuro: #7c7c7cff; /*#454b4b;*/
-    --terciario: rgb(253, 243, 245);
+    --terciario: rgb(252, 227, 232);
     --blanco: #FFF;
     --negro: #000;
     --fuentePrincipal: 'Staatliches', 
@@ -1169,20 +1169,12 @@ h3 {
   color: var(--secundario); 
 }
 
-.section {
-  padding: 20px;
-  border-top: 1px solid var(--primarioOscuro);
-}
 
 .section h3 {
   margin-bottom: 10px;
   color: var(--secundario);
 }
 
-.section p,
-.section ul {
-  margin: 0 0 10px;
-}
 
 .button {
   display: inline-block;
@@ -1196,6 +1188,7 @@ h3 {
   margin: 0 auto; 
   display: block; 
   text-align: center;
+  margin-bottom: 10px;
 }
 
 .button:hover {
@@ -1215,6 +1208,7 @@ form label {
   text-align: center;
   font-weight: bold;
   margin-bottom: 5px;
+  color:sec
 }
 
 form input {
@@ -1232,16 +1226,18 @@ form input:focus {
   box-shadow: 0 0 5px var(--secundario); 
 }
 
+.order {
+  border-bottom: 1px solid var(--primarioOscuro);
+  padding: 10px 0;
+  color: var(--secundarioOscuro);
+  margin-left: 10px;
+  margin-right: 10px;
+}
 
 .orders ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
-}
-
-.order {
-  border-bottom: 1px solid var(--primarioOscuro);
-  padding: 10px 0;
 }
 
 .order-summary {
@@ -1268,8 +1264,10 @@ button.toggle-details {
   cursor: pointer;
   border-radius: 3px; 
   transition: background-color 0.3s ease; 
+
 }
 
 button.toggle-details:hover {
   background-color: var(--primarioOscuro);/
 }
+

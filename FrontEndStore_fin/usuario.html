@@ -68,43 +68,42 @@
         </nav>
 
 
-          <main class="contenedor">
-            <div id="dateTimeDisplay">Cargando...</div>
-              </main>
+        <main class="contenedor">
+          <div id="dateTimeDisplay">Cargando...</div>
+        </main>
         
 
 
-        <div class="container">
-          <!-- Header -->
-          <div class="header"></div>
-
-          <div class="profile">
-            <h2>Mi Cuenta</h2>
-            <img id="profile-picture" src="../fonts/Imagenes/user.jpeg" alt="Foto de perfil">
-            <h2>Marina Godoy</h2>
+  <div class="container">
+     <div class="header"></div>
+   <!--imagen usuario-->
+    <div class="profile">
+      <h2>Mi Cuenta</h2>
+         <img id="profile-picture" src="../fonts/Imagenes/user.jpeg" alt="Foto de perfil">
+            <h2>Nombre usuario</h2>
             <input type="file" id="upload-photo" accept="image/*">
-            <button id="save-photo" class="button">Guardar Foto</button>
-          </div>
-          
-          <section class="section personal-info">
-            <h3>Datos Personales</h3>
-            <form id="edit-form">
+        <button id="save-photo" class="button">Guardar Foto</button>
+     </div>
+     <!--datos de ususario-->     
+    <section class="section personal-info">
+       <h3>Datos Personales</h3>
+         <form id="edit-form">
               <label for="name">Nombre:</label>
-              <input type="text" id="name" name="name" value="Marina Godoy" required><br>
+              <input type="text" id="name" name="name" value="" required><br>
           
               <label for="email">Email:</label>
-              <input type="email" id="email" name="email" value="marinagodoy@gmail.com" required><br>
+              <input type="email" id="email" name="email" value="" required><br>
           
               <label for="phone">Teléfono:</label>
-              <input type="tel" id="phone" name="phone" value="+34 600 123 456" required><br>
+              <input type="tel" id="phone" name="phone" value="" required><br>
           
-              <button type="submit" class="button">Guardar Cambios</button>
-            </form>
-          </section>
-          
-          <section class="section change-password">
-            <h3>Cambiar Contraseña</h3>
-            <form id="password-form">
+          <button type="submit" class="button">Guardar Cambios</button>
+       </form>
+    </section>
+       <!--cambio contraseña-->   
+    <section class="section change-password">
+       <h3>Cambiar Contraseña</h3>
+          <form id="password-form">
               <label for="current-password">Contraseña Actual:</label>
               <input type="password" id="current-password" name="current-password" required autocomplete="current-password"><br>
           
@@ -114,12 +113,12 @@
               <label for="confirm-password">Confirmar Contraseña:</label>
               <input type="password" id="confirm-password" name="confirm-password" required autocomplete="new-password"><br>
           
-              <button type="submit" class="button">Actualizar Contraseña</button>
-            </form>
-          </section>
-          
-          <section class="section orders">
-            <h3>Historial de Pedidos</h3>
+            <button type="submit" class="button">Actualizar Contraseña</button>
+         </form>
+     </section>
+        <!--historial de pedidos-->
+     <section class="section orders">
+      <h3>Historial de Pedidos</h3>
             <ul>
               <li class="order">
                 <div class="order-summary">
@@ -134,7 +133,6 @@
                   <p><strong>Total:</strong> 24€</p>
                 </div>
               </li>
-              <!-- Repite para otros pedidos -->
             </ul>
 
             <ul>
@@ -151,7 +149,6 @@
                   <p><strong>Total:</strong> 24€</p>
                 </div>
               </li>
-             
             </ul>
 
             <ul>
@@ -167,18 +164,18 @@
                   <p><strong>Cantidad:</strong> 3</p>
                   <p><strong>Total:</strong> 36€</p>
                 </div>
-              </li>
-           
-            </ul>
-          </section>
-          
-          <section class="section options">
-            <h3>Opciones</h3>
-            <button id="logout-button" class="button logout">Cerrar sesión</button>
-          </section>
-          
+            </li>
+        </ul>
+    </section>
 
-
+      <!--boton cerrar sesion-->   
+    <section class="section options">
+      <h3>Opciones</h3>
+        <button id="logout-button" class="button logout">Cerrar sesión</button>
+   </section>
+  </div>
+  
+ <!--footer-->
     <footer class="footer">
         <div class="footer__contenedor">
             <div class="footer__seccion">

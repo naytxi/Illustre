@@ -394,7 +394,7 @@ document.addEventListener("DOMContentLoaded", () => {
   logoutButton.addEventListener("click", () => {
     deleteUser(); // Elimina los datos del usuario de localStorage
     alert("Sesión cerrada correctamente.");
-    window.location.href = "index.html"; // Redirige a la página de inicio
+    window.location.href = "../FrontEndStore/index.html"; // Redirige a la página de inicio
   });
 });
 

@@ -390,7 +390,7 @@ h3 {
   position: fixed; 
   top: 0; 
   width: 100%; 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
 .navegacion__enlace {
@@ -403,6 +403,7 @@ h3 {
 .navegacion__enlace:hover {
     color: var(--secundario);
 }
+
 
 /*estilos boton de filtro*/
 .filter_wrapper {
@@ -527,58 +528,72 @@ h3 {
 }
 
 .imagen_zoom img:hover {
-  transform: scale(1.20); 
-}
-
-
-/* Botón de rebajas */
-.boton_rebajas {
-  align-self: center;
-  color: var(--secundario);
-  font-size: 8rem;
-  padding: 0.8rem 1.5rem;
-  border: none;
-  border-radius: 10px;
-  border: solid var(--secundario);
-  cursor: pointer;
-  position: absolute;
-  z-index: 5;
-  top: 50rem;
-  background-color: transparent;
- transition: 3s;
-}
-
-.boton_rebajas:hover {
   transform: scale(1.30); 
 }
 
-/* Popup rebajas */
+/*popup rebajas*/
 .popup {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0s, opacity 0.3s ease;
-}
-
-.popup.oculto {
-  visibility: hidden;
-  opacity: 0;
+  transition: visibility 0s, opacity 0.5s ease;
 }
 
 .popup.visible {
   visibility: visible;
   opacity: 1;
+  animation: zoomIn 0.8s ease-in-out;
 }
 
+.popup_contenido {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  position: relative;
+}
+
+.popup_contenido h2 {
+  color: var(--primarioOscuro);
+  margin-bottom: 1rem;
+}
+
+.popup_contenido p {
+  color: var(--secundarioOscuro);
+  margin-bottom: 2rem;
+}
+
+.cerrar {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 3rem;
+  cursor: pointer;
+  color: var(--secundario);
+}
+
+@keyframes zoomIn {
+  from {
+      transform: scale(0.9);
+      opacity: 0;
+  }
+  to {
+      transform: scale(1.20);
+      opacity: 1;
+  }
+}
 /* Contenido del popup */
 .popup_contenido {
   background-color: white;

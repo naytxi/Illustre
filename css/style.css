@@ -1398,20 +1398,35 @@ button.toggle-details:hover {
 }
 
 /* flecha volver arriba*/
-.scroll-to-top {
+.scroll-top-btn {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #e392a4ff;
+  width: 70px;
+  height: 70px;
+  background-color: #ec598cff; 
   color: white;
   border: none;
   border-radius: 50%;
-  width: 70px;
-  height: 70px;
-  display: none;  /* Importante */
+  display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  opacity: 0;
   z-index: 1000;
 }
 
+.scroll-top-btn:hover {
+  background-color: #e392a4ff;
+  transform: translateY(-5px);
+}
+
+.scroll-top-btn.visible {
+  opacity: 1;
+}
+
+.scroll-top-btn i {
+  font-size: 24px;
+}

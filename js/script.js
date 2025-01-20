@@ -533,7 +533,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   
 
-
 //Volver arriba inicio
 document.addEventListener('DOMContentLoaded', function() {
   const scrollToTopButton = document.getElementById('scrollToTop');

@@ -3,7 +3,10 @@
   color: white;
 }
 
-
+.month{
+  color: rgb(87, 2, 2);
+  font-size: 2.5rem;
+}
 
 .select-month{
 display: flex;
@@ -70,3 +73,4 @@ margin-top: 5rem;
     width: 100%;
   }
 }
+

@@ -55,24 +55,31 @@ loadTranslations().then(() => {
 });
 
 
-//script Administrador 
-  document.addEventListener('DOMContentLoaded', function() {
-    const monthSelect = document.getElementById('monthSelect');
-    const dashboards = document.querySelectorAll('.dashboard');
-  
-    monthSelect.addEventListener('change', function() {
+//script Administrador Inicio//admin
+document.addEventListener('DOMContentLoaded', function() {
+  const monthSelect = document.getElementById('monthSelect');
+  const dashboards = document.querySelectorAll('.dashboard');
+
+  monthSelect.addEventListener('change', function() {
       const selectedMonth = this.value;
-      dashboards.forEach(dashboard => {
-        if (dashboard.id === `dashboard-${selectedMonth}`) {
-          dashboard.style.display = 'block';
-        } else {
-          dashboard.style.display = 'none';
-        }
-      });
-    });
+      
+      if (selectedMonth === 'todos') {  // Si selecciona "Todo"
+          dashboards.forEach(dashboard => {
+              dashboard.style.display = 'block';
+          });
+      } else {
+          dashboards.forEach(dashboard => {
+              if (dashboard.id === `dashboard-${selectedMonth}`) {
+                  dashboard.style.display = 'block';
+              } else {
+                  dashboard.style.display = 'none';
+              }
+          });
+      }
   });
+});
 
-
+//script Administrador Fin//admin
 //Script Index por detalle producto inicio 
 
 document.addEventListener('DOMContentLoaded', function() {

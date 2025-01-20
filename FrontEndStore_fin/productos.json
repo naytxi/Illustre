@@ -1,0 +1,149 @@
+{
+    "productos": [
+      {
+        "id": "producto0",
+        "titulo": "Palmier",
+        "descripcion": "Un pendiente que te traslada a los días de verano. Realizado en resina epoxi en el color elegido y con una base de acero inoxidable en forma de hoja. A pesar de su tamaño, no pesa.",
+        "precio": "12€",
+        "imagen": "../fonts/Imagenes/IMG_20240607_075802.jpg",
+        "colores": ["Purpurina rosa", "Purpurina azul", "Purpurina verde", "Purpurina morado", "Purpurina naranja", "Purpurina amarillo"]
+      },
+      {
+        "id": "producto1",
+        "titulo": "Cuore",
+        "descripcion": "Éste corazón irregular en tono dorado de acero inoxidable, puede personalizarse en su zona central. Se realiza con resina UV.",
+        "precio": "8€",
+        "imagen": "../fonts/Imagenes/IMG_20240607_155209.jpg",
+        "colores": ["Flores", "Purpurina", "Color"]
+      },
+      {
+        "id": "producto2",
+        "titulo": "Medusa",
+        "descripcion": "Elegancia con un toque marino. Éste modelo está compuesto por una base irregular de resina epoxi en tonos blanco y azul; y un dije de acero inoxidable en tono dorado y una piedra azul creando una forma de medusa.",
+        "precio": "12€",
+        "imagen": "../fonts/Imagenes/IMG_20240623_111432.jpg",
+        "colores": ["Color único"]
+      },
+      {
+        "id": "producto3",
+        "titulo": "Pulsera Flor",
+        "descripcion": "Pulseras elásticas a elegir entre los colores disponibles. Añadimos un dije en forma de flor realizada en resina epoxi del mismo color de la pulsera.",
+        "precio": "6€",
+        "imagen": "../fonts/Imagenes/IMG_20240716_120551.jpg",
+        "colores": ["Rosa", "Rojo", "Azul", "Verde", "Amarillo", "Negro", "Beige"]
+      },
+      {
+        "id": "producto4",
+        "titulo": "Baldosa Bilbao",
+        "descripcion": "Una de las señas de identidad de Bilbao es su baldosa. Y no podía faltar en nuestro catálago. Personalízala en el color que prefieras y lúcela con tu look.",
+        "precio": "10€",
+        "imagen": "../fonts/Imagenes/IMG_20240731_070046.jpg",
+        "colores": ["Azul marino", "Rojo", "Azul cielo", "Verde", "Amarillo", "Negro", "Beige", "Otro"]
+      },
+      {
+        "id": "producto5",
+        "titulo": "Pulsera Tusi",
+        "descripcion": "Pulsera elástica a elegir entre los colores disponibles. Como dije tiene un famoso oso, hecho con resina epoxi, que puede ser en el mismo color de la pulsera o combinar ambos en diferentes colores.",
+        "precio": "6€",
+        "imagen": "../fonts/Imagenes/IMG_20240716_120628.jpg",
+        "colores": ["Amarillo", "Rojo", "Azul", "Verde", "Negro", "Beige", "Mismo color", "Color combinado"]
+      },
+      {
+        "id": "producto6",
+        "titulo": "Collar Tusi perlas",
+        "descripcion": "Un collar para combinarlo con tus looks más elegantes o informales. Tiene una parte de acero inoxidable y otra parte de perlas blancas. En el cierre redondo, colgamos el osito elegido.",
+        "precio": "12€",
+        "imagen": "../fonts/Imagenes/IMG_20240629_184726.jpg",
+        "colores": ["Amarillo", "Rojo", "Azul", "Verde", "Negro", "Beige", "Purpurina"]
+      },
+      {
+        "id": "producto7",
+        "titulo": "Collar corazón",
+        "descripcion": "Collar realizado con una cadena de acero inoxidable de eslabones medianos en tono dorado y cinco corazones colgando de él. Puedes elegir entre poner un mismo tono de corazones o cominarlo con diferentes colores. Tú eliges.",
+        "precio": "10€",
+        "imagen": "../fonts/Imagenes/IMG_20240629_185313.jpg",
+        "colores": ["Color único", "Multicolor"]
+      },
+      {
+        "id": "producto8",
+        "titulo": "Collar Ositos Gummy",
+        "descripcion": "ULos adorables ositos Gummy te acompañan en éste maravilloso collar. Una cadena de acero inoxidable de eslabones medianos en tono dorado y cinco ositos. ¡Combínalos en el mismo color, gama de un color o multicolor!",
+        "precio": "10€",
+        "imagen": "../fonts/Imagenes/IMG_20240629_185849.jpg",
+        "colores": ["Color único", "Multicolor"]
+      },
+      {
+        "id": "producto9",
+        "titulo": "Collar Ositos Gummy",
+        "descripcion": "éste modelo de ositos Gummys combina una cadena en acero inoxidable con eslabones medianos y cinco ositos combinando un color y purpurina. Haz tu mezcla ideal.",
+        "precio": "10€",
+        "imagen": "../fonts/Imagenes/IMG_20240629_185946.jpg",
+        "colores": ["Color + purpurina"]
+      },
+      {
+        "id": "producto10",
+        "titulo": "Collarr conchas",
+        "descripcion": "Luce ésta joya veraniega con el look que más te guste. Una cadena de eslabones medianos en tono dorado, con dos dijes de concha en dorados... Y lo mejor... Don conchitas y una concha (hechas con resina epoxi) más grande que puedes personalizar como más te guste.",
+        "precio": "10€",
+        "imagen": "../fonts/Imagenes/IMG_20240629_190319.jpg",
+        "colores": ["Dorado", "Plateado", "Purpurina", "Color único", "Multicolor"]
+      },
+      {
+        "id": "producto11",
+        "titulo": "Cascada color",
+        "descripcion": "Corazones realizados en resina epoxi, creando una cascada de color. En total son tres corazones que puedes elegir en un sólo color o combinar varios colores.",
+        "precio": "8€",
+        "imagen": "../fonts/Imagenes/IMG_20240702_170022.jpg",
+        "colores": ["Azules", "Verdes", "Morados", "Rosas", "Naranjas", "Multicolor"]
+      },
+      {
+        "id": "producto12",
+        "titulo": "Pompero",
+        "descripcion": "un pendiente largo, elegante y a pesar del tamaño, no pesa. Consta de dos piezas circulares realizadas con resina epoxi y de la inferior colgando una pieza en forma de plumero, de hilo de macramé en tono blanco roto.",
+        "precio": "12€",
+        "imagen": "../fonts/Imagenes/IMG_20240702_175641.jpg",
+        "colores": ["Naranja", "Morado", "Azul", "Rosa", "Verde", "Negro", "Blanco"]
+      },
+      {
+        "id": "producto13",
+        "titulo": "Abanico",
+        "descripcion": "No sé qué tiene este modelo que lo hace tan especial. Base dorada con relieve en acero inoxidable y de ella cuelga un pieza de tela con un grabado.",
+        "precio": "8€",
+        "imagen": "../fonts/Imagenes/IMG_20240703_171528.jpg",
+        "colores": ["Turquesa", "Morado", "Azul eléctrico", "Rosa fucsia", "Verde", "Arena", "Blanco roto"]
+      },
+      {
+        "id": "producto14",
+        "titulo": "Collar Perrito Globo",
+        "descripcion": "Collar de bolitas a elegir entre colores: azul, morado, naranja, verde y rojo. El perrito (resina epoxi) se puede personalizar en purpurina del color elegido, un único color o multicolor.",
+        "precio": "8€",
+        "imagen": "../fonts/Imagenes/IMG_20240703_195749.jpg",
+        "colores": ["Purpurina", "Color único", "Multicolor"]
+      },
+      {
+        "id": "producto15",
+        "titulo": "Tulip",
+        "descripcion": "Algo tan delicado y bonito como un tulipán. Una pequeña pieza de resina epoxi en el color elegido, colgado de una base alargada de acero inoxidable en tono plateado.",
+        "precio": "6€",
+        "imagen": "../fonts/Imagenes/IMG_20240703_201531.jpg",
+        "colores": ["Negro", "Blanco", "Azul", "Morado", "Rosa"]
+      },
+      {
+        "id": "producto16",
+        "titulo": "Tesoro",
+        "descripcion": "Éste pendiente veraniego y marinero es ideal para cualquier look. Una concha pequeña que hace de base de pendiente tipo botón y de ella, colgada, una concha de un tamaño superior. Ambas están hechas de resina epoxi y puedes elegir entre un color, purpurina o combinar dos colores.",
+        "precio": "10€",
+        "imagen": "../fonts/Imagenes/IMG_20240707_111448.jpg",
+        "colores": ["Amarillo", "Naranja", "Azul", "Morado", "Rosa", "Purpurina", "Dos colores"]
+      },
+      {
+        "id": "producto17",
+        "titulo": "Rouge",
+        "descripcion": "Éste modelo está inspirado en uno de los looks que tiene en su armario Emily, de la serie Emily en París. Me pareció precioso mezclar un color rojo con la pata de gallo. Y el resultado es este pendiente de base en forma de rosa roja aterciopelada con base de acero inoxidable y una pieza en forma de lágrima hecha con resina epoxi y con efecto pata de gallo.",
+        "precio": "12€",
+        "imagen": "../fonts/Imagenes/IMG_20240815_104044.jpg",
+        "colores": ["Color único"]
+      }
+    ]
+  }
+  

@@ -36,15 +36,14 @@
             </div>            
       
           <div class="icons">
-            <button id="loginButton" href="/login" class="icon"><i class="fas fa-user"></i></button>
-            <div id="loginPopup" class="popup">
+            <button id="loginButton" type="button" class="icon"><i class="fas fa-user"></i></button>
+            <div id="loginPopup" class="loginpopup">
                 <div class="popup-content">
                   <span id ="loginClose" class="close">&times;</span>
                   <h2>Login</h2>
                   <form id="loginForm">
                     <label for="username">User</label>
                     <input type="text" id="username" name="username" required>
-                    
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password" required>
                     <button id ="ojito" ><img id ="imagen" src="../fonts/Imagenes/ojoCerrado1.jpg" /></button>
@@ -93,6 +92,25 @@
 
     <main class="contenedor">
         <div id="dateTimeDisplay" class="date-container">Cargando...</div>
+        <div class="imagenes_contenedor">
+            <div class="imagen_zoom">
+                <img src="../fonts/Imagenes/CYMERA_20250119_232957.jpg" alt="Ejemplo 1">
+            </div>
+
+            <button class="boton_rebajas" onclick="mostrarPopup()">Oferta</button>
+            <div class="imagen_zoom">
+                <img src="../fonts/Imagenes/IMG_4634.jpg" alt="Ejemplo 2">
+            </div>
+        </div>
+        <div id="popupRebajas" class="popup oculto">
+            <div class="popup_contenido">
+                <span class="cerrar" id ="rebajasclose">&times;</span>
+                <h2>¡Oferta Especial!</h2>
+                <p>Aprovecha nuestro 3x2 en toda la web.</p>
+                <p>Hasta fin de mes.</p>
+            </div>
+        </div>
+        
         <h1 data-translate="principal">Nuestros Productos</h1>
 
         <div id="contenedor-productos" class="grid">
@@ -120,14 +138,17 @@
                             <input class="producto_submit" type="submit" value="Agregar al Carrito"> 
 
                         </div>
+                    
                     </div>
             
             </div>  <!--.producto-->
 
-<div class="producto" data-id="producto1">
-                <a href="producto.html?id=producto1" data-nombre="Cuore" data-imagen="../fonts/Imagenes/IMG_20240607_155209.jpg" data-precio="8€">
-                    <img class="producto__imagen" id="producto-imagen"  src="../fonts/Imagenes/IMG_20240607_155209.jpg" alt="imagen ">
-                            </a>
+            <div class="producto" data-category="pendientes" data-price="8">
+
+                    <a href="producto.html" data-nombre="Cuore" data-imagen="../fonts/Imagenes/IMG_20240607_155209.jpg" data-precio="8€">
+                        <img class="producto__imagen" src="../fonts/Imagenes/IMG_20240607_155209.jpg" alt="imagen ">
+                    </a>
+
                     <div class="producto__informacion">
                         <p class="producto__nombre">Cuore</p>
                         <p class="producto_contenido"></p>
@@ -149,7 +170,7 @@
             
             </div>  <!--.producto-->
 
-<div class="producto" data-id="producto2">
+        <div class="producto" data-id="producto2" data-category="pendientes" data-price="12">
                 <a href="producto.html?id=producto2" data-nombre="Medusa" data-imagen="../fonts/Imagenes/IMG_20240623_111432.jpg" data-precio="12€">
                     <img class="producto__imagen" id="producto-imagen"  src="../fonts/Imagenes/IMG_20240623_111432.jpg" alt="imagen ">
                             </a>
@@ -172,7 +193,7 @@
             
             </div>  <!--.producto-->
 
-<div class="producto" data-id="producto3">
+        <div class="producto" data-id="producto3" data-category="pulseras" data-price="6">
                 <a href="producto.html?id=producto3" data-nombre="Pulsera Flor" data-imagen="../fonts/Imagenes/IMG_20240716_120551.jpg" data-precio="6€">
                     <img class="producto__imagen" id="producto-imagen"  src="../fonts/Imagenes/IMG_20240716_120551.jpg" alt="imagen ">
                             </a>
@@ -201,10 +222,11 @@
             
             </div>  <!--.producto-->
 
-<div class="producto" data-id="producto4">
-                <a href="producto.html?id=producto4" data-nombre="Baldosa Bilbao" data-imagen="../fonts/Imagenes/IMG_20240731_070046.jpg" data-precio="10€">
-                    <img class="producto__imagen" id="producto-imagen"  src="../fonts/Imagenes/IMG_20240731_070046.jpg" alt="imagen ">
-                            </a>
+
+            <div class="producto" data-price="10" data-category="pendientes">
+                <a href="producto.html" >
+                    <img class="producto__imagen" src="../fonts/Imagenes/IMG_20240731_070046.jpg" alt="imagen ">
+                </a>
                     <div class="producto__informacion">
                         <p class="producto__nombre">Baldosa Bilbao</p>
                         <p class="producto_contenido"></p>
@@ -231,7 +253,7 @@
             
             </div>  <!--.producto-->
 
-<div class="producto" data-id="producto5">
+        <div class="producto" data-id="producto5" data-category="pulseras" data-price="6">
                 <a href="producto.html?id=producto5" data-nombre="Pulsera Tusi" data-imagen="../fonts/Imagenes/IMG_20240716_120628.jpg" data-precio="6€">
                     <img class="producto__imagen" id="producto-imagen"  src="../fonts/Imagenes/IMG_20240716_120628.jpg" alt="imagen ">
                             </a>
@@ -261,7 +283,7 @@
             
             </div>  <!--.producto-->
 
-<div class="producto" data-id="producto6">
+        <div class="producto" data-id="producto6" data-category="collares" data-price="12">
                 <a href="producto.html?id=producto6" data-nombre="Collar Tusi perlas" data-imagen="../fonts/Imagenes/IMG_20240629_184726.jpg" data-precio="12€">
                     <img class="producto__imagen" id="producto-imagen"  src="../fonts/Imagenes/IMG_20240629_184726.jpg" alt="imagen ">
                             </a>
@@ -290,7 +312,7 @@
             
             </div>  <!--.producto-->
 
-<div class="producto" data-id="producto7">
+        <div class="producto" data-id="producto7" data-category="collares" data-price="10">
                 <a href="producto.html?id=producto7" data-nombre="Collar corazón" data-imagen="../fonts/Imagenes/IMG_20240629_185313.jpg" data-precio="10€">
                     <img class="producto__imagen" id="producto-imagen"  src="../fonts/Imagenes/IMG_20240629_185313.jpg" alt="imagen ">
                             </a>
@@ -314,7 +336,7 @@
             
             </div>  <!--.producto-->
 
-<div class="producto" data-id="producto8">
+        <div class="producto" data-id="producto8" data-category="collares" data-price="10">
                 <a href="producto.html?id=producto8" data-nombre="Collar Ositos Gummy" data-imagen=".../fonts/Imagenes/IMG_20240629_185849.jpg" data-precio="10€">
                     <img class="producto__imagen" id="producto-imagen"  src="../fonts/Imagenes/IMG_20240629_185849.jpg" alt="imagen ">
                             </a>
@@ -338,7 +360,7 @@
             
             </div>  <!--.producto-->
 
-        <div class="producto" data-id="producto9">
+        <div class="producto" data-id="producto9" data-category="collares" data-price="10">
                 <a href="producto.html?id=producto9" data-nombre="Collar Ositos Gummy" data-imagen="./fonts/Imagenes/IMG_20240629_185946.jpg" data-precio="10€">
                     <img class="producto__imagen" id="producto-imagen"  src="../fonts/Imagenes/IMG_20240629_185946.jpg" alt="imagen ">
                             </a>
@@ -361,7 +383,7 @@
             
             </div>  <!--.producto-->
 
-<div class="producto" data-id="producto10">
+        <div class="producto" data-id="producto10" data-category="collares" data-price="10">
                 <a href="producto.html?id=producto10" data-nombre="Collar conchas" data-imagen="../fonts/Imagenes/IMG_20240629_190319.jpg" data-precio="10€">
                     <img class="producto__imagen" id="producto-imagen"  src="../fonts/Imagenes/IMG_20240629_190319.jpg" alt="imagen ">
                             </a>
@@ -388,7 +410,7 @@
             
             </div>  <!--.producto-->
 
-<div class="producto" data-id="producto11">
+            <div class="producto" data-id="producto11" data-category="pendientes" data-price="8">
                 <a href="producto.html?id=producto11" data-nombre="Cascada color" data-imagen="../fonts/Imagenes/IMG_20240702_170022.jpg" data-precio="8€">
                     <img class="producto__imagen" id="producto-imagen"  src="../fonts/Imagenes/IMG_20240702_170022.jpg" alt="imagen ">
                             </a>
@@ -416,7 +438,7 @@
             
             </div>  <!--.producto-->
 
-<div class="producto" data-id="producto12">
+            <div class="producto" data-id="producto12" data-category="pendientes" data-price="12">
                 <a href="producto.html?id=producto12" data-nombre="Pompero" data-imagen="../fonts/Imagenes/IMG_20240702_175641.jpg" data-precio="12€">
                     <img class="producto__imagen" id="producto-imagen"  src="../fonts/Imagenes/IMG_20240702_175641.jpg" alt="imagen ">
                             </a>
@@ -445,7 +467,7 @@
             
             </div>  <!--.producto-->
 
-<div class="producto" data-id="producto13">
+<div class="producto" data-id="producto13" data-category="pendientes" data-price="8">
                 <a href="producto.html?id=producto13" data-nombre="Abanico" data-imagen="../fonts/Imagenes/IMG_20240703_171528.jpg" data-precio="8€">
                     <img class="producto__imagen" id="producto-imagen"  src="../fonts/Imagenes/IMG_20240703_171528.jpg" alt="imagen ">
                             </a>
@@ -474,7 +496,7 @@
             
             </div>  <!--.producto-->
 
-<div class="producto" data-id="producto14">
+<div class="producto" data-id="producto14" data-category="collares" data-price="8">
                 <a href="producto.html?id=producto14" data-nombre="Collar Perrito Globo" data-imagen="../fonts/Imagenes/IMG_20240703_195749.jpg" data-precio="8€">
                     <img class="producto__imagen" id="producto-imagen"  src="../fonts/Imagenes/IMG_20240703_195749.jpg" alt="imagen ">
                             </a>
@@ -499,7 +521,7 @@
             
             </div>  <!--.producto-->
 
-<div class="producto" data-id="producto15">
+            <div class="producto" data-id="producto15" data-category="pendientes" data-price="6">
                 <a href="producto.html?id=producto15" data-nombre="Tulip" data-imagen="../fonts/Imagenes/IMG_20240703_201531.jpg" data-precio="6€">
                     <img class="producto__imagen" id="producto-imagen"  src="../fonts/Imagenes/IMG_20240703_201531.jpg" alt="imagen ">
                             </a>
@@ -526,7 +548,7 @@
             
             </div>  <!--.producto-->
 
-<div class="producto" data-id="producto16">
+                <div class="producto" data-id="producto16" data-category="pendientes" data-price="10">
                 <a href="producto.html?id=producto16" data-nombre="Tesoro" data-imagen="../fonts/Imagenes/IMG_20240707_111448.jpg" data-precio="10€">
                     <img class="producto__imagen" id="producto-imagen"  src="../fonts/Imagenes/IMG_20240707_111448.jpg" alt="imagen ">
                             </a>
@@ -555,7 +577,7 @@
             
             </div>  <!--.producto-->
 
-<div class="producto" data-id="producto17">
+            <div class="producto" data-id="producto17" data-category="pendientes" data-price="12">
                 <a href="producto.html?id=producto17" data-nombre="Rouge" data-imagen="../fonts/Imagenes/IMG_20240815_104044.jpg" data-precio="12€">
                     <img class="producto__imagen" id="producto-imagen"  src="../fonts/Imagenes/IMG_20240815_104044.jpg" alt="imagen ">
                             </a>

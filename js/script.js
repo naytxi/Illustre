@@ -102,35 +102,33 @@ document.addEventListener('DOMContentLoaded', function() {
 const loginButton = document.getElementById('loginButton');
 const loginPopup = document.getElementById('loginPopup');
 const closePopup = document.getElementById('loginClose');
-const cartButton = document.getElementById('cartButton');
-const cartPopup = document.getElementById('cartPopup');
-const cartClose = document.getElementById('cartClose');
-let ojito = document.getElementById('ojito');
+const ojito = document.getElementById('ojito');
+const imagen = document.getElementById('imagen');
 const password = document.getElementById('password');
 
 loginButton.addEventListener('click', () => {
     loginPopup.style.display = 'block';
-  });
+});
 
-  closePopup.addEventListener('click', () => {
+closePopup.addEventListener('click', () => {
     loginPopup.style.display = 'none';
-  });
+});
 
 ojito.addEventListener('click', function() {
-
     if (password.type === "password") {
         password.type = "text";
         imagen.src = "../fonts/Imagenes/ojoAbierto1.jpg";
-
-    } 
-    else {
+    } else {
         password.type = "password";
         imagen.src = "../fonts/Imagenes/ojoCerrado1.jpg";
     }
-})
+});
 
- //POPUP CARRITO
- const counter1Display = document.getElementById("counter1");
+ //POPUP CARRITO//
+ const cartButton = document.getElementById('cartButton');
+const cartPopup = document.getElementById('cartPopup');
+const cartClose = document.getElementById('cartClose');
+const counter1Display = document.getElementById("counter1");
  let counter1Value = 0;
 
 cartButton.addEventListener('click', () => {
@@ -154,6 +152,26 @@ document.getElementById("increment1").addEventListener("click", () => {
     }
   });
 
+  //popup rebajas
+  const botonRebajas = document.querySelector(".boton_rebajas");
+  const popupRebajas = document.getElementById("popupRebajas");
+  const botonCerrar = document.getElementById("rebajasclose");
+  
+
+  function mostrarPopup() {
+    popupRebajas.classList.remove("oculto"); 
+    popupRebajas.classList.add("visible"); 
+  }
+  
+  function cerrarPopup() {
+    popupRebajas.classList.remove("visible"); 
+    popupRebajas.classList.add("oculto");    
+  }
+  
+  botonRebajas.addEventListener("click", mostrarPopup);
+  
+  botonCerrar.addEventListener("click", cerrarPopup);
+  
 
   //script para la barra de NAVEGACION
   document.addEventListener("DOMContentLoaded", () => {
@@ -231,6 +249,8 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   });
+
+
 
 
   //historial de pedidos
@@ -394,7 +414,7 @@ document.addEventListener("DOMContentLoaded", () => {
   logoutButton.addEventListener("click", () => {
     deleteUser(); // Elimina los datos del usuario de localStorage
     alert("Sesión cerrada correctamente.");
-    window.location.href = "../FrontEndStore/index.html"; // Redirige a la página de inicio
+    window.location.href = "index.html"; // Redirige a la página de inicio
   });
 });
 

@@ -1382,3 +1382,21 @@ button.toggle-details:hover {
   background-color: var(--primarioOscuro);/
 }
 
+/* flecha volver arriba*/
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #e392a4ff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: none;  /* Importante */
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+}
+

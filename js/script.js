@@ -269,25 +269,19 @@ document.getElementById("increment1").addEventListener("click", () => {
   });
 
   //popup rebajas
-  const botonRebajas = document.querySelector(".boton_rebajas");
-  const popupRebajas = document.getElementById("popupRebajas");
-  const botonCerrar = document.getElementById("rebajasclose");
-  
 
-  function mostrarPopup() {
-    popupRebajas.classList.remove("oculto"); 
-    popupRebajas.classList.add("visible"); 
-  }
-  
-  function cerrarPopup() {
-    popupRebajas.classList.remove("visible"); 
-    popupRebajas.classList.add("oculto");    
-  }
-  
-  botonRebajas.addEventListener("click", mostrarPopup);
-  
-  botonCerrar.addEventListener("click", cerrarPopup);
-  
+  document.addEventListener("DOMContentLoaded", () => {
+    const popupRebajas = document.getElementById("popupRebajas");
+    const closePopup = document.getElementById("rebajasclose");
+
+    // Mostrar el popup al cargar la página
+    popupRebajas.classList.add("visible");
+    
+    // Cerrar el popup cuando se haga clic en la X
+    closePopup.addEventListener("click", () => {
+        popupRebajas.classList.remove("visible");
+    });
+});
 
   //script para la barra de NAVEGACION
   document.addEventListener("DOMContentLoaded", () => {
@@ -311,7 +305,8 @@ document.getElementById("increment1").addEventListener("click", () => {
 document.addEventListener("DOMContentLoaded", function () {
     const toggleButton = document.querySelector(".filters-tittle");
     const filtersContainer = document.querySelector(".filter_container");
-  
+
+  //para que se desplieguen los filtros al darle al boton
     toggleButton.addEventListener("click", () => {
       filtersContainer.classList.toggle("hidden");
       toggleButton.textContent = filtersContainer.classList.contains("hidden")
@@ -320,6 +315,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+//filtrado por categorias
 document.addEventListener("DOMContentLoaded", function () {
     const checkboxes = document.querySelectorAll(".filter-option");
     const products = document.querySelectorAll(".producto");
@@ -344,6 +340,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+//filtrado por precio
   document.addEventListener("DOMContentLoaded", function () {
     const priceRange = document.getElementById("price-range");
     const priceValue = document.getElementById("price-value");
@@ -535,3 +532,29 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+//Volver arriba inicio
+document.addEventListener('DOMContentLoaded', function() {
+  const scrollToTopButton = document.getElementById('scrollToTop');
+
+  // Mostrar/ocultar botón
+  window.addEventListener('scroll', function() {
+    if (window.pageYOffset > 300) {
+      scrollToTopButton.style.display = 'block';
+    } else {
+      scrollToTopButton.style.display = 'none';
+    }
+  });
+
+  // Scroll suave
+  scrollToTopButton.addEventListener('click', function() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+
+  // Ocultar inicialmente
+  scrollToTopButton.style.display = 'none';
+});
+
+//volver arriba fin

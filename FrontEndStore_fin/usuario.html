@@ -78,22 +78,19 @@
           <!-- Header -->
           <div class="header"></div>
 
-    <!-- usuario -->
           <div class="profile">
-             <h2>Mi Cuenta</h2>
+            <h2>Mi Cuenta</h2>
             <img id="profile-picture" src="../fonts/Imagenes/user.jpeg" alt="Foto de perfil">
             <h2>Marina Godoy</h2>
             <input type="file" id="upload-photo" accept="image/*">
             <button id="save-photo" class="button">Guardar Foto</button>
           </div>
           
-    <!-- informacion personal-->
-          
-          <div class="section">
+          <section class="section personal-info">
             <h3>Datos Personales</h3>
             <form id="edit-form">
               <label for="name">Nombre:</label>
-              <input type="text" id="name" name="name" value="marina Godoy" required><br>
+              <input type="text" id="name" name="name" value="Marina Godoy" required><br>
           
               <label for="email">Email:</label>
               <input type="email" id="email" name="email" value="marinagodoy@gmail.com" required><br>
@@ -103,78 +100,83 @@
           
               <button type="submit" class="button">Guardar Cambios</button>
             </form>
-          </div>
-       <!--cambio contraseña-->
-
-          <div class="section">
+          </section>
+          
+          <section class="section change-password">
             <h3>Cambiar Contraseña</h3>
             <form id="password-form">
               <label for="current-password">Contraseña Actual:</label>
-              <input type="password" id="current-password" name="current-password" required><br>
+              <input type="password" id="current-password" name="current-password" required autocomplete="current-password"><br>
           
               <label for="new-password">Nueva Contraseña:</label>
-              <input type="password" id="new-password" name="new-password" required><br>
+              <input type="password" id="new-password" name="new-password" required autocomplete="new-password"><br>
           
               <label for="confirm-password">Confirmar Contraseña:</label>
-              <input type="password" id="confirm-password" name="confirm-password" required><br>
+              <input type="password" id="confirm-password" name="confirm-password" required autocomplete="new-password"><br>
           
               <button type="submit" class="button">Actualizar Contraseña</button>
             </form>
-          </div>
-    <!--mis pedidos -->
-                  
-        <div class="section orders">
-          <h3>Historial de Pedidos</h3>
-          <ul>
-            <li class="order">
-              <div class="order-summary">
-                <strong>Pedido #12345</strong>
-                <p>Fecha: 12/01/2025</p>
-                <p>Estado: Pendiente</p>
-                <button class="toggle-details">Ver detalles</button>
-              </div>
-              <div class="order-details">
-                <p><strong>Producto:</strong> Pendientes Palmier</p>
-                <p><strong>Cantidad:</strong> 2</p>
-                <p><strong>Total:</strong> 24€</p>
-              </div>
-            </li>
-            <li class="order">
-              <div class="order-summary">
-                <strong>Pedido #12346</strong>
-                <p>Fecha: 05/01/2025</p>
-                <p>Estado: Enviado</p>
-                <button class="toggle-details">Ver detalles</button>
-              </div>
-              <div class="order-details">
-                <p><strong>Producto:</strong> Pulsera Flor</p>
-                <p><strong>Cantidad:</strong> 3</p>
-                <p><strong>Total:</strong> 18€</p>
-              </div>
-            </li>
-            <li class="order">
-              <div class="order-summary">
-                <strong>Pedido #12347</strong>
-                <p>Fecha: 20/12/2024</p>
-                <p>Estado: Entregado</p>
-                <button class="toggle-details">Ver detalles</button>
-              </div>
-              <div class="order-details">
-                <p><strong>Producto:</strong> Collar Tusi perlas</p>
-                <p><strong>Cantidad:</strong> 2</p>
-                <p><strong>Total:</strong> 24€</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-    <!-- +opciones -->
-          <div class="section">
-            <h3>Opciones</h3>
-            <a href="#" class="button">Cerrar Sesión</a>
-          </div>
+          </section>
+          
+          <section class="section orders">
+            <h3>Historial de Pedidos</h3>
+            <ul>
+              <li class="order">
+                <div class="order-summary">
+                  <strong>Pedido #12345</strong>
+                  <p>Fecha: 12/01/2025</p>
+                  <p>Estado: Pendiente</p>
+                  <button class="toggle-details">Ver detalles</button>
+                </div>
+                <div class="order-details" style="display: none;">
+                  <p><strong>Producto:</strong> Pendientes Palmier</p>
+                  <p><strong>Cantidad:</strong> 2</p>
+                  <p><strong>Total:</strong> 24€</p>
+                </div>
+              </li>
+              <!-- Repite para otros pedidos -->
+            </ul>
 
-        </div>
-        
+            <ul>
+              <li class="order">
+                <div class="order-summary">
+                  <strong>Pedido #12344</strong>
+                  <p>Fecha: 22/12/2024</p>
+                  <p>Estado: Entregado</p>
+                  <button class="toggle-details">Ver detalles</button>
+                </div>
+                <div class="order-details" style="display: none;">
+                  <p><strong>Producto:</strong> Collar Tusy perlas</p>
+                  <p><strong>Cantidad:</strong> 2</p>
+                  <p><strong>Total:</strong> 24€</p>
+                </div>
+              </li>
+             
+            </ul>
+
+            <ul>
+              <li class="order">
+                <div class="order-summary">
+                  <strong>Pedido #12343</strong>
+                  <p>Fecha: 20/11/2024</p>
+                  <p>Estado: Entregado</p>
+                  <button class="toggle-details">Ver detalles</button>
+                </div>
+                <div class="order-details" style="display: none;">
+                  <p><strong>Producto:</strong> Pendientes Baldosas Bilbao</p>
+                  <p><strong>Cantidad:</strong> 3</p>
+                  <p><strong>Total:</strong> 36€</p>
+                </div>
+              </li>
+           
+            </ul>
+          </section>
+          
+          <section class="section options">
+            <h3>Opciones</h3>
+            <button id="logout-button" class="button logout">Cerrar sesión</button>
+          </section>
+          
 
 
     <footer class="footer">

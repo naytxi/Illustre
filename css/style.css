@@ -1143,94 +1143,133 @@ h3 {
     padding: 0.8rem 1.5rem;
   }
 }
-    .container {
-      max-width: 900px;
-      margin: 20px auto;
-      background:var(--terciario);
-      box-shadow: 0 4px 8px rgba(0.9, 0, 0, 0.9);
-      border-radius: 10px;
-      overflow: hidden;
-    }
-  
-    .profile {
-      text-align: center;
-      padding: 20px;
-    }
-    .profile img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      border: 4px solid var(--secundario);
-    }
-    .profile h2 {
-      margin: 10px 0;
-    }
-    .section {
-      padding: 20px;
-      border-top: 1px solid var(--primarioOscuro);
-    }
-    .section h3 {
-      margin-bottom: 10px;
-      color:var(--secundario);
-    }
-    .section p, .section ul {
-      margin: 0 0 10px;
-  
-    }
-    .button {
-      display: inline-block;
-      padding: 10px 20px;
-      color: white;
-      background: var(--secundario);
-      border: none;
-      border-radius: 5px;
-      text-decoration: none;
-      cursor: pointer;
-      margin-left: 300px;
-    }
-    .button:hover {
-      background: var(--primarioOscuro);
-    }
-<<<<<<< HEAD
-=======
+.container {
+  max-width: 900px;
+  margin: 20px auto;
+  background: var(--terciario);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9); 
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.profile {
+  text-align: center;
+  padding: 20px;
+}
+
+.profile img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid var(--secundario);
+}
+
+.profile h2 {
+  margin: 10px 0;
+  color: var(--secundario); 
+}
+
+.section {
+  padding: 20px;
+  border-top: 1px solid var(--primarioOscuro);
+}
+
+.section h3 {
+  margin-bottom: 10px;
+  color: var(--secundario);
+}
+
+.section p,
+.section ul {
+  margin: 0 0 10px;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  color: white;
+  background: var(--secundario);
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 0 auto; 
+  display: block; 
+  text-align: center;
+}
+
+.button:hover {
+  background: var(--primarioOscuro);
+}
  
- .orders ul {
+/* Formularios */
+form {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  gap: 15px; 
+}
+
+form label {
+  width: 100%; 
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+form input {
+  width: 80%; 
+  max-width: 400px; 
+  padding: 10px;
+  border: 1px solid var(--primarioOscuro);
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+form input:focus {
+  outline: none;
+  border-color: var(--secundario); 
+  box-shadow: 0 0 5px var(--secundario); 
+}
+
+
+.orders ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
->>>>>>> 41fddff98a57c4d4e392ae7fa554f4971a43aefd
 
-    .orders ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-    }
+.order {
+  border-bottom: 1px solid var(--primarioOscuro);
+  padding: 10px 0;
+}
 
-    .order {
-      border-bottom: 1px solid #ddd;
-      padding: 10px 0;
-    }
+.order-summary {
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+}
 
-    .order-summary {
-      font-size: 16px;
-    }
+.order-details {
+  display: none; 
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid var(--primarioOscuro);
+  border-radius: 5px;
+  margin-top: 10px;
+}
 
-    .order-details {
-      display: none; /* Los detalles están ocultos por defecto */
-      padding: 10px;
-      background-color: #f9f9f9;
-      margin-top: 10px;
-    }
+button.toggle-details {
+  background-color: var(--secundario);
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px; 
+  transition: background-color 0.3s ease; 
+}
 
-    button.toggle-details {
-      background-color: var(--secundario);
-      color: white;
-      padding: 5px 10px;
-      border: none;
-      cursor: pointer;
-    }
-
-    button.toggle-details:hover {
-      background-color: var(--secundario);
-    }
+button.toggle-details:hover {
+  background-color: var(--primarioOscuro);/
+}

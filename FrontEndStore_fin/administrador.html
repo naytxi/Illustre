@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/style2.css">
+    <link rel="stylesheet" href="../css/admin.css">
     <link rel="icon" href="../fonts/imagenes/favicon.ico" type="imagen.ico">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="../fonts/imagenes/favicon.ico" type="imagen.ico">
+
     <title>Illustre</title>
 </head>
 <body>
@@ -59,17 +63,48 @@
             </div>
           </div>
       </header>
-      <nav class="navegacion">
-        <a class="navegacion__enlace" href="home.html" data-translate="titulo-nav">Inicio</a>
-        <a class="navegacion__enlace navegacion__enlace--activo" href="index.html" data-translate="store-titulo">Tienda</a>
-        <a class="navegacion__enlace " href="#" data-translate="dashboard">Dashboard</a>
-        <a class="navegacion__enlace " href="#" data-translate="gestionInventario">Gestión de Inventario</a>
-        <a class="navegacion__enlace " href="#" data-translate="gestionPedidos">Gestión de Pedidos</a>
-        <a class="navegacion__enlace " href="#" data-translate="gestionClientes">Gestión de Clientes</a>
+      <nav class="navegacion admin">
+        <a class="navegacion__enlace" href="home.html" data-translate="titulo-nav"> Inicio</a>
+        <a class="navegacion__enlace navegacion__enlace--activo" href="index.html" data-translate="store-titulo"> Tienda</a>
+        <a class="navegacion__enlace " href="#" data-translate="dashboard"> Dashboard</a>
+        <a class="navegacion__enlace " href="#" data-translate="gestionInventario"> Gestión de Inventario</a>
+        <a class="navegacion__enlace " href="#" data-translate="gestionPedidos"> Gestión de Pedidos</a>
+        <a class="navegacion__enlace " href="#" data-translate="gestionClientes"> Gestión de Clientes</a>
       </nav>
-    <main class="contenedor">
-        
-    </main>
+
+
+
+      <main class="contenedor">
+        <section id="dashboard">
+          <h2 class="dashboard-title">Dashboard Anual</h2>
+          
+          <div class="month-toggle">
+            <button class="month-button" data-month="december">Diciembre 2024</button>
+            <button class="month-button" data-month="january">Enero 2025</button>
+          </div>
+      
+          <div id="december-dashboard" class="dashboard-content" style="display: none;">
+            <div class="dashboard-cards">
+              <!-- Cards de Diciembre -->
+            </div>
+          </div>
+      
+          <div id="january-dashboard" class="dashboard-content" style="display: none;">
+            <div class="dashboard-cards">
+              <!-- Cards de Enero -->
+            </div>
+          </div>
+        </section>
+      </main>
+      
+
+
+
+
+
+
+
+
 
     <footer class="footer">
         <div class="footer__contenedor">
@@ -97,5 +132,26 @@
         <p class="footer__derechos" data-translate="derechos">Todos los derechos Reservados © 2025</p>
     </footer>
    <script src="../js/script.js"></script>
+
+
+   <script>
+   document.addEventListener('DOMContentLoaded', function() {
+    const monthButtons = document.querySelectorAll('.month-button');
+    const dashboardContents = document.querySelectorAll('.dashboard-content');
+  
+    monthButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const month = this.getAttribute('data-month');
+        dashboardContents.forEach(content => {
+          if (content.id === `${month}-dashboard`) {
+            content.style.display = 'block';
+          } else {
+            content.style.display = 'none';
+          }
+        });
+      });
+    });
+  });
+</script>  
 </body>
 </html>

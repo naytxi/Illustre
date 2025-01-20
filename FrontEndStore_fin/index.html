@@ -20,7 +20,7 @@
           <img class="header__logo" src="../fonts/Imagenes/ILLUSTRE.png" /*src="../fonts/Imagenes/illustre.png"*/ alt="Logotipo">
         </a>
         
-        <div class="lema2">BELLES HISTOIRIES</div>
+        <div class="lema2">BELLES HISTOIRES</div>
   
       
         <div class="header-right">
@@ -631,6 +631,29 @@
         </div>
         <p class="footer__derechos" data-translate="derechos">Todos los derechos Reservados © 2025</p>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const productos = document.querySelectorAll('.producto');
+    productos.forEach(element => {
+        element.addEventListener('click', function(e) {
+            if (e.target.tagName === 'IMG') { 
+                // <!--e.target Verifica si el elemento clicado (e.target) es una imagen.-->
+                  // tagname para devolver el nbr del etiqueta en mayuscula que es mas practico en javascript 
+                const productoId = this.getAttribute('data-id');
+                const colorSeleccionado = this.querySelector('select').value;
+                const descripcion = this.querySelector('p').textContent;
+                const titulo = this.querySelector('.producto_contenido').textContent;
+                window.location.href = `producto.html?id=${productoId}&color=${colorSeleccionado}&descripcion=${encodeURIComponent(descripcion)}&titulo=${encodeURIComponent(titulo)}`;
+            }
+           
+            // La propiedad window.location.href en JavaScript se utiliza para obtener o establecer la URL actual de la página web. 
+            //la siguiente parte de esta linea nos muestra como sera la url el id sera el id del producto que es   const productoId = this.getAttribute('data-id');
+            //y el color sera la varibale colorSeleccionado y encodeURIComponent es un codigo que se pone en la url ..........
+        });
+    });
+});
+        </script>
+    
    <script src="../js/script.js"></script>
 </body>
 </html>

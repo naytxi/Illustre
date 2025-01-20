@@ -55,6 +55,115 @@ loadTranslations().then(() => {
 });
 
 
+//script Administrador 
+  document.addEventListener('DOMContentLoaded', function() {
+    const monthSelect = document.getElementById('monthSelect');
+    const dashboards = document.querySelectorAll('.dashboard');
+  
+    monthSelect.addEventListener('change', function() {
+      const selectedMonth = this.value;
+      dashboards.forEach(dashboard => {
+        if (dashboard.id === `dashboard-${selectedMonth}`) {
+          dashboard.style.display = 'block';
+        } else {
+          dashboard.style.display = 'none';
+        }
+      });
+    });
+  });
+
+
+//Script Index por detalle producto inicio 
+
+document.addEventListener('DOMContentLoaded', function() {
+const productos = document.querySelectorAll('.producto');
+productos.forEach(element => {
+element.addEventListener('click', function(e) {
+    if (e.target.tagName === 'IMG') { 
+        // <!--e.target Verifica si el elemento clicado (e.target) es una imagen.-->
+          // tagname para devolver el nbr del etiqueta en mayuscula que es mas practico en javascript 
+        const productoId = this.getAttribute('data-id');
+        const colorSeleccionado = this.querySelector('select').value;
+        const descripcion = this.querySelector('p').textContent;
+        const titulo = this.querySelector('.producto_contenido').textContent;
+        window.location.href = `producto.html?id=${productoId}&color=${colorSeleccionado}&descripcion=${encodeURIComponent(descripcion)}&titulo=${encodeURIComponent(titulo)}`;
+    }
+   
+    // La propiedad window.location.href en JavaScript se utiliza para obtener o establecer la URL actual de la página web. 
+    //la siguiente parte de esta linea nos muestra como sera la url el id sera el id del producto que es   const productoId = this.getAttribute('data-id');
+    //y el color sera la varibale colorSeleccionado y encodeURIComponent es un codigo que se pone en la url ..........
+});
+});
+});
+
+
+//Script Index por detalle producto fin 
+
+//Script producto por detalle producto inicio 
+document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const productoId = urlParams.get('id');
+    const colorSeleccionado = urlParams.get('color');
+
+    fetch('./productos.json')
+        .then(response => response.json())
+        .then(data => {
+            console.log('Datos cargados:', data); // Para depuración
+            const producto = data.productos.find(p => p.id == productoId);
+            if (producto) {
+                mostrarProducto(producto, colorSeleccionado);
+            } else {
+                console.error('Producto no encontrado');
+            }
+        })
+        .catch(error => console.error('Error:', error));
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+const urlParams = new URLSearchParams(window.location.search);
+const productoId = urlParams.get('id');
+
+if (!productoId) {
+console.error('No se encontró el ID del producto en la URL.');
+return;
+}
+
+// Carga el archivo JSON
+fetch('productos.json')
+.then(response => response.json())
+.then(data => {
+    const producto = data.productos.find(p => p.id === productoId);
+    if (producto) {
+        mostrarProducto(producto);
+    } else {
+        console.error('Producto no encontrado en el JSON.');
+    }
+})
+.catch(error => console.error('Error al cargar el JSON:', error));
+});
+
+function mostrarProducto(producto) {
+const detalleProducto = document.querySelector('.detalle-producto');
+
+// Configurar los datos del producto
+detalleProducto.querySelector('.producto__imagen').src = producto.imagen;
+detalleProducto.querySelector('.producto__imagen').alt = producto.titulo;
+detalleProducto.querySelector('.producto__nombre').textContent = producto.titulo;
+detalleProducto.querySelector('.producto_contenido').textContent = producto.descripcion;
+detalleProducto.querySelector('.producto__precio').textContent = producto.precio;
+
+// Configurar los colores
+const selectColores = detalleProducto.querySelector('.formulariocampo');
+producto.colores.forEach(color => {
+const option = document.createElement('option');
+option.value = color;
+option.textContent = color;
+selectColores.appendChild(option);
+});
+}
+//Script producto por detalle producto fin 
+
+
 //Página de productos
 document.addEventListener('DOMContentLoaded', function() {
     // Seleccionamos todos los enlaces de productos

@@ -3,7 +3,15 @@
   color: white;
 }
 
-#dashboard {
+
+
+.select-month{
+display: flex;
+justify-content: end;
+margin-top: 5rem;
+
+}
+.dashboard {
   margin-top: 5rem;
   background-color: #e392a4ff;
   padding: 2rem;

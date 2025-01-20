@@ -74,68 +74,85 @@
 
 
 
-    <main class="contenedor">
+      <main class="contenedor">
+        <div class="select-month">
+          <select id="monthSelect">
+            <option value="enero" selected>Enero 2025</option>
+            <option value="deciembre">Deciembre 2024</option>
+            <option value="septiembre">Septiembre 2024</option>
+            <option value="agosto">Agosto 2024</option>
+          </select>
+        </div>
         
-
-      <section id="dashboard">
-        <h2 class="dashboard-title">Dashboard Anual</h2>
-        <p>Deciembre 2024</p>
-        <div class="dashboard-cards">
-          <div class="card">
-            <div class="card-icon"><i class="fas fa-chart-line"></i></div>
-            <h3>Ventas Totales</h3>
-            <p class="card-value">100</p>
+        <section id="dashboard-enero" class="dashboard">
+          <h2 class="dashboard-title">Dashboard Anual</h2>
+          <p class="month">Enero 2025</p>
+          <div class="dashboard-cards">
+            <div class="card">
+              <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+              <h3>Ventas Totales</h3>
+              <p class="card-value">50</p>
+            </div>
+            <div class="card">
+              <div class="card-icon"><i class="fas fa-clock"></i></div>
+              <h3>Pedidos Pendientes</h3>
+              <p class="card-value">15</p>
+            </div>
+            <div class="card">
+              <div class="card-icon"><i class="fas fa-box"></i></div>
+              <h3>Productos en Stock</h3>
+              <p class="card-value">200</p>
+            </div>
           </div>
-          <div class="card">
-            <div class="card-icon"><i class="fas fa-clock"></i></div>
-            <h3>Pedidos Pendientes</h3>
-            <p class="card-value">1</p>
-          </div>
-          <div class="card">
-            <div class="card-icon"><i class="fas fa-box"></i></div>
-            <h3>Productos en Stock</h3>
-            <p class="card-value">120</p>
-          </div>
-        </div>
-      </section>
-
-
+        </section>
       
-      <section id="dashboard">
-        <h2 class="dashboard-title">Dashboard Anual</h2>
-        <p>Enero 2025</p>
-        <div class="dashboard-cards">
-          <div class="card">
-            <div class="card-icon"><i class="fas fa-chart-line"></i></div>
-            <h3>Ventas Totales</h3>
-            <p class="card-value">50</p>
+        <section id="dashboard-deciembre" class="dashboard" style="display: none;">
+          <h2 class="dashboard-title">Dashboard Anual</h2>
+          <p class="month">Deciembre 2024</p>
+          <div class="dashboard-cards">
+            <div class="card">
+              <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+              <h3>Ventas Totales</h3>
+              <p class="card-value">100</p>
+            </div>
+            <div class="card">
+              <div class="card-icon"><i class="fas fa-clock"></i></div>
+              <h3>Pedidos Pendientes</h3>
+              <p class="card-value">1</p>
+            </div>
+            <div class="card">
+              <div class="card-icon"><i class="fas fa-box"></i></div>
+              <h3>Productos en Stock</h3>
+              <p class="card-value">120</p>
+            </div>
           </div>
-          <div class="card">
-            <div class="card-icon"><i class="fas fa-clock"></i></div>
-            <h3>Pedidos Pendientes</h3>
-            <p class="card-value">15</p>
+        </section>
+
+
+        <section id="dashboard-septiembre" class="dashboard" style="display: none;">
+          <h2 class="dashboard-title">Dashboard Anual</h2>
+          <p class="month">Septiembre 2024</p>
+          <div class="dashboard-cards">
+            <div class="card">
+              <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+              <h3>Ventas Totales</h3>
+              <p class="card-value">20</p>
+            </div>
+            <div class="card">
+              <div class="card-icon"><i class="fas fa-clock"></i></div>
+              <h3>Pedidos Pendientes</h3>
+              <p class="card-value">6</p>
+            </div>
+            <div class="card">
+              <div class="card-icon"><i class="fas fa-box"></i></div>
+              <h3>Productos en Stock</h3>
+              <p class="card-value">60</p>
+            </div>
           </div>
-          <div class="card">
-            <div class="card-icon"><i class="fas fa-box"></i></div>
-            <h3>Productos en Stock</h3>
-            <p class="card-value">200</p>
-          </div>
-        </div>
-      </section>
-
-
-
-
-    </main>
-
-
-
-
-
-
-
-
-
+        </section>
+      
+      </main>
+      
 
     <footer class="footer">
         <div class="footer__contenedor">
@@ -162,6 +179,8 @@
         </div>
         <p class="footer__derechos" data-translate="derechos">Todos los derechos Reservados © 2025</p>
     </footer>
-   <script src="../js/script.js"></script>
+
+
+<script src="../js/script.js"></script>
 </body>
 </html>

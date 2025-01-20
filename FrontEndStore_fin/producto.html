@@ -121,69 +121,7 @@
         <p class="footer__derechos" data-translate="derechos">Todos los derechos Reservados © 2025</p>
     </footer>
     
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const productoId = urlParams.get('id');
-            const colorSeleccionado = urlParams.get('color');
-        
-            fetch('./productos.json')
-                .then(response => response.json())
-                .then(data => {
-                    console.log('Datos cargados:', data); // Para depuración
-                    const producto = data.productos.find(p => p.id == productoId);
-                    if (producto) {
-                        mostrarProducto(producto, colorSeleccionado);
-                    } else {
-                        console.error('Producto no encontrado');
-                    }
-                })
-                .catch(error => console.error('Error:', error));
-        });
-        
-        document.addEventListener('DOMContentLoaded', function () {
-    const urlParams = new URLSearchParams(window.location.search);
-    const productoId = urlParams.get('id');
-
-    if (!productoId) {
-        console.error('No se encontró el ID del producto en la URL.');
-        return;
-    }
-
-    // Carga el archivo JSON
-    fetch('productos.json')
-        .then(response => response.json())
-        .then(data => {
-            const producto = data.productos.find(p => p.id === productoId);
-            if (producto) {
-                mostrarProducto(producto);
-            } else {
-                console.error('Producto no encontrado en el JSON.');
-            }
-        })
-        .catch(error => console.error('Error al cargar el JSON:', error));
-});
-
-function mostrarProducto(producto) {
-    const detalleProducto = document.querySelector('.detalle-producto');
-
-    // Configurar los datos del producto
-    detalleProducto.querySelector('.producto__imagen').src = producto.imagen;
-    detalleProducto.querySelector('.producto__imagen').alt = producto.titulo;
-    detalleProducto.querySelector('.producto__nombre').textContent = producto.titulo;
-    detalleProducto.querySelector('.producto_contenido').textContent = producto.descripcion;
-    detalleProducto.querySelector('.producto__precio').textContent = producto.precio;
-
-    // Configurar los colores
-    const selectColores = detalleProducto.querySelector('.formulariocampo');
-    producto.colores.forEach(color => {
-        const option = document.createElement('option');
-        option.value = color;
-        option.textContent = color;
-        selectColores.appendChild(option);
-    });
-}
- </script>
+ 
  
     <script src="../js/script.js"></script>
 

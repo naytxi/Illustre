@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Illustre</title>
+    <title>FrontEnd Store</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" href="../fonts/imagenes/favicon.ico" type="imagen.ico">
-
 </head>
 <body>
     <header class="header">
@@ -77,29 +75,24 @@
 </nav>
 
     <main class="contenedor">
-        <h1>Palmier</h1>
+        <!-- <h1>Palmier</h1> -->
 
-        <div class="producto_info">
-            <img class="producto_foto" src="../fonts/Imagenes/IMG_20240607_075802.jpg" alt="Imagen del Producto">
-
-            <div class="producto_contenido">
-                <p>Maecenas consectetur ultricies mi vel venenatis. Curabitur risus tellus, congue non tellus at, semper dapibus turpis. Duis pellentesque, risus sit amet placerat porttitor, tortor augue volutpat ante, non dignissim odio ligula at arcu.</p>
-
-                <form class="formulario">
-                    <select class="formulario__campo">
-                        <option disabled selected>-- Seleccionar Color --</option>
-                        <option>Purpurina rosa</option>
-                        <option>Purpurina azul</option>
-                        <option>Purpurina verde</option>
-                        <option>Purpurina morado</option>
-                        <option>Purpurina naranja</option>
-                        <option>Purpurina amarillo</option>
-                    </select>
-                    <input class="formulario__campo" type="number" placeholder="Cantidad" min="1">
-                    <input class="formulario__submit" type="submit" value="Agregar al Carrito">
-                </form>
-            </div>
+        <div id="infoProducto" class="detalle-producto producto_info">
+            <img class="producto__imagen" src="" alt="Imagen del Producto">
+            <div class="test">
+            <p class="producto__nombre"></p>
+            <p class="producto_contenido"></p>
+            <p class="producto__precio"></p>
+            <form class="formulario">
+                <select class="formulariocampo formulario__campo ">
+                    <option disabled selected>-- Seleccionar Color --</option>
+                </select>
+                <input class="formulariocampo formulario__campo " type="number" placeholder="Cantidad" min="1">
+            </form>
+            <input class="formulario__submit" type="submit" value="Agregar al Carrito">
         </div>
+      
+         </div>   
     </main>
 
     <footer class="footer">
@@ -117,17 +110,81 @@
             </div>
             <div class="footer__seccion">
                 <h3 class="footer__titulo">Contacto</h3>
-                <p class="footer__texto"><i class="fas fa-phone"></i> +34 634 567 890</p>
-                <p class="footer__texto"><i class="fas fa-envelope"></i> info@quintessence.com</p>
+                <p class="footer__texto"><i class="fas fa-phone"></i> +1 234 567 890</p>
+                <p class="footer__texto"><i class="fas fa-envelope"></i> info@frontendstore.com</p>
             </div>
             <div class="footer__seccion">
                 <h3 class="footer__titulo">Dirección</h3>
-                <p class="footer__texto"><i class="fas fa-map-marker-alt"></i>c/ Serrano 76 Madrid España</p>
+                <p class="footer__texto"><i class="fas fa-map-marker-alt"></i> 123 Calle Principal, Ciudad, País</p>
             </div>
         </div>
         <p class="footer__derechos" data-translate="derechos">Todos los derechos Reservados © 2025</p>
     </footer>
     
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productoId = urlParams.get('id');
+            const colorSeleccionado = urlParams.get('color');
+        
+            fetch('./productos.json')
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Datos cargados:', data); // Para depuración
+                    const producto = data.productos.find(p => p.id == productoId);
+                    if (producto) {
+                        mostrarProducto(producto, colorSeleccionado);
+                    } else {
+                        console.error('Producto no encontrado');
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        });
+        
+        document.addEventListener('DOMContentLoaded', function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const productoId = urlParams.get('id');
+
+    if (!productoId) {
+        console.error('No se encontró el ID del producto en la URL.');
+        return;
+    }
+
+    // Carga el archivo JSON
+    fetch('productos.json')
+        .then(response => response.json())
+        .then(data => {
+            const producto = data.productos.find(p => p.id === productoId);
+            if (producto) {
+                mostrarProducto(producto);
+            } else {
+                console.error('Producto no encontrado en el JSON.');
+            }
+        })
+        .catch(error => console.error('Error al cargar el JSON:', error));
+});
+
+function mostrarProducto(producto) {
+    const detalleProducto = document.querySelector('.detalle-producto');
+
+    // Configurar los datos del producto
+    detalleProducto.querySelector('.producto__imagen').src = producto.imagen;
+    detalleProducto.querySelector('.producto__imagen').alt = producto.titulo;
+    detalleProducto.querySelector('.producto__nombre').textContent = producto.titulo;
+    detalleProducto.querySelector('.producto_contenido').textContent = producto.descripcion;
+    detalleProducto.querySelector('.producto__precio').textContent = producto.precio;
+
+    // Configurar los colores
+    const selectColores = detalleProducto.querySelector('.formulariocampo');
+    producto.colores.forEach(color => {
+        const option = document.createElement('option');
+        option.value = color;
+        option.textContent = color;
+        selectColores.appendChild(option);
+    });
+}
+ </script>
+ 
     <script src="../js/script.js"></script>
 
 </body>

@@ -235,23 +235,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //historial de pedidos
 
- // Espera que el contenido de la página esté completamente cargado
- document.addEventListener('DOMContentLoaded', function () {
-  const buttons = document.querySelectorAll('.toggle-details'); // Selecciona los botones
+ document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.toggle-details');
 
-  // Itera sobre cada botón
-  buttons.forEach(button => {
-    button.addEventListener('click', function () {
-      const details = this.closest('.order').querySelector('.order-details'); // Encuentra los detalles asociados
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const orderDetails = button.closest('.order').querySelector('.order-details');
+        orderDetails.classList.toggle('show'); // Alterna la clase 'show'
 
-      // Alterna la visibilidad
-      if (details.style.display === 'block') {
-        details.style.display = 'none'; // Oculta los detalles
-        this.textContent = 'Ver detalles'; // Cambia el texto del botón
-      } else {
-        details.style.display = 'block'; // Muestra los detalles
-        this.textContent = 'Ocultar detalles'; // Cambia el texto del botón
-      }
+        // Cambia el texto del botón
+        if (orderDetails.classList.contains('show')) {
+          button.textContent = 'Ocultar detalles';
+        } else {
+          button.textContent = 'Ver detalles';
+        }
+      });
     });
   });
-});

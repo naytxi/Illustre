@@ -535,29 +535,3 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-//Volver arriba inicio
-document.addEventListener('DOMContentLoaded', function() {
-  const scrollToTopButton = document.getElementById('scrollToTop');
-
-  // Mostrar/ocultar botón
-  window.addEventListener('scroll', function() {
-    if (window.pageYOffset > 300) {
-      scrollToTopButton.style.display = 'block';
-    } else {
-      scrollToTopButton.style.display = 'none';
-    }
-  });
-
-  // Scroll suave
-  scrollToTopButton.addEventListener('click', function() {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  });
-
-  // Ocultar inicialmente
-  scrollToTopButton.style.display = 'none';
-});
-
-//volver arriba fin

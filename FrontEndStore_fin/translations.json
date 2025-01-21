@@ -1,5 +1,14 @@
 {
     "es": {
+        "palmier": "Palmier",
+        "purpinaRosa": "Purpurina rosa",
+        "purpinaAzul": "Purpurina azul",
+        "purpurinaVerde": "Purpurina verde",
+        "purpinaMorado": "Purpurina morado",
+        "purpinaNaranja": "Purpurina naranja",
+        "purpinaAmarillo": "Purpurina amarillo",
+        "seleccionarColor":"Seleccionar Color",
+        "cuore" : "Cuore",
         "gestionClientes":"Gestion clientes",
         "gestionPedidos":"Gestion pedidos",
         "gestionInventario": "Gestion Inventario",
@@ -33,6 +42,15 @@
         "store": "Tienda"
     },
     "en": {
+         "palmier": "palm tree",
+        "purpinaRosa": "Pink glitter",
+        "purpinaAzul": "Blue glitter",
+        "purpurinaVerde": "Green glitter",
+        "purpinaMorado": "Purple glitter",
+        "purpinaNaranja": "Orange glitter",
+        "purpinaAmarillo": "Yellow glitter",
+        "seleccionarColor": "Select Color",
+        "cuore" : "Heart",
         "gestionClientes": "Customer Management",
         "gestionPedidos": "Order Management",
         "gestiónInventario": "Inventory Management",
@@ -66,6 +84,15 @@
         "store": "Store"
     },
     "fr": { 
+        "palmier": "Palmier",
+        "purpinaRosa": "Paillettes roses",
+        "purpinaAzul": "Paillettes bleues",
+        "purpurinaVerde": "Paillettes vertes",
+        "purpinaMorado": "Paillettes violettes",
+        "purpinaNaranja": "Paillettes orange",
+        "purpinaAmarillo": "Paillettes jaunes",
+        "seleccionarColor":"Sélectionner la Couleur",
+        "cuore" : "Coeur",
         "gestionClientes": "Gestion des clients",
         "gestionPedidos": "Gestion des commandes",
         "gestionInventario": "Gestion de l'inventaire",
@@ -99,6 +126,15 @@
         "store": "Boutique"
     },
     "eu": {
+        "palmier": "palmondo",
+        "purpinaRosa": "Purpurina arrosa",
+        "purpinaAzul": "Purpurina urdina",
+        "purpurinaVerde": "Purpurina berdea",
+        "purpinaMorado": "Purpurina morea",
+        "purpinaNaranja": "Purpurina laranja",
+        "purpinaAmarillo": "Purpurina horia",
+        "seleccionarColor":"Kolorea Aukeratu",
+        "cuore" :"Bihotz",
         "gestionClientes": "Bezeroen kudeaketa",
         "gestionPedidos": "Eskaeren kudeaketa",
         "gestiónInventario": "Inbentarioaren kudeaketa",

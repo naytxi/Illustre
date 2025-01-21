@@ -289,64 +289,8 @@ document.getElementById("increment1").addEventListener("click", () => {
     }
   });
 
-  //datos jason para carrito
+  
 
-  // Obtener productos del JSON 
-let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-
-const productos = JSON.parse(`productos.json`).productos;
-
-// Seleccionar elementos relevantes del DOM
-const contenedorProductos = document.getElementById('contenedor-productos');
-const cartItems = document.getElementById('cartItems');
-const totalPrice = document.getElementById('totalPrice');
-
-// Función para agregar producto al carrito
-function agregarAlCarrito(id, cantidad) {
-    const producto = productos.find(p => p.id === id);
-    if (!producto) return;
-
-    const productoEnCarrito = carrito.find(p => p.id === id);
-    if (productoEnCarrito) {
-        productoEnCarrito.cantidad += cantidad;
-        productoEnCarrito.subtotal = productoEnCarrito.cantidad * parseFloat(producto.precio.replace('€', ''));
-    } else {
-        carrito.push({
-            ...producto,
-            cantidad: cantidad,
-            subtotal: cantidad * parseFloat(producto.precio.replace('€', '')),
-        });
-    }
-    actualizarCarrito();
-}
-
-// Función para actualizar el carrito
-function actualizarCarrito() {
-    cartItems.innerHTML = '';
-    carrito.forEach(producto => {
-        const li = document.createElement('li');
-        li.textContent = `${producto.titulo} x${producto.cantidad} - ${producto.subtotal.toFixed(2)}€`;
-        cartItems.appendChild(li);
-    });
-
-    const total = carrito.reduce((sum, p) => sum + p.subtotal, 0);
-    totalPrice.textContent = `${total.toFixed(2)}€`;
-
-    // Guardar en localStorage
-    localStorage.setItem('carrito', JSON.stringify(carrito));
-}
-
-// Event listeners para botones "Agregar al carrito"
-contenedorProductos.addEventListener('click', e => {
-    if (e.target.classList.contains('producto_submit')) {
-        const productoId = e.target.closest('.producto').dataset.id;
-        const cantidad = parseInt(e.target.previousElementSibling.value) || 1;
-        agregarAlCarrito(productoId, cantidad);
-    }
-});
-
-// Inicializar carrito en la interfaz
-actualizarCarrito();
 
 
 
@@ -651,3 +595,62 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 //volver arriba fin
+
+
+  // Obtener productos del JSON Carrito
+  let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+  const productos = JSON.parse(`productos.json`).productos;
+  
+  // Seleccionar elementos relevantes del DOM
+  const contenedorProductos = document.getElementById('contenedor-productos');
+  const cartItems = document.getElementById('cartItems');
+  const totalPrice = document.getElementById('totalPrice');
+  
+  // Función para agregar producto al carrito
+  function agregarAlCarrito(id, cantidad) {
+      const producto = productos.find(p => p.id === id);
+      if (!producto) return;
+  
+      const productoEnCarrito = carrito.find(p => p.id === id);
+      if (productoEnCarrito) {
+          productoEnCarrito.cantidad += cantidad;
+          productoEnCarrito.subtotal = productoEnCarrito.cantidad * parseFloat(producto.precio.replace('€', ''));
+      } else {
+          carrito.push({
+              ...producto,
+              cantidad: cantidad,
+              subtotal: cantidad * parseFloat(producto.precio.replace('€', '')),
+          });
+      }
+      actualizarCarrito();
+  }
+  
+  // Función para actualizar el carrito
+  function actualizarCarrito() {
+      cartItems.innerHTML = '';
+      carrito.forEach(producto => {
+          const li = document.createElement('li');
+          li.textContent = `${producto.titulo} x${producto.cantidad} - ${producto.subtotal.toFixed(2)}€`;
+          cartItems.appendChild(li);
+      });
+  
+      const total = carrito.reduce((sum, p) => sum + p.subtotal, 0);
+      totalPrice.textContent = `${total.toFixed(2)}€`;
+  
+      // Guardar en localStorage
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+  }
+  
+  // Event listeners para botones "Agregar al carrito"
+  contenedorProductos.addEventListener('click', e => {
+      if (e.target.classList.contains('producto_submit')) {
+          const productoId = e.target.closest('.producto').dataset.id;
+          const cantidad = parseInt(e.target.previousElementSibling.value) || 1;
+          agregarAlCarrito(productoId, cantidad);
+      }
+  });
+  
+  // Inicializar carrito en la interfaz
+  actualizarCarrito();
+  

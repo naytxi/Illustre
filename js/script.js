@@ -240,12 +240,33 @@ ojito.addEventListener('click', function() {
     }
 });
 
+//submit login//
+const loginForm = document.getElementById('loginForm');
+loginForm.addEventListener('submit', function(event) {
+  event.preventDefault();  // Prevenir que el formulario recargue la página
+
+  const username = document.getElementById('username').value; 
+  const passwordValue = document.getElementById('password').value; 
+
+  const userData = {
+    username: username,
+    password: passwordValue,
+};
+
+localStorage.setItem('userData', JSON.stringify(userData));
+
+  window.location.href = 'usuario.html'; 
+});
+
+
+
+
  //POPUP CARRITO//
- const cartButton = document.getElementById('cartButton');
+const cartButton = document.getElementById('cartButton');
 const cartPopup = document.getElementById('cartPopup');
 const cartClose = document.getElementById('cartClose');
 const counter1Display = document.getElementById("counter1");
- let counter1Value = 0;
+let counter1Value = 0;
 
 cartButton.addEventListener('click', () => {
     cartPopup.style.display = 'block';
@@ -388,150 +409,160 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   //pagina ususario
+  //aqui carga los datos guardados del login en el localstorage.
+  document.addEventListener("DOMContentLoaded", () => {
+    const userData = JSON.parse(localStorage.getItem("userData"));
+    //aqui guardamos esos datos en dos variables.
+      const usernameDisplay = document.getElementById("username-display");
+      const passwordDisplay = document.getElementById("current-password");
+  //aqui se muestra los datos del userdata que se han recuperado del localstorage, o si no hay nada saca lo entrecomillado.
+      usernameDisplay.textContent = userData.username || "Usuario no registrado";
+      passwordDisplay.value = userData.password || "";
+  });
 
 
-  document.addEventListener("DOMContentLoaded", function() {
+ // Clave de almacenamiento en localStorage
+const USER_DATA_KEY = "userData";
 
-    // Clave de almacenamiento en localStorage
-    const USER_DATA_KEY = "userData";
-  
-    // Función para crear el objeto del usuario
-    function createUser(name, email, phone, password, photo = "") {
-      const userData = {
-        name: name || "",
-        email: email || "",
-        phone: phone || "",
-        password: password || "",
-        photo: photo || "",
+// Función para crear el objeto del usuario
+function createUser(name, email, phone, password, photo = "") {
+  const userData = {
+    name: name || "",
+    email: email || "",
+    phone: phone || "",
+    password: password || "",
+    photo: photo || "",
+  };
+  saveToLocalStorage(USER_DATA_KEY, userData);
+  return userData;
+}
+
+// Función para obtener los datos del usuario
+function getUser() {
+  return loadFromLocalStorage(USER_DATA_KEY) || {};
+}
+
+// Función para actualizar los datos del usuario
+function updateUser(updates) {
+  const userData = getUser();
+  const updatedData = { ...userData, ...updates };
+  saveToLocalStorage(USER_DATA_KEY, updatedData);
+  return updatedData;
+}
+
+// Función para eliminar los datos del usuario
+function deleteUser() {
+  localStorage.removeItem(USER_DATA_KEY);
+}
+
+// Función para guardar datos en localStorage
+function saveToLocalStorage(key, data) {
+  localStorage.setItem(key, JSON.stringify(data));
+}
+
+// Función para cargar datos desde localStorage
+function loadFromLocalStorage(key) {
+  const data = localStorage.getItem(key);
+  return data ? JSON.parse(data) : null;
+}
+
+// Manejo de eventos y configuración de la interfaz de usuario
+document.addEventListener("DOMContentLoaded", () => {
+  // Referencias a los elementos del DOM
+  const profilePicture = document.getElementById("profile-picture");
+  const uploadPhoto = document.getElementById("upload-photo");
+  const savePhotoButton = document.getElementById("save-photo");
+
+  const editForm = document.getElementById("edit-form");
+  const nameInput = document.getElementById("name");
+  const emailInput = document.getElementById("email");
+  const phoneInput = document.getElementById("phone");
+
+  const passwordForm = document.getElementById("password-form");
+  const currentPasswordInput = document.getElementById("current-password");
+  const newPasswordInput = document.getElementById("new-password");
+  const confirmPasswordInput = document.getElementById("confirm-password");
+
+  const orderDetailsButtons = document.querySelectorAll("button.toggle-details");
+
+  const logoutButton = document.getElementById("logout-button"); // Botón de cerrar sesión
+
+  // Cargar datos del usuario al iniciar la página
+  const userData = getUser();
+  if (userData) {
+    nameInput.value = userData.name || "";
+    emailInput.value = userData.email || "";
+    phoneInput.value = userData.phone || "";
+    if (userData.photo) {
+      profilePicture.src = userData.photo;
+    }
+  }
+
+  // Subir y guardar foto de perfil
+  uploadPhoto.addEventListener("change", (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        profilePicture.src = e.target.result;
+        updateUser({ photo: e.target.result });
       };
-      saveToLocalStorage(USER_DATA_KEY, userData);
-      return userData;
+      reader.readAsDataURL(file);
     }
-  
-    // Función para obtener los datos del usuario
-    function getUser() {
-      return loadFromLocalStorage(USER_DATA_KEY) || {};
-    }
-  
-    // Función para actualizar los datos del usuario
-    function updateUser(updates) {
-      const userData = getUser();
-      const updatedData = { ...userData, ...updates };
-      saveToLocalStorage(USER_DATA_KEY, updatedData);
-      return updatedData;
-    }
-  
-    // Función para eliminar los datos del usuario
-    function deleteUser() {
-      localStorage.removeItem(USER_DATA_KEY);
-    }
-  
-    // Función para guardar datos en localStorage
-    function saveToLocalStorage(key, data) {
-      localStorage.setItem(key, JSON.stringify(data));
-    }
-  
-    // Función para cargar datos desde localStorage
-    function loadFromLocalStorage(key) {
-      const data = localStorage.getItem(key);
-      return data ? JSON.parse(data) : null;
-    }
-  
-    // Referencias a los elementos del DOM
-    const profilePicture = document.getElementById("profile-picture");
-    const uploadPhoto = document.getElementById("upload-photo");
-    const savePhotoButton = document.getElementById("save-photo");
-  
-    const editForm = document.getElementById("edit-form");
-    const nameInput = document.getElementById("name");
-    const emailInput = document.getElementById("email");
-    const phoneInput = document.getElementById("phone");
-  
-    const passwordForm = document.getElementById("password-form");
-    const currentPasswordInput = document.getElementById("current-password");
-    const newPasswordInput = document.getElementById("new-password");
-    const confirmPasswordInput = document.getElementById("confirm-password");
-  
-    const orderDetailsButtons = document.querySelectorAll("button.toggle-details");
-  
-    const logoutButton = document.getElementById("logout-button"); // Botón de cerrar sesión
-  
-    // Cargar datos del usuario al iniciar la página
-    const userData = getUser();
-    if (userData) {
-      nameInput.value = userData.name || "";
-      emailInput.value = userData.email || "";
-      phoneInput.value = userData.phone || "";
-      if (userData.photo) {
-        profilePicture.src = userData.photo;
-      }
-    }
-  
-    // Subir y guardar foto de perfil
-    uploadPhoto.addEventListener("change", (event) => {
-      const file = event.target.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = (e) => {
-          profilePicture.src = e.target.result;
-          updateUser({ photo: e.target.result });
-        };
-        reader.readAsDataURL(file);
-      }
+  });
+
+  // Guardar datos personales
+  editForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    updateUser({
+      name: nameInput.value,
+      email: emailInput.value,
+      phone: phoneInput.value,
     });
-  
-    // Guardar datos personales
-    editForm.addEventListener("submit", (event) => {
-      event.preventDefault();
-      updateUser({
-        name: nameInput.value,
-        email: emailInput.value,
-        phone: phoneInput.value,
-      });
-      alert("Datos personales actualizados.");
-    });
-  
-    // Cambiar contraseña
-    passwordForm.addEventListener("submit", (event) => {
-      event.preventDefault();
-      const currentPassword = currentPasswordInput.value;
-      const newPassword = newPasswordInput.value;
-      const confirmPassword = confirmPasswordInput.value;
-  
-      if (newPassword !== confirmPassword) {
-        alert("La nueva contraseña y su confirmación no coinciden.");
-        return;
-      }
-  
-      const storedPassword = getUser().password;
-      if (storedPassword && currentPassword !== storedPassword) {
-        alert("La contraseña actual es incorrecta.");
-        return;
-      }
-  
-      updateUser({ password: newPassword });
-      alert("Contraseña actualizada correctamente.");
-      passwordForm.reset();
-    });
-  
-    // Mostrar/ocultar detalles de pedidos
-    orderDetailsButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        const orderDetails = button.parentElement.nextElementSibling;
-        const isHidden = orderDetails.style.display === "none" || !orderDetails.style.display;
-        orderDetails.style.display = isHidden ? "block" : "none";
-        button.textContent = isHidden ? "Ocultar detalles" : "Ver detalles";
-      });
-    });
-  
-    // Cerrar sesión
-    logoutButton.addEventListener("click", () => {
-      deleteUser(); // Elimina los datos del usuario de localStorage
-      alert("Sesión cerrada correctamente.");
-      window.location.href = "index.html"; // Redirige a la página de inicio
+    alert("Datos personales actualizados.");
+  });
+
+  // Cambiar contraseña
+  passwordForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const currentPassword = currentPasswordInput.value;
+    const newPassword = newPasswordInput.value;
+    const confirmPassword = confirmPasswordInput.value;
+
+    if (newPassword !== confirmPassword) {
+      alert("La nueva contraseña y su confirmación no coinciden.");
+      return;
+    }
+
+    const storedPassword = getUser().password;
+    if (storedPassword && currentPassword !== storedPassword) {
+      alert("La contraseña actual es incorrecta.");
+      return;
+    }
+
+    updateUser({ password: newPassword });
+    alert("Contraseña actualizada correctamente.");
+    passwordForm.reset();
+  });
+
+  // Mostrar/ocultar detalles de pedidos
+  orderDetailsButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const orderDetails = button.parentElement.nextElementSibling;
+      const isHidden = orderDetails.style.display === "none" || !orderDetails.style.display;
+      orderDetails.style.display = isHidden ? "block" : "none";
+      button.textContent = isHidden ? "Ocultar detalles" : "Ver detalles";
     });
   });
-  
+
+  // Cerrar sesión
+  logoutButton.addEventListener("click", () => {
+    deleteUser(); // Elimina los datos del usuario de localStorage
+    alert("Sesión cerrada correctamente.");
+    window.location.href = "index.html"; // Redirige a la página de inicio
+  });
+});
+
 
 //Volver arriba inicio
 document.addEventListener('DOMContentLoaded', function() {

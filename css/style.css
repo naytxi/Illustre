@@ -51,8 +51,9 @@ h1, h2, h3 {
     color: var(--secundarioOscuro);
     font-family: var(--fuentePrincipal);
 }
-h1 {
+.tituloPrincipal {
     font-size: 4rem;
+    margin: 8rem;
 }
 h2 {
     font-size: 3.2rem;
@@ -380,7 +381,6 @@ h3 {
   align-items: center;
   gap: 1rem;
   z-index: 1000; 
-  transition: all 0.3s ease;
   width: 100%;
   top: 20rem;
   }
@@ -403,7 +403,15 @@ h3 {
 .navegacion__enlace:hover {
     color: var(--secundario);
 }
-
+@media (min-width: 600px) {
+  .navegacion {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .navegacion__enlace {
+    font-size: 3rem;
+  }
+}
 
 /*estilos boton de filtro*/
 .filter_wrapper {
@@ -448,16 +456,7 @@ h3 {
 .hidden {
   display: none;
 }
-@media (min-width: 600px) {
-    .navegacion {
-      position: absolute;
-      flex-direction: row;
-      justify-content: center;
-    }
-    .navegacion__enlace {
-      font-size: 3rem;
-    }
-}
+
 
 /** Grid **/
 .grid {
@@ -649,7 +648,8 @@ h3 {
 }
 
 .producto__nombre {
-    font-size: 4rem;
+    font-size: 3rem;
+    font-weight: 600;
 }
 .producto__precio {
     font-size: 2.8rem;
@@ -979,9 +979,6 @@ h3 {
   border-radius: 1rem;
 }
 
-.producto__nombre {
-  font-size: 4rem;
-}
 .producto__precio {
   font-size: 2.8rem;
   color: var(--secundario);

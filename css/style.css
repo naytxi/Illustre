@@ -1076,8 +1076,7 @@ h3 {
 }
 
 /* Formulario */
-.right-column {
-  width: 80%; 
+.right-column { 
   max-width: 500px; 
 }
 
@@ -1087,7 +1086,7 @@ h3 {
 }
 
 .form-card1 {
-  width: 400px;
+  max-width: 600px;
   background-image: linear-gradient(163deg, #ecbceeff 0%,#ecbceeff 100%);
   border-radius: 20px;
   transition: all 0.3s;
@@ -1100,7 +1099,7 @@ h3 {
 }
 
 .form-card2 {
-  width: 400px;
+  width: 100%;
   border-radius: 20px;
   transition: all 0.2s;
   background-color: var(--primarioOscuro); 
@@ -1181,6 +1180,7 @@ h3 {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.75);
   overflow: hidden;
+  margin: 8rem;
 }
 .map-container:hover {
   transform: scale(0.90);

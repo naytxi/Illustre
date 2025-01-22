@@ -99,14 +99,14 @@ h3 {
     margin-bottom: 10rem;
  }
 
-  @media (min-width: 600px) {
+  @media (min-width: 668px) {
       .header {
         justify-content: center;
         flex-direction: row;
       }
       .lema, .lema2 {
         display: flex;
-        margin-left: 3rem;
+        margin-left: 7rem;
         margin-right: 1rem;
       }
       #language-selec {
@@ -116,7 +116,7 @@ h3 {
 
   .lema {
     text-align: left;
-
+    margin-right:-2rem;
   }
   
   .lema2 {
@@ -125,9 +125,15 @@ h3 {
   
   .header__logo {
     max-width: 100%;
+    min-width: 20rem;
     text-align: center;
     margin: 0;
-    width: auto;
+  }
+  @media (min-width: 668px) {
+      .header__logo {
+        position: relative;
+        right: -8rem;
+      }
   }
   
   .header-right {
@@ -135,6 +141,12 @@ h3 {
     flex-direction: row;
     align-items: flex-end;
     position: relative;
+  }
+  @media (max-width: 668px ) {
+      .header-right {
+        margin-right: 2.5rem;
+        margin-left: 1.5rem;
+      }
   }
 
   /*selector idioma*/
@@ -407,6 +419,7 @@ h3 {
   .navegacion {
     flex-direction: row;
     justify-content: center;
+    gap: 3rem;
   }
   .navegacion__enlace {
     font-size: 3rem;
@@ -675,22 +688,29 @@ h3 {
     grid-template-rows: repeat(2, auto);
     margin-top: 6rem;
 }
-@media (min-width: 768px) {
-    .nosotros {
-        grid-template-columns: repeat(2, 1fr);
-        column-gap: 2rem;
+@media (max-width: 410px) {
+    .nosotros__imagen {
+      width: 20rem;
     }
 }
-.nosotros__imagen {
+@media (max-width: 968px ) {
+  .nosotros__imagen {
     grid-row: 1 / 2;
     width: 40rem;
     margin: 0 auto;
 }
-@media (min-width: 768px) {
+}
+
+@media (min-width: 980px) {
     .nosotros__imagen {
        grid-column: 2 / 3;
-       width: 50rem;
+       width: 66rem;
+       margin-left: 15rem;
     }
+    .nosotros {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 2rem;
+  }
 }
  /** Fromulario de contacto **/ 
  .container-center {
@@ -703,13 +723,17 @@ h3 {
   margin-top: 6rem;
 }
  .formu-card1 {
-  width: 400px;
   background-image: linear-gradient(163deg, #ecbceeff 0%,#ecbceeff 100%);
   border-radius: 20px;
   transition: all 0.3s;
   padding: 1em; 
   box-shadow: 0px 4px 20px #ec598cff(100, 255, 218, 0.2);
 
+}
+@media (min-width: 429px) {
+    .form-card1 {
+      width: 400px;
+    }
 }
 
 .formu-card1:hover {
@@ -792,6 +816,8 @@ h3 {
 }
 /** Bloques **/
 .nosotros__contenido {
+  display: flex;
+  align-items: center;
   margin-top: 6rem;
   text-align: justify;
   margin: 2rem;

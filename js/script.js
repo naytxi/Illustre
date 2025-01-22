@@ -224,6 +224,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // SCRIPT LOGIN //
+const userInfo = document.getElementById("user-info");
+const usernameButton = document.getElementById("username-button");
 const loginButton = document.getElementById('loginButton');
 const loginPopup = document.getElementById('loginPopup');
 const closePopup = document.getElementById('loginClose');
@@ -249,26 +251,105 @@ ojito.addEventListener('click', function() {
     }
 });
 
-//submit login//
-const loginForm = document.getElementById('loginForm');
-loginForm.addEventListener('submit', function(event) {
-  event.preventDefault();  // Prevenir que el formulario recargue la página
+//aqui manejamos el evento del formulario del login, guardamos el user y el password en el localstorage
+document.addEventListener("DOMContentLoaded", () => {
+  const loginForm = document.getElementById("loginForm");
+  if (loginForm) {
+    loginForm.addEventListener("submit", function (event) {
+      
+      const username = document.getElementById("username").value;
+      const passwordValue = document.getElementById("password").value;
 
-  const username = document.getElementById('username').value; 
-  const passwordValue = document.getElementById('password').value; 
+      const userData = {
+        username: username,
+        password: passwordValue,
+      };
 
-  const userData = {
-    username: username,
-    password: passwordValue,
-};
+      localStorage.setItem("userData", JSON.stringify(userData));
 
-localStorage.setItem('userData', JSON.stringify(userData));
+      // Redirigir a la página de usuario
+      window.location.href = "usuario.html";
+    });
+  }
 
-  window.location.href = 'usuario.html'; 
+//aqui manejamos el icono y el boton del usuario, cambiando de uno a otro cuando logeamos
+  // Verificar el estado del usuario para mostrar login o nombre de usuario
+  const loginButton = document.getElementById("loginButton");
+  const usernameButton = document.getElementById("usernameButton");
+  const userInfo = document.getElementById("userInfo");
+
+  const userData = JSON.parse(localStorage.getItem("userData"));
+
+  if (userData && userData.username) {
+    // Si el usuario está logueado, mostrar el nombre de usuario
+    if (loginButton && userInfo && usernameButton) {
+      loginButton.style.display = "none";
+      userInfo.style.display = "block";
+      usernameButton.textContent = userData.username;
+
+      // Agregar evento para redirigir a usuario.html
+      usernameButton.addEventListener("click", () => {
+        window.location.href = "usuario.html";
+      });
+    }
+  } else {
+    // Si no está logueado, mostrar el icono del login
+    if (loginButton && userInfo && usernameButton) {
+      loginButton.style.display = "block";
+      userInfo.style.display = "none";
+    }
+  }
+
+  // Manejar la carga de datos en usuario.html
+  if (window.location.pathname.includes("usuario.html")) {
+    const usernameDisplay = document.getElementById("username-display");
+    const passwordDisplay = document.getElementById("current-password");
+
+    if (usernameDisplay && userData) {
+      // Mostrar el nombre de usuario
+      usernameDisplay.textContent = userData.username || "Usuario no registrado";
+      passwordDisplay.value = userData.password || "";
+    }
+  }
 });
 
+//aqui manejamos la seccion del historial de pedidos
+document.addEventListener("DOMContentLoaded", () => {
+  // Seleccionamos todos los botones de "Ver detalles"
+  const toggleDetailsButtons = document.querySelectorAll('.toggle-details');
 
+  // Añadimos el evento de clic a cada botón
+  toggleDetailsButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // primero buscamos el contenedor de order y una vez lo tenemos, buscamos el primer hijo llamado order details y lo guardamos
+      const orderDetails = button.closest('.order').querySelector('.order-details');
 
+      // Alterna la visibilidad del contenedor de detalles
+      if (orderDetails.style.display === 'none' || orderDetails.style.display === '') {
+        orderDetails.style.display = 'block'; // Mostrar los detalles
+        button.textContent = 'Ocultar detalles'; // Cambiar texto del botón
+      } else {
+        orderDetails.style.display = 'none'; // Ocultar los detalles
+        button.textContent = 'Ver detalles'; // Cambiar texto del botón
+      }
+    });
+  });
+});
+
+//aqui manejamos el boton de cerrar sesion del usuario.html
+document.addEventListener("DOMContentLoaded", () => {
+  const logoutButton = document.getElementById("logout-button");
+
+  if (logoutButton) {
+    logoutButton.addEventListener("click", () => {
+      // Elimina los datos del usuario del localStorage
+      localStorage.removeItem("userData");
+
+      // Redirige al index
+      window.location.href = "index.html";
+    });
+  }
+});
 
  //POPUP CARRITO//
 const cartButton = document.getElementById('cartButton');
@@ -422,160 +503,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 
-  //pagina ususario
-  //aqui carga los datos guardados del login en el localstorage.
-  document.addEventListener("DOMContentLoaded", () => {
-    const userData = JSON.parse(localStorage.getItem("userData"));
-    //aqui guardamos esos datos en dos variables.
-      const usernameDisplay = document.getElementById("username-display");
-      const passwordDisplay = document.getElementById("current-password");
-  //aqui se muestra los datos del userdata que se han recuperado del localstorage, o si no hay nada saca lo entrecomillado.
-      usernameDisplay.textContent = userData.username || "Usuario no registrado";
-      passwordDisplay.value = userData.password || "";
-  });
-
-
- // Clave de almacenamiento en localStorage
-const USER_DATA_KEY = "userData";
-
-// Función para crear el objeto del usuario
-function createUser(name, email, phone, password, photo = "") {
-  const userData = {
-    name: name || "",
-    email: email || "",
-    phone: phone || "",
-    password: password || "",
-    photo: photo || "",
-  };
-  saveToLocalStorage(USER_DATA_KEY, userData);
-  return userData;
-}
-
-// Función para obtener los datos del usuario
-function getUser() {
-  return loadFromLocalStorage(USER_DATA_KEY) || {};
-}
-
-// Función para actualizar los datos del usuario
-function updateUser(updates) {
-  const userData = getUser();
-  const updatedData = { ...userData, ...updates };
-  saveToLocalStorage(USER_DATA_KEY, updatedData);
-  return updatedData;
-}
-
-// Función para eliminar los datos del usuario
-function deleteUser() {
-  localStorage.removeItem(USER_DATA_KEY);
-}
-
-// Función para guardar datos en localStorage
-function saveToLocalStorage(key, data) {
-  localStorage.setItem(key, JSON.stringify(data));
-}
-
-// Función para cargar datos desde localStorage
-function loadFromLocalStorage(key) {
-  const data = localStorage.getItem(key);
-  return data ? JSON.parse(data) : null;
-}
-
-// Manejo de eventos y configuración de la interfaz de usuario
-document.addEventListener("DOMContentLoaded", () => {
-  // Referencias a los elementos del DOM
-  const profilePicture = document.getElementById("profile-picture");
-  const uploadPhoto = document.getElementById("upload-photo");
-  const savePhotoButton = document.getElementById("save-photo");
-
-  const editForm = document.getElementById("edit-form");
-  const nameInput = document.getElementById("name");
-  const emailInput = document.getElementById("email");
-  const phoneInput = document.getElementById("phone");
-
-  const passwordForm = document.getElementById("password-form");
-  const currentPasswordInput = document.getElementById("current-password");
-  const newPasswordInput = document.getElementById("new-password");
-  const confirmPasswordInput = document.getElementById("confirm-password");
-
-  const orderDetailsButtons = document.querySelectorAll("button.toggle-details");
-
-  const logoutButton = document.getElementById("logout-button"); // Botón de cerrar sesión
-
-  // Cargar datos del usuario al iniciar la página
-  const userData = getUser();
-  if (userData) {
-    nameInput.value = userData.name || "";
-    emailInput.value = userData.email || "";
-    phoneInput.value = userData.phone || "";
-    if (userData.photo) {
-      profilePicture.src = userData.photo;
-    }
-  }
-
-  // Subir y guardar foto de perfil
-  uploadPhoto.addEventListener("change", (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        profilePicture.src = e.target.result;
-        updateUser({ photo: e.target.result });
-      };
-      reader.readAsDataURL(file);
-    }
-  });
-
-  // Guardar datos personales
-  editForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    updateUser({
-      name: nameInput.value,
-      email: emailInput.value,
-      phone: phoneInput.value,
-    });
-    alert("Datos personales actualizados.");
-  });
-
-  // Cambiar contraseña
-  passwordForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const currentPassword = currentPasswordInput.value;
-    const newPassword = newPasswordInput.value;
-    const confirmPassword = confirmPasswordInput.value;
-
-    if (newPassword !== confirmPassword) {
-      alert("La nueva contraseña y su confirmación no coinciden.");
-      return;
-    }
-
-    const storedPassword = getUser().password;
-    if (storedPassword && currentPassword !== storedPassword) {
-      alert("La contraseña actual es incorrecta.");
-      return;
-    }
-
-    updateUser({ password: newPassword });
-    alert("Contraseña actualizada correctamente.");
-    passwordForm.reset();
-  });
-
-  // Mostrar/ocultar detalles de pedidos
-  orderDetailsButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const orderDetails = button.parentElement.nextElementSibling;
-      const isHidden = orderDetails.style.display === "none" || !orderDetails.style.display;
-      orderDetails.style.display = isHidden ? "block" : "none";
-      button.textContent = isHidden ? "Ocultar detalles" : "Ver detalles";
-    });
-  });
-
-  // Cerrar sesión
-  logoutButton.addEventListener("click", () => {
-    deleteUser(); // Elimina los datos del usuario de localStorage
-    alert("Sesión cerrada correctamente.");
-    window.location.href = "index.html"; // Redirige a la página de inicio
-  });
-});
+  
 
 
 //Volver arriba inicio
@@ -606,95 +534,76 @@ document.addEventListener('DOMContentLoaded', function() {
 //volver arriba fin
 
 
- // Cargar productos desde JSON en localStorage o inicializar si no existe
-
- document.addEventListener('DOMContentLoaded', () => {
-  if (!localStorage.getItem('productos')) {
-      localStorage.setItem('productos', JSON.stringify({
-          productos: [
-              {
-                  "id": " ",
-                  "titulo": " ",
-                  "descripcion": " ",
-                  "precio": " ",
-                  "imagen": "" ,
-                  "colores": [""]
-              }]
-      }));
-  }
-
-  const producto = JSON.parse(localStorage.getItem('productos')).productos;
+ // Inicializamos el carrito desde localStorage o vacío si no hay datos
   let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+// Productos cargados desde tu archivo JSON
+const productos = JSON.parse(`{
+    "productos": [
+        productos.json
+    ]
+}`).productos;
+  
+// Referencias a elementos del DOM
   const contenedorProductos = document.getElementById('contenedor-productos');
   const cartItems = document.getElementById('cartItems');
   const totalPrice = document.getElementById('totalPrice');
-  const cartPopup = document.getElementById('cartPopup');
-  const cartButton = document.getElementById('cartButton');
-  const cartClose = document.getElementById('cartClose');
-
-  cartButton.addEventListener('click', () => {
-      cartPopup.style.display = 'block';
-  });
-  cartClose.addEventListener('click', () => {
-      cartPopup.style.display = 'none';
-  });
-
+  
+  // Función para agregar producto al carrito
   function agregarAlCarrito(id, cantidad) {
       const producto = productos.find(p => p.id === id);
-      if (!producto) return;
-
-      const productoEnCarrito = carrito.find(item => item.id === id);
+    if (!producto) {
+        console.error(`Producto con ID ${id} no encontrado`);
+        return;
+    }
+  
+    // Verificar si el producto ya está en el carrito
+      const productoEnCarrito = carrito.find(p => p.id === id);
       if (productoEnCarrito) {
           productoEnCarrito.cantidad += cantidad;
           productoEnCarrito.subtotal = productoEnCarrito.cantidad * parseFloat(producto.precio.replace('€', ''));
       } else {
           carrito.push({
-              id: producto.id,
-              titulo: producto.titulo,
-              precio: parseFloat(producto.precio.replace('€', '')),
-              cantidad,
-              subtotal: cantidad * parseFloat(producto.precio.replace('€', ''))
+            id: producto.id,
+            titulo: producto.titulo,
+            precio: parseFloat(producto.precio.replace('€', '')),
+              cantidad: cantidad,
+              subtotal: cantidad * parseFloat(producto.precio.replace('€', '')),
           });
       }
+
       actualizarCarrito();
   }
-
+  
+  // Función para actualizar el carrito
   function actualizarCarrito() {
-      cartItems.innerHTML = '';
+    cartItems.innerHTML = ''; // Limpiamos el contenido previo
+
       carrito.forEach(producto => {
           const li = document.createElement('li');
           li.textContent = `${producto.titulo} x${producto.cantidad} - ${producto.subtotal.toFixed(2)}€`;
           cartItems.appendChild(li);
       });
-
-      const total = carrito.reduce((sum, item) => sum + item.subtotal, 0);
+  
+    // Actualizar el total
+      const total = carrito.reduce((sum, p) => sum + p.subtotal, 0);
       totalPrice.textContent = `${total.toFixed(2)}€`;
+  
+    // Guardar el carrito actualizado en localStorage
       localStorage.setItem('carrito', JSON.stringify(carrito));
   }
-
-  productos.forEach(producto => {
-      const productoDiv = document.createElement('div');
-      productoDiv.classList.add('producto');
-      productoDiv.dataset.id = producto.id;
-      productoDiv.innerHTML = `
-          <img src="${producto.imagen}" alt="${producto.titulo}">
-          <h3>${producto.titulo}</h3>
-          <p>${producto.descripcion}</p>
-          <p>${producto.precio}</p>
-          <input type="number" min="1" value="1" class="cantidad">
-          <button class="producto_submit">Agregar al carrito</button>
-      `;
-      contenedorProductos.appendChild(productoDiv);
-  });
-
+  
+// Event listener para capturar clics en los botones de "Agregar al Carrito"
   contenedorProductos.addEventListener('click', e => {
       if (e.target.classList.contains('producto_submit')) {
-          const productoDiv = e.target.closest('.producto');
-          const productoId = productoDiv.dataset.id;
-          const cantidad = parseInt(productoDiv.querySelector('.cantidad').value) || 1;
+          const productoId = e.target.closest('.producto').dataset.id;
+        const cantidadInput = e.target.previousElementSibling;
+        const cantidad = parseInt(cantidadInput.value) || 1;
+
           agregarAlCarrito(productoId, cantidad);
       }
   });
-
+  
+// Inicializar el carrito en la interfaz
   actualizarCarrito();
-});
+  

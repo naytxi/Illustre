@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,100 +13,106 @@
   <link rel="icon" href="../fonts/imagenes/favicon.ico" type="imagen.ico">
 
 </head>
+
 <body>
   <header class="header">
     <div class="lema">PETITE TOUCHE</div>
 
     <a href="index.html">
-      <img class="header__logo" src="../fonts/Imagenes/ILLUSTRE.png" /*src="../fonts/Imagenes/illustre.png"*/ alt="Logotipo"></a>
-    
+      <img class="header__logo" src="../fonts/Imagenes/ILLUSTRE.png" /*src="../fonts/Imagenes/illustre.png" */
+        alt="Logotipo"></a>
+
     <div class="lema2">BELLES HISTOIRES</div>
 
-  
+
     <div class="header-right">
-   
-        <div class="language-selector">
-            <select id="language-select">
-                <option selected disabled>Idioma</option>
-                <option value="es">Español</option>
-                <option value="eu">Euskara</option>
-                <option value="en">English</option>
-                <option value="fr">Français</option>
-            </select>
-        </div>            
-  
+
+      <div class="language-selector">
+        <select id="language-select">
+          <option selected disabled>Idioma</option>
+          <option value="es">Español</option>
+          <option value="eu">Euskara</option>
+          <option value="en">English</option>
+          <option value="fr">Français</option>
+        </select>
+      </div>
+
       <div class="icons">
         <button id="loginButton" href="/login" class="icon"><i class="fas fa-user"></i></button>
         <div id="loginPopup" class="loginpopup">
-            <div class="popup-content">
-              <span id ="loginClose" class="close">&times;</span>
-              <h2>Login</h2>
-              <form id="loginForm">
-                <label for="username">User</label>
-                <input type="text" id="username" name="username" required>
-                
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
-                <button id ="ojito" ><img id ="imagen" src="../fonts/Imagenes/ojoCerrado1.jpg" /></button>
-                <button id="Submit" type="submit">Submit</button>
-              </form>
-            </div>
+          <div class="popup-content">
+            <span id="loginClose" class="close">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+              <label for="username">User</label>
+              <input type="text" id="username" name="username" required>
+
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" required>
+              <button id="ojito"><img id="imagen" src="../fonts/Imagenes/ojoCerrado1.jpg" /></button>
+              <button id="Submit" type="submit">Submit</button>
+            </form>
           </div>
+        </div>
         <button id="cartButton" href="/store" class="icon"><i class="fas fa-shopping-cart"></i></button>
         <div id="cartPopup" class="cartpopup">
-            <div class="popup-contentcart">
-                <span id="cartClose" class="close">&times;</span>
-                <h2>Cart</h2>
-                <ul id="cartItems"></ul>
-                <div class="counter-controls">
-                    <button id="decrement1" class="counter-button decrement">-</button>
-                    <span id="counter1" class="counter-display">0</span>
-                    <button id="increment1" class="counter-button increment">+</button>
-                  </div>
-                <div class="total">
-                    <p>Total: <span id="totalPrice">0€</span></p>
-                </div>
+          <div class="popup-contentcart">
+            <span id="cartClose" class="close">&times;</span>
+            <h2>Cart</h2>
+            <ul id="cartItems"></ul>
+            <div class="counter-controls">
+              <button id="decrement1" class="counter-button decrement">-</button>
+              <span id="counter1" class="counter-display">0</span>
+              <button id="increment1" class="counter-button increment">+</button>
             </div>
+            <div class="total">
+              <p>Total: <span id="totalPrice">0€</span></p>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
   </header>
-    <nav class="navegacion">
-        <a class="navegacion__enlace" href="home.html" data-translate="titulo-nav">Inicio</a>
-        <a class="navegacion__enlace" href="index.html" data-translate="store-titulo">Tienda</a>
-        <a class="navegacion__enlace navegacion__enlace--activo " href="contacto.html" data-translate="contacto">Contacto</a>
-    </nav>
+  <nav class="navegacion">
+    <a class="navegacion__enlace" href="home.html" data-translate="titulo-nav">Inicio</a>
+    <a class="navegacion__enlace" href="index.html" data-translate="store-titulo">Tienda</a>
+    <a class="navegacion__enlace navegacion__enlace--activo " href="contacto.html"
+      data-translate="contacto">Contacto</a>
+  </nav>
 
   <main>
-        <div class="contenedor">
-          <div id="dateTimeDisplay">Cargando...</div>
-          <h1>Contáctanos</h1>
-          <p>Nos encantaría saber de ti, si tienes dudas o quieres contactar con nosotros, escríbenos nos pondremos en contacto contigo lo antes posible
-            o explora nuestras redes sociales y no te pierdas ninguna de nuestras promociones.</p>
+    <div class="contenedor contenedor__contacto">
+      <div id="dateTimeDisplay">Cargando...</div>
+      <h1>Contáctanos</h1>
+      <p>Cada pieza de bisutería que creamos cuenta una historia única, y queremos que tú seas parte de ella. Nuestro
+        compromiso es ofrecerte accesorios que no solo complementen tu estilo, sino que también realcen tu personalidad
+        y te hagan sentir especial en cada ocasión. Estamos dedicados a brindarte una experiencia personalizada, desde
+        el primer contacto hasta que uses nuestra joya.<br><br>Nos encantaría saber de ti, si tienes dudas o quieres
+        contactar con nosotros, escríbenos nos pondremos en contacto contigo lo antes posible
+        o explora nuestras redes sociales y no te pierdas ninguna de nuestras promociones.</p>
+    </div>
+    <div class="contact-layout">
+      <!-- Columna izquierda -->
+      <div class="left-column">
+        <h2>Siguenos en redes</h2>
+        <a href="mailto:info@tuempresa.com">Correo: info@quintessence.com</a>
+        <a href="tel:+123456789">Teléfono: +34 634 567 89</a>
+        <a href="https://wa.me/123456789">WhatsApp: 634 567 89</a>
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">Twitter</a>
       </div>
-      <div class="contact-layout">
-          <!-- Columna izquierda -->
-          <div class="left-column">
-            <h2>Siguenos en redes</h2>
-              <a href="mailto:info@tuempresa.com">Correo: info@quintessence.com</a>
-              <a href="tel:+123456789">Teléfono: +34 634 567 89</a>
-              <a href="https://wa.me/123456789">WhatsApp: 634 567 89</a>
-              <a href="#">Facebook</a>
-              <a href="#">Instagram</a>
-              <a href="#">Twitter</a>
-          </div>
-          <!-- Columna derecha -->
-          <div class="map-container">
-            <h2>Donde estamos</h2>
-            <iframe 
-              src="https://maps.google.com/maps?25&amp;&amp;hl=es&amp;q=calle%20serrano%20n%2076%20+(Quintessence)&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" 
-              frameborder="0" 
-              scrolling="no">
-            </iframe>
-          </div>
-    
+      <!-- Columna derecha -->
+      <div class="map-container">
+        <h2>Donde estamos</h2>
+        <iframe
+          src="https://maps.google.com/maps?25&amp;&amp;hl=es&amp;q=calle%20serrano%20n%2076%20+(Quintessence)&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+          frameborder="0" scrolling="no">
+        </iframe>
+      </div>
+
       <div class="right-column">
-         <div class="form-card1">
+        <div class="form-card1">
           <h2>Formulario de Contacto</h2>
           <div class="form-card2">
             <div class="form">
@@ -115,71 +122,56 @@
               </div>
 
               <div class="form-field">
-                <input
-                  required=""
-                  placeholder="Email"
-                  class="input-field"
-                  type="email"
-                />
+                <input required="" placeholder="Email" class="input-field" type="email" />
               </div>
 
               <div class="form-field">
-                <input
-                  required=""
-                  placeholder="Numero contacto"
-                  class="input-field"
-                  type="text"
-                />
+                <input required="" placeholder="Numero contacto" class="input-field" type="text" />
               </div>
 
               <div class="form-field">
-                <textarea
-                  required=""
-                  placeholder="Mensaje"
-                  cols="30"
-                  rows="3"
-                  class="input-field"
-                ></textarea>
+                <textarea required="" placeholder="Mensaje" cols="30" rows="3" class="input-field"></textarea>
               </div>
-          
-                  <button class="sendMessage-btn">Enviar mensaje</button>
+
+              <button class="sendMessage-btn">Enviar mensaje</button>
 
             </div>
           </div>
-            </div>
-             
+        </div>
+
   </main>
   <footer class="footer">
     <div class="footer__contenedor">
-        <div class="footer__seccion">
-            <h3 class="footer__titulo">Redes Sociales</h3>
-                <div class="footer__iconos">
-                    <ul class="list-unstyled social-icons">
-                        <li><a href="#" target="_blank"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
-                        <li class="twitter"><a href="#" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
-                        <li><a href="#" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
-                        <li><a href="#" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
-                      </ul>
-                </div>
+      <div class="footer__seccion">
+        <h3 class="footer__titulo">Redes Sociales</h3>
+        <div class="footer__iconos">
+          <ul class="list-unstyled social-icons">
+            <li><a href="#" target="_blank"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
+            <li class="twitter"><a href="#" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+            <li><a href="#" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="#" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+          </ul>
         </div>
-       
-        <div class="footer__seccion">
-            <h3 class="footer__titulo">Contacto</h3>
-            <p class="footer__texto"><i class="fas fa-phone"></i> +34 634 567 890</p>
-            <p class="footer__texto"><i class="fas fa-envelope"></i> info@quintessence.com</p>
-        </div>
-        <div class="footer__seccion">
-            <h3 class="footer__titulo">Dirección</h3>
-            <p class="footer__texto"><i class="fas fa-map-marker-alt"></i> 123 Calle Principal, Ciudad, País</p>
-        </div>
+      </div>
+
+      <div class="footer__seccion">
+        <h3 class="footer__titulo">Contacto</h3>
+        <p class="footer__texto"><i class="fas fa-phone"></i> +34 634 567 890</p>
+        <p class="footer__texto"><i class="fas fa-envelope"></i> info@quintessence.com</p>
+      </div>
+      <div class="footer__seccion">
+        <h3 class="footer__titulo">Dirección</h3>
+        <p class="footer__texto"><i class="fas fa-map-marker-alt"></i> 123 Calle Principal, Ciudad, País</p>
+      </div>
     </div>
     <p class="footer__derechos" data-translate="derechos">Todos los derechos Reservados © 2025</p>
-</footer>
+  </footer>
 
-<button class="scroll-top-btn" id="scrollTopBtn">
-  <i class="fas fa-chevron-up"></i>
-</button>
-<script src="../js/flecha.js"></script>
-<script src="../js/script.js"></script>
+  <button class="scroll-top-btn" id="scrollTopBtn">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+  <script src="../js/flecha.js"></script>
+  <script src="../js/script.js"></script>
 </body>
+
 </html>

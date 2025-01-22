@@ -623,8 +623,9 @@ document.addEventListener('DOMContentLoaded', function() {
       }));
   }
 
-  const producto = JSON.parse(localStorage.getItem('productos')).productos;
+  const productos = JSON.parse(localStorage.getItem('productos')).productos;
   let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
   const contenedorProductos = document.getElementById('contenedor-productos');
   const cartItems = document.getElementById('cartItems');
   const totalPrice = document.getElementById('totalPrice');
@@ -661,6 +662,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function actualizarCarrito() {
       cartItems.innerHTML = '';
+
       carrito.forEach(producto => {
           const li = document.createElement('li');
           li.textContent = `${producto.titulo} x${producto.cantidad} - ${producto.subtotal.toFixed(2)}€`;
@@ -669,6 +671,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       const total = carrito.reduce((sum, item) => sum + item.subtotal, 0);
       totalPrice.textContent = `${total.toFixed(2)}€`;
+      
       localStorage.setItem('carrito', JSON.stringify(carrito));
   }
 

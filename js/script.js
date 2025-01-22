@@ -228,32 +228,34 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+
+
 // SCRIPT LOGIN //
 const userInfo = document.getElementById("user-info");
 const usernameButton = document.getElementById("username-button");
-const loginButton = document.getElementById("loginButton");
-const loginPopup = document.getElementById("loginPopup");
-const closePopup = document.getElementById("loginClose");
-const ojito = document.getElementById("ojito");
-const imagen = document.getElementById("imagen");
-const password = document.getElementById("password");
+const loginButton = document.getElementById('loginButton');
+const loginPopup = document.getElementById('loginPopup');
+const closePopup = document.getElementById('loginClose');
+const ojito = document.getElementById('ojito');
+const imagen = document.getElementById('imagen');
+const password = document.getElementById('password');
 
-loginButton.addEventListener("click", () => {
-  loginPopup.style.display = "block";
+loginButton.addEventListener('click', () => {
+    loginPopup.style.display = 'block';
 });
 
 closePopup.addEventListener("click", () => {
   loginPopup.style.display = "none";
 });
 
-ojito.addEventListener("click", function () {
-  if (password.type === "password") {
-    password.type = "text";
-    imagen.src = "../fonts/Imagenes/ojoAbierto1.jpg";
-  } else {
-    password.type = "password";
-    imagen.src = "../fonts/Imagenes/ojoCerrado1.jpg";
-  }
+ojito.addEventListener('click', function() {
+    if (password.type === "password") {
+        password.type = "text";
+        imagen.src = "../fonts/Imagenes/ojoAbierto1.jpg";
+    } else {
+        password.type = "password";
+        imagen.src = "../fonts/Imagenes/ojoCerrado1.jpg";
+    }
 });
 
 //aqui manejamos el evento del formulario del login, guardamos el user y el password en el localstorage
@@ -261,18 +263,29 @@ document.addEventListener("DOMContentLoaded", () => {
   const loginForm = document.getElementById("loginForm");
   if (loginForm) {
     loginForm.addEventListener("submit", function (event) {
+      
       const username = document.getElementById("username").value;
       const passwordValue = document.getElementById("password").value;
-
+ //recogemos los datos puestos en el form del login, esto es lo que enviaremos al localStorage
       const userData = {
         username: username,
         password: passwordValue,
       };
-
+   // Comprobamos si el usuario es el administrador
+      if (username === "nahia" && passwordValue === "Nahia") {
+          userData.isAdmin = true;  // Marcar al usuario como administrador
+      }
+   
+  //guardamos el userData dentro del localStorage
       localStorage.setItem("userData", JSON.stringify(userData));
-
-      // Redirigir a la página de usuario
-      window.location.href = "usuario.html";
+//si el login es admin redirigir a la pagina respectiva
+      if (userData.isAdmin) {
+        window.location.href = "administrador.html";  // Redirigir a la página de administrador
+      }
+      else {
+        // Si no es admin, redirigir a la página de usuario
+        window.location.href = "usuario.html";  // Redirigir a la página de usuario
+      }
     });
   }
 
@@ -282,10 +295,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const usernameButton = document.getElementById("usernameButton");
   const userInfo = document.getElementById("userInfo");
 
+  //Obtiene los datos guardados como una cadena JSON y los guarda en una variable
   const userData = JSON.parse(localStorage.getItem("userData"));
 
+ //Se comprueba si existe el objeto userData y si tiene una propiedad username. Esto indica que el usuario está logeado y tiene un nombre de usuario registrado.
   if (userData && userData.username) {
-    // Si el usuario está logueado, mostrar el nombre de usuario
+    // Si el usuario está logueado, muestra el nombre de usuario y quita el icon de login.
     if (loginButton && userInfo && usernameButton) {
       loginButton.style.display = "none";
       userInfo.style.display = "block";
@@ -297,14 +312,14 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   } else {
-    // Si no está logueado, mostrar el icono del login
+    // Si no está logeado, mostrar el icono del login
     if (loginButton && userInfo && usernameButton) {
       loginButton.style.display = "block";
       userInfo.style.display = "none";
     }
   }
 
-  // Manejar la carga de datos en usuario.html
+  // Manejar la carga de datos en usuario.html y cambia los valores a los guardados en el localstorage
   if (window.location.pathname.includes("usuario.html")) {
     const usernameDisplay = document.getElementById("username-display");
     const passwordDisplay = document.getElementById("current-password");
@@ -372,30 +387,28 @@ cartButton.addEventListener("click", () => {
   cartPopup.style.display = "block";
 });
 
-cartClose.addEventListener("click", () => {
-  cartPopup.style.display = "none";
+cartClose.addEventListener('click', () => {
+    cartPopup.style.display = 'none';
 });
 
-let carrito = [];
-const DOMitems = document.getElementById('contenedor-productos');
-const DOMcarrito = document.getElementById('cartButton');
-const DOMtotal = document.querySelector('#total');
-const DOMbotonVaciar = document.querySelector('#boton-vaciar');
+document.getElementById("increment1").addEventListener("click", () => {
+    counter1Value++;
+    counter1Display.textContent = counter1Value;
+  });
+  
+  document.getElementById("decrement1").addEventListener("click", () => {
+    if (counter1Value > 0) {
+      counter1Value--;
+      counter1Display.textContent = counter1Value;
+    }
+  });
+
+  
 
 
-// document.getElementById("increment1").addEventListener("click", () => {
-//   counter1Value++;
-//   counter1Display.textContent = counter1Value;
-// });
 
-// document.getElementById("decrement1").addEventListener("click", () => {
-//   if (counter1Value > 0) {
-//     counter1Value--;
-//     counter1Display.textContent = counter1Value;
-//   }
-// });
 
-//popup rebajas
+  //popup rebajas
 
 document.addEventListener("DOMContentLoaded", () => {
   const popupRebajas = document.getElementById("popupRebajas");
@@ -410,10 +423,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-//script para la barra de NAVEGACION
-document.addEventListener("DOMContentLoaded", () => {
-  const navegacion = document.querySelector(".navegacion");
-  const header = document.querySelector("header");
+  //script para la barra de NAVEGACION
+  document.addEventListener("DOMContentLoaded", () => {
+    const navegacion = document.querySelector(".navegacion");
+    const header = document.querySelector("header"); 
+
 
   window.addEventListener("scroll", () => {
     if (window.scrollY >= header.offsetHeight) {
@@ -426,7 +440,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-//script para los FILTROS
+//SCRIPT FILTROS
 
 document.addEventListener("DOMContentLoaded", function () {
   const toggleButton = document.querySelector(".filters-tittle");
@@ -470,49 +484,54 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //filtrado por precio
-document.addEventListener("DOMContentLoaded", function () {
-  const priceRange = document.getElementById("price-range");
-  const priceValue = document.getElementById("price-value");
-  const products = document.querySelectorAll(".producto");
-
-  // Actualiza el texto del precio al mover la barra
-  priceRange.addEventListener("input", function () {
-    const selectedPrice = priceRange.value;
-    priceValue.textContent = `${selectedPrice}€`;
-
-    // Filtra los productos
-    products.forEach((product) => {
-      const productPrice = product.getAttribute("data-price");
-      if (productPrice === selectedPrice) {
-        product.style.display = "block"; // Muestra el producto
-      } else {
-        product.style.display = "none"; // Oculta el producto
-      }
+  document.addEventListener("DOMContentLoaded", function () {
+    const priceRange = document.getElementById("price-range");
+    const priceValue = document.getElementById("price-value");
+    const products = document.querySelectorAll(".producto");
+  
+    // Actualiza el texto del precio al mover la barra
+    priceRange.addEventListener("input", function () {
+      const selectedPrice = priceRange.value;
+      priceValue.textContent = `${selectedPrice}€`;
+  
+      // Filtra los productos
+      products.forEach((product) => {
+        const productPrice = product.getAttribute("data-price");
+        if (productPrice === selectedPrice) {
+          product.style.display = "block"; // Muestra el producto
+        } else {
+          product.style.display = "none"; // Oculta el producto
+        }
+      });
     });
   });
-});
 
-//historial de pedidos
 
-document.addEventListener("DOMContentLoaded", () => {
-  const buttons = document.querySelectorAll(".toggle-details");
 
-  buttons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const orderDetails = button
-        .closest(".order")
-        .querySelector(".order-details");
-      orderDetails.classList.toggle("show"); // Alterna la clase 'show'
 
-      // Cambia el texto del botón
-      if (orderDetails.classList.contains("show")) {
-        button.textContent = "Ocultar detalles";
-      } else {
-        button.textContent = "Ver detalles";
-      }
+  //historial de pedidos
+
+ document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.toggle-details');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const orderDetails = button.closest('.order').querySelector('.order-details');
+        orderDetails.classList.toggle('show'); // Alterna la clase 'show'
+
+        // Cambia el texto del botón
+        if (orderDetails.classList.contains('show')) {
+          button.textContent = 'Ocultar detalles';
+        } else {
+          button.textContent = 'Ver detalles';
+        }
+      });
     });
   });
-});
+
+
+  
+
 
 //Volver arriba inicio
 document.addEventListener("DOMContentLoaded", function () {

@@ -116,7 +116,7 @@
         <h1 class="tituloPrincipal" data-translate="principal">Nuestros Productos</h1>
 
         <div id="contenedor-productos" class="grid">
-            <div class="producto" data-id="producto0">
+            <div class="producto" data-id="producto0" data-category="pendientes" data-price="12">
                 <a href="producto.html?id=producto0" data-nombre="Palmier" data-imagen="../fonts/Imagenes/IMG_20240607_075802.jpg" data-precio="12€">
                     <img class="producto__imagen" id="producto-imagen"  src="../fonts/Imagenes/IMG_20240607_075802.jpg" alt="imagen ">
                             </a>
@@ -152,7 +152,7 @@
                     </a>
 
                     <div class="producto__informacion">
-                        <p class="producto__nombre">Cuore</p>
+                        <p class="producto__nombre" data-translate="cuore">Cuore</p>
                         <p class="producto_contenido"></p>
                         <p class="producto__precio" id="producto-precio">8€</p>
                         
@@ -160,12 +160,12 @@
 
                             <select class="producto_color">
                                 <option disabled selected>-- Seleccionar Color --</option>
-                                <option>Flores</option>
-                                <option>Purpurina</option>
-                                <option>Color</option>
+                                <option data-translate="flores">Flores</option>
+                                <option data-translate="purpina">Purpurina</option>
+                                <option data-translate="color">Color</option>
                             </select>
-                            <input class="producto_cantidad" type="number" placeholder="Cantidad" min="1">
-                            <input class="producto_submit" type="submit" value="Agregar al Carrito"> 
+                            <input class="producto_cantidad" type="number" placeholder="Cantidad" min="1" data-translate="cantidad">
+                            <input class="producto_submit" type="submit" value="Agregar al Carrito" data-translate="carrito"> 
 
                         </div>
                     </div>
@@ -177,7 +177,7 @@
                     <img class="producto__imagen" id="producto-imagen"  src="../fonts/Imagenes/IMG_20240623_111432.jpg" alt="imagen ">
                             </a>
                     <div class="producto__informacion">
-                        <p class="producto__nombre">Medusa</p>
+                        <p class="producto__nombre" data-translate="medusa">Medusa</p>
                         <p class="producto_contenido"></p>
                         <p class="producto__precio" id="producto-precio">12€</p>
                         
@@ -185,10 +185,10 @@
 
                             <select class="producto_color">
                                 <option disabled selected>-- Seleccionar Color --</option>
-                                <option>Color único</option>
+                                <option data-translate="colorUnico">Color único</option>
                             </select>
-                            <input class="producto_cantidad" type="number" placeholder="Cantidad" min="1">
-                            <input class="producto_submit" type="submit" value="Agregar al Carrito"> 
+                            <input class="producto_cantidad" type="number" placeholder="Cantidad" min="1" data-translate="cantidad">
+                            <input class="producto_submit" type="submit" value="Agregar al Carrito" data-translate="carrito"> 
 
                         </div>
                     </div>
@@ -200,7 +200,7 @@
                     <img class="producto__imagen" id="producto-imagen"  src="../fonts/Imagenes/IMG_20240716_120551.jpg" alt="imagen ">
                             </a>
                     <div class="producto__informacion">
-                        <p class="producto__nombre">Pulsera Flor</p>
+                        <p class="producto__nombre" data-translate="pulseraFlor">Pulsera Flor</p>
                         <p class="producto_contenido"></p>
                         <p class="producto__precio" id="producto-precio">6€</p>
                         
@@ -208,16 +208,17 @@
 
                             <select class="producto_color">
                                 <option disabled selected>-- Seleccionar Color --</option>
-                                <option>Rosa</option>
-                                <option>Rojo</option>
-                                <option>Azul</option>
-                                <option>Verde</option>
-                                <option>Amarillo</option>
-                                <option>Negro</option>
-                                <option>Beige</option>
+                                <option data-translate="rosa">Rosa</option>
+                                <option data-translate="rojo">Rojo</option>
+                                <option data-translate="azul">Azul</option>
+                                <option data-translate="verde">Verde</option>
+                                <option data-translate="amarillo">Amarillo</option>
+                                <option data-translate="negro">Negro</option>
+                                <option data-translate="beige">Beige</option>
+
                             </select>
-                            <input class="producto_cantidad" type="number" placeholder="Cantidad" min="1">
-                            <input class="producto_submit" type="submit" value="Agregar al Carrito"> 
+                            <input class="producto_cantidad" type="number" placeholder="Cantidad" min="1" data-translate="cantidad">
+                            <input class="producto_submit" type="submit" value="Agregar al Carrito" data-translate="carrito"> 
 
                         </div>
                     </div>
@@ -230,7 +231,7 @@
                     <img class="producto__imagen" src="../fonts/Imagenes/IMG_20240731_070046.jpg" alt="imagen ">
                 </a>
                     <div class="producto__informacion">
-                        <p class="producto__nombre">Baldosa Bilbao</p>
+                        <p class="producto__nombre" data-translate="baldosaBilbao">Baldosa Bilbao</p>
                         <p class="producto_contenido"></p>
                         <p class="producto__precio" id="producto-precio">10€</p>
                         
@@ -238,17 +239,17 @@
 
                             <select class="producto_color">
                                 <option disabled selected>-- Seleccionar Color --</option>
-                                <option>Azul marino</option>
-                                <option>Rojo</option>
-                                <option>Azul cielo</option>
-                                <option>Verde</option>
-                                <option>Amarillo</option>
-                                <option>Negro</option>
-                                <option>Beige</option>
-                                <option>Otro</option> 
+                                <option data-translate="azulMarino">Azul marino</option>
+                                <option data-translate="rojo">Rojo</option>
+                                <option data-translate="azulCielo">Azul cielo</option>
+                                <option data-translate="verde">Verde</option>
+                                <option data-translate="amarillo">Amarillo</option>
+                                <option data-translate="negro">Negro</option>
+                                <option data-translate="beige">Beige</option>
+                                <option data-translate="otro">Otro</option>                                
                             </select>
-                            <input class="producto_cantidad" type="number" placeholder="Cantidad" min="1">
-                            <input class="producto_submit" type="submit" value="Agregar al Carrito"> 
+                            <input class="producto_cantidad" type="number" placeholder="Cantidad" min="1" data-translate="cantidad">
+                            <input class="producto_submit" type="submit" value="Agregar al Carrito" data-translate="carrito"> 
 
                         </div>
                     </div>
@@ -260,25 +261,25 @@
                     <img class="producto__imagen" id="producto-imagen"  src="../fonts/Imagenes/IMG_20240716_120628.jpg" alt="imagen ">
                             </a>
                     <div class="producto__informacion">
-                        <p class="producto__nombre">Pulsera Tusi</p>
+                        <p class="producto__nombre" data-translate="pulseraTusi">Pulsera Tusi</p>
                         <p class="producto_contenido"></p>
                         <p class="producto__precio" id="producto-precio">6€</p>
                         
                         <div class="producto_inputs">
 
                             <select class="producto_color">
-                                <option disabled selected>-- Seleccionar Color --</option>
-                                <option>Amarillo</option>
-                                <option>Rojo</option>
-                                <option>Azul</option>
-                                <option>Verde</option>
-                                <option>Negro</option>
-                                <option>Beige</option>
-                                <option>Mismo color</option> 
-                                <option>Color combinado</option> 
+                                <option disabled selected >-- Seleccionar Color --</option>
+                                <option data-translate="amarillo">Amarillo</option>
+                                <option data-translate="rojo">Rojo</option>
+                                <option data-translate="azul">Azul</option>
+                                <option data-translate="verde">Verde</option>
+                                <option data-translate="negro">Negro</option>
+                                <option data-translate="beige">Beige</option>
+                                <option data-translate="mismoColor">Mismo color</option> 
+                                <option data-translate="colorCombinado">Color combinado</option> 
                             </select>
-                            <input class="producto_cantidad" type="number" placeholder="Cantidad" min="1">
-                            <input class="producto_submit" type="submit" value="Agregar al Carrito"> 
+                            <input class="producto_cantidad" type="number" placeholder="Cantidad" min="1" data-translate="cantidad">
+                            <input class="producto_submit" type="submit" value="Agregar al Carrito" data-translate="carrito"> 
 
                         </div>
                     </div>
@@ -290,24 +291,24 @@
                     <img class="producto__imagen" id="producto-imagen"  src="../fonts/Imagenes/IMG_20240629_184726.jpg" alt="imagen ">
                             </a>
                     <div class="producto__informacion">
-                        <p class="producto__nombre">Collar Tusi perlas</p>
+                        <p class="producto__nombre" data-translate="collarTusiPerlas">Collar Tusi perlas</p>
                         <p class="producto_contenido"></p>
                         <p class="producto__precio" id="producto-precio">12€</p>
                         
                         <div class="producto_inputs">
 
                             <select class="producto_color">
-                                <option disabled selected>-- Seleccionar Color --</option>
-                                <option>Amarillo</option>
-                                <option>Rojo</option>
-                                <option>Azul</option>
-                                <option>Verde</option>
-                                <option>Negro</option>
-                                <option>Beige</option>
-                                <option>Purpurina</option> 
+                                <option disabled selected data-translate="seleccionarColor" >-- Seleccionar Color --</option>
+                                <option data-translate="amarillo">Amarillo</option>
+                                <option data-translate="rojo">Rojo</option>
+                                <option data-translate="azul">Azul</option>
+                                <option data-translate="verde">Verde</option>
+                                <option data-translate="negro">Negro</option>
+                                <option data-translate="beige">Beige</option>
+                                <option data-translate="purpina">Purpurina</option> 
                             </select>
-                            <input class="producto_cantidad" type="number" placeholder="Cantidad" min="1">
-                            <input class="producto_submit" type="submit" value="Agregar al Carrito"> 
+                            <input class="producto_cantidad" type="number" placeholder="Cantidad" min="1" data-translate="cantidad">
+                            <input class="producto_submit" type="submit" value="Agregar al Carrito" data-translate="carrito"> 
 
                         </div>
                     </div>
@@ -319,19 +320,19 @@
                     <img class="producto__imagen" id="producto-imagen"  src="../fonts/Imagenes/IMG_20240629_185313.jpg" alt="imagen ">
                             </a>
                     <div class="producto__informacion">
-                        <p class="producto__nombre">Collar corazón</p>
+                        <p class="producto__nombre" data-translate="collarCorazon">Collar corazón</p>
                         <p class="producto_contenido"></p>
                         <p class="producto__precio" id="producto-precio">10€</p>
                         
                         <div class="producto_inputs">
 
                             <select class="producto_color">
-                                <option disabled selected>-- Seleccionar Color --</option>
-                                <option>Color único</option>
-                                <option>Multicolor</option>
+                                <option disabled selected data-translate="seleccionarColor">-- Seleccionar Color --</option>
+                                <option data-translate="colorUnico">Color único</option>
+                                <option data-translate="Multicolor">Multicolor</option>
                             </select>
-                            <input class="producto_cantidad" type="number" placeholder="Cantidad" min="1">
-                            <input class="producto_submit" type="submit" value="Agregar al Carrito"> 
+                            <input class="producto_cantidad" type="number" placeholder="Cantidad" min="1" data-translate="cantidad">
+                            <input class="producto_submit" type="submit" value="Agregar al Carrito" data-translate="carrito"> 
 
                         </div>
                     </div>
@@ -343,19 +344,19 @@
                     <img class="producto__imagen" id="producto-imagen"  src="../fonts/Imagenes/IMG_20240629_185849.jpg" alt="imagen ">
                             </a>
                     <div class="producto__informacion">
-                        <p class="producto__nombre">Collar Ositos Gummy</p>
+                        <p class="producto__nombre" data-translate="collarOsitosGummy">Collar Ositos Gummy</p>
                         <p class="producto_contenido"></p>
                         <p class="producto__precio" id="producto-precio">10€</p>
                         
                         <div class="producto_inputs">
 
                             <select class="producto_color">
-                                <option disabled selected>-- Seleccionar Color --</option>
-                                <option>Color único</option>
-                                <option>Multicolor</option>
+                                <option disabled selected data-translate="seleccionarColor">-- Seleccionar Color --</option>
+                                <option data-translate="colorUnico">Color único</option>
+                                <option data-translate="Multicolor">Multicolor</option>
                             </select>
-                            <input class="producto_cantidad" type="number" placeholder="Cantidad" min="1">
-                            <input class="producto_submit" type="submit" value="Agregar al Carrito"> 
+                            <input class="producto_cantidad" type="number" placeholder="Cantidad" min="1" data-translate="cantidad">
+                            <input class="producto_submit" type="submit" value="Agregar al Carrito" data-translate="carrito"> 
 
                         </div>
                     </div>
@@ -367,18 +368,18 @@
                     <img class="producto__imagen" id="producto-imagen"  src="../fonts/Imagenes/IMG_20240629_185946.jpg" alt="imagen ">
                             </a>
                     <div class="producto__informacion">
-                        <p class="producto__nombre">Collar Ositos Gummy</p>
+                        <p class="producto__nombre" data-translate="collarOsitosGummy">Collar Ositos Gummy</p>
                         <p class="producto_contenido"></p>
                         <p class="producto__precio" id="producto-precio">10€</p>
                         
                         <div class="producto_inputs">
 
                             <select class="producto_color">
-                                <option disabled selected>-- Seleccionar Color --</option>
-                                <option>Color + purpurina</option>
+                                <option disabled selected data-translate="seleccionarColor">-- Seleccionar Color --</option>
+                                <option data-translate="Color+purpia">Color + purpurina</option>
                             </select>
-                            <input class="producto_cantidad" type="number" placeholder="Cantidad" min="1">
-                            <input class="producto_submit" type="submit" value="Agregar al Carrito"> 
+                            <input class="producto_cantidad" type="number" placeholder="Cantidad" min="1" data-translate="cantidad">
+                            <input class="producto_submit" type="submit" value="Agregar al Carrito" data-translate="carrito"> 
 
                         </div>
                     </div>
@@ -390,22 +391,22 @@
                     <img class="producto__imagen" id="producto-imagen"  src="../fonts/Imagenes/IMG_20240629_190319.jpg" alt="imagen ">
                             </a>
                     <div class="producto__informacion">
-                        <p class="producto__nombre">Collar conchas</p>
+                        <p class="producto__nombre" data-translate="collarConchas">Collar conchas</p>
                         <p class="producto_contenido"></p>
                         <p class="producto__precio" id="producto-precio">10€</p>
                         
                         <div class="producto_inputs">
 
                             <select class="producto_color">
-                                <option disabled selected>-- Seleccionar Color --</option>
-                                <option>Dorado</option>
-                                <option>Plateado</option>
-                                <option>Purpurina</option>
-                                <option>Color único</option>
-                                <option>Multicolor</option>
+                                <option disabled selected data-translate="seleccionarColor">-- Seleccionar Color --</option>
+                                <option data-translate="dorado">Dorado</option>
+                                <option data-translate="plateado">Plateado</option>
+                                <option data-translate="purpina">Purpurina</option>
+                                <option data-translate="colorUnico">Color único</option>
+                                <option data-translate="Multicolor">Multicolor</option>
                             </select>
-                            <input class="producto_cantidad" type="number" placeholder="Cantidad" min="1">
-                            <input class="producto_submit" type="submit" value="Agregar al Carrito"> 
+                            <input class="producto_cantidad" type="number" placeholder="Cantidad" min="1" data-translate="cantidad">
+                            <input class="producto_submit" type="submit" value="Agregar al Carrito" data-translate="carrito"> 
 
                         </div>
                     </div>
@@ -417,23 +418,23 @@
                     <img class="producto__imagen" id="producto-imagen"  src="../fonts/Imagenes/IMG_20240702_170022.jpg" alt="imagen ">
                             </a>
                     <div class="producto__informacion">
-                        <p class="producto__nombre">Cascada Color</p>
+                        <p class="producto__nombre" data-translate="cascadaColor">Cascada Color</p>
                         <p class="producto_contenido"></p>
                         <p class="producto__precio" id="producto-precio">8€</p>
                         
                         <div class="producto_inputs">
 
                             <select class="producto_color">
-                                <option disabled selected>-- Seleccionar Color --</option>
-                                <option>Azules</option>
-                                <option>Verdes</option>
-                                <option>Morados</option>
-                                <option>Rosas</option>
-                                <option>Naranjas</option>
-                                <option>Multicolor</option>
+                                <option disabled selected data-translate="seleccionarColor">-- Seleccionar Color --</option>
+                                <option data-translate="azul">Azules</option>
+                                <option data-translate="verde">Verdes</option>
+                                <option data-translate="morado">Morados</option>
+                                <option data-translate="rosa">Rosas</option>
+                                <option data-translate="naranja">Naranjas</option>
+                                <option data-translate="Multicolor">Multicolor</option>
                             </select>
-                            <input class="producto_cantidad" type="number" placeholder="Cantidad" min="1">
-                            <input class="producto_submit" type="submit" value="Agregar al Carrito"> 
+                            <input class="producto_cantidad" type="number" placeholder="Cantidad" min="1" data-translate="cantidad">
+                            <input class="producto_submit" type="submit" value="Agregar al Carrito" data-translate="carrito"> 
 
                         </div>
                     </div>
@@ -445,24 +446,24 @@
                     <img class="producto__imagen" id="producto-imagen"  src="../fonts/Imagenes/IMG_20240702_175641.jpg" alt="imagen ">
                             </a>
                     <div class="producto__informacion">
-                        <p class="producto__nombre">Pompero</p>
+                        <p class="producto__nombre" data-translate="Pompero">Pompero</p>
                         <p class="producto_contenido"></p>
                         <p class="producto__precio" id="producto-precio">12€</p>
                         
                         <div class="producto_inputs">
 
                             <select class="producto_color">
-                                <option disabled selected>-- Seleccionar Color --</option>
-                                <option>Naranja</option>
-                                <option>Morado</option>
-                                <option>Azul</option>
-                                <option>Rosa</option>
-                                <option>Verde</option>
-                                <option>Negro</option>
-                                <option>Blanco</option>
+                                <option disabled selected data-translate="seleccionarColor">-- Seleccionar Color --</option>
+                                <option data-translate="naranja">Naranja</option>
+                                <option data-translate="morado">Morado</option>
+                                <option data-translate="azul">Azul</option>
+                                <option data-translate="rosa">Rosa</option>
+                                <option data-translate="verde">Verde</option>
+                                <option data-translate="negro">Negro</option>
+                                <option data-translate="blanco">Blanco</option>
                             </select>
-                            <input class="producto_cantidad" type="number" placeholder="Cantidad" min="1">
-                            <input class="producto_submit" type="submit" value="Agregar al Carrito"> 
+                            <input class="producto_cantidad" type="number" placeholder="Cantidad" min="1" data-translate="cantidad">
+                            <input class="producto_submit" type="submit" value="Agregar al Carrito" data-translate="carrito"> 
 
                         </div>
                     </div>
@@ -474,24 +475,24 @@
                     <img class="producto__imagen" id="producto-imagen"  src="../fonts/Imagenes/IMG_20240703_171528.jpg" alt="imagen ">
                             </a>
                     <div class="producto__informacion">
-                        <p class="producto__nombre">Abanico</p>
+                        <p class="producto__nombre" data-translate="abanico">Abanico</p>
                         <p class="producto_contenido"></p>
                         <p class="producto__precio" id="producto-precio">8€</p>
                         
                         <div class="producto_inputs">
 
                             <select class="producto_color">
-                                <option disabled selected>-- Seleccionar Color --</option>
-                                <option>Turquesa</option>
-                                <option>Morado</option>
-                                <option>Azul eléctrico</option>
-                                <option>Rosa fucsia</option>
-                                <option>Verde</option>
-                                <option>Arena</option>
-                                <option>Blanco roto</option>
+                                <option disabled selected data-translate="seleccionarColor">-- Seleccionar Color --</option>
+                                <option data-translate="Turquesa">Turquesa</option>
+                                <option data-translate="morado">Morado</option>
+                                <option data-color="azul_electrico" data-translate="azul_electrico">Azul eléctrico</option>
+                                <option data-color="rosa_fucsia" data-translate="rosa_fucsia">Rosa fucsia</option>                                
+                                <option data-translate="verde">Verde</option>
+                                <option data-translate="arena">Arena</option>
+                                <option data-translate="blancoRoto">Blanco roto</option>
                             </select>
-                            <input class="producto_cantidad" type="number" placeholder="Cantidad" min="1">
-                            <input class="producto_submit" type="submit" value="Agregar al Carrito"> 
+                            <input class="producto_cantidad" type="number" placeholder="Cantidad" min="1" data-translate="cantidad">
+                            <input class="producto_submit" type="submit" value="Agregar al Carrito" data-translate="carrito"> 
 
                         </div>
                     </div>
@@ -503,20 +504,20 @@
                     <img class="producto__imagen" id="producto-imagen"  src="../fonts/Imagenes/IMG_20240703_195749.jpg" alt="imagen ">
                             </a>
                     <div class="producto__informacion">
-                        <p class="producto__nombre">Collar Perrito Globo</p>
+                        <p class="producto__nombre" data-translate="collar_perrito_globo">Collar Perrito Globo</p>
                         <p class="producto_contenido"></p>
                         <p class="producto__precio" id="producto-precio">8€</p>
                         
                         <div class="producto_inputs">
 
                             <select class="producto_color">
-                                <option disabled selected>-- Seleccionar Color --</option>
-                                <option>Purpurina</option>
-                                <option>Color único</option>
-                                <option>Multicolor</option>
+                                <option disabled selected data-translate="seleccionarColor">-- Seleccionar Color --</option>
+                                <option data-translate="purpina">Purpurina</option>
+                                <option data-translate="colorUnico">Color único</option>
+                                <option data-translate="Multicolor">Multicolor</option>
                             </select>
-                            <input class="producto_cantidad" type="number" placeholder="Cantidad" min="1">
-                            <input class="producto_submit" type="submit" value="Agregar al Carrito"> 
+                            <input class="producto_cantidad" type="number" placeholder="Cantidad" min="1" data-translate="cantidad">
+                            <input class="producto_submit" type="submit" value="Agregar al Carrito" data-translate="carrito"> 
 
                         </div>
                     </div>
@@ -528,22 +529,22 @@
                     <img class="producto__imagen" id="producto-imagen"  src="../fonts/Imagenes/IMG_20240703_201531.jpg" alt="imagen ">
                             </a>
                     <div class="producto__informacion">
-                        <p class="producto__nombre">Tulip</p>
+                        <p class="producto__nombre" data-translate="tulip">Tulip</p>
                         <p class="producto_contenido"></p>
                         <p class="producto__precio" id="producto-precio">6€</p>
                         
                         <div class="producto_inputs">
 
                             <select class="producto_color">
-                                <option disabled selected>-- Seleccionar Color --</option>
-                                <option>Negro</option>
-                                <option>Blanco</option>
-                                <option>Azul</option>
-                                <option>Morado</option>
-                                <option>Rosa</option>
+                                <option disabled selected data-translate="seleccionarColor">-- Seleccionar Color --</option>
+                                <option data-translate="negro">Negro</option>
+                                <option data-translate="blanco">Blanco</option>
+                                <option data-translate="azul">Azul</option>
+                                <option data-translate="morado">Morado</option>
+                                <option data-translate="rosa">Rosa</option>
                             </select>
-                            <input class="producto_cantidad" type="number" placeholder="Cantidad" min="1">
-                            <input class="producto_submit" type="submit" value="Agregar al Carrito"> 
+                            <input class="producto_cantidad" type="number" placeholder="Cantidad" min="1" data-translate="cantidad">
+                            <input class="producto_submit" type="submit" value="Agregar al Carrito" data-translate="carrito"> 
 
                         </div>
                     </div>
@@ -555,7 +556,7 @@
                     <img class="producto__imagen" id="producto-imagen"  src="../fonts/Imagenes/IMG_20240707_111448.jpg" alt="imagen ">
                             </a>
                     <div class="producto__informacion">
-                        <p class="producto__nombre">Tesoro</p>
+                        <p class="producto__nombre" data-translate="tesoro">Tesoro</p>
                         <p class="producto_contenido"></p>
                         <p class="producto__precio" id="producto-precio">10€</p>
                         
@@ -563,16 +564,16 @@
 
                             <select class="producto_color">
                                 <option disabled selected>-- Seleccionar Color --</option>
-                                <option>Amarillo</option>
-                                <option>Naranaja</option>
-                                <option>Azul</option>
-                                <option>Morado</option>
-                                <option>Rosa</option>
-                                <option>Purpurina</option>
-                                <option>Dos colores</option>
+                                <option data-translate="amarillo">Amarillo</option>
+                                <option data-translate="naranja">Naranaja</option>
+                                <option data-translate="azul">Azul</option>
+                                <option data-translate="morado">Morado</option>
+                                <option data-translate="rosa">Rosa</option>
+                                <option data-translate="purpina">Purpurina</option>
+                                <option data-translate="dosColores">Dos colores</option>
                             </select>
-                            <input class="producto_cantidad" type="number" placeholder="Cantidad" min="1">
-                            <input class="producto_submit" type="submit" value="Agregar al Carrito"> 
+                            <input class="producto_cantidad" type="number" placeholder="Cantidad" min="1" data-translate="cantidad">
+                            <input class="producto_submit" type="submit" value="Agregar al Carrito" data-translate="carrito"> 
 
                         </div>
                     </div>
@@ -584,18 +585,18 @@
                     <img class="producto__imagen" id="producto-imagen"  src="../fonts/Imagenes/IMG_20240815_104044.jpg" alt="imagen ">
                             </a>
                     <div class="producto__informacion">
-                        <p class="producto__nombre">Rouge</p>
+                        <p class="producto__nombre" data-translate="rojo">Rouge</p>
                         <p class="producto_contenido"></p>
                         <p class="producto__precio" id="producto-precio">12€</p>
                         
                         <div class="producto_inputs">
 
                             <select class="producto_color">
-                                <option disabled selected>-- Seleccionar Color --</option>
-                                <option>Color único</option>
+                                <option disabled selected data-translate="seleccionarColor">-- Seleccionar Color --</option>
+                                <option data-translate="colorUnico">Color único</option>
                             </select>
-                            <input class="producto_cantidad" type="number" placeholder="Cantidad" min="1">
-                            <input class="producto_submit" type="submit" value="Agregar al Carrito"> 
+                            <input class="producto_cantidad" type="number" placeholder="Cantidad" min="1" data-translate="cantidad">
+                            <input class="producto_submit" type="submit" value="Agregar al Carrito" data-translate="carrito"> 
 
                         </div>
                     </div>

@@ -222,10 +222,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-
+//NAHIA SCRIPT
 // SCRIPT LOGIN //
-const userInfo = document.getElementById("user-info");
-const usernameButton = document.getElementById("username-button");
 const loginButton = document.getElementById('loginButton');
 const loginPopup = document.getElementById('loginPopup');
 const closePopup = document.getElementById('loginClose');
@@ -233,6 +231,7 @@ const ojito = document.getElementById('ojito');
 const imagen = document.getElementById('imagen');
 const password = document.getElementById('password');
 
+//aqui comenzamos a manejar el evento del popup del login
 loginButton.addEventListener('click', () => {
     loginPopup.style.display = 'block';
 });
@@ -241,7 +240,10 @@ closePopup.addEventListener('click', () => {
     loginPopup.style.display = 'none';
 });
 
-ojito.addEventListener('click', function() {
+//esto es para el evento del ojo y el propio password, para que se pueda ver la contraseña
+ojito.addEventListener('click', function(event) {
+  //evita que el boton de ojo se comporte por defecto como un envio de formulario
+  event.preventDefault(); 
     if (password.type === "password") {
         password.type = "text";
         imagen.src = "../fonts/Imagenes/ojoAbierto1.jpg";
@@ -256,19 +258,31 @@ document.addEventListener("DOMContentLoaded", () => {
   const loginForm = document.getElementById("loginForm");
   if (loginForm) {
     loginForm.addEventListener("submit", function (event) {
-      
+      // esto evita que el formulario se envíe de forma predeterminada
+      event.preventDefault();
+
       const username = document.getElementById("username").value;
       const passwordValue = document.getElementById("password").value;
-
+ //recogemos los datos puestos en el form del login, esto es lo que enviaremos al localStorage
       const userData = {
         username: username,
         password: passwordValue,
       };
-
+   // Comprobamos si el usuario es el administrador
+      if (username === "nahia" && passwordValue === "Nahia") {
+          userData.isAdmin = true;  // Marcar al usuario como administrador
+      }
+   
+  //guardamos el userData dentro del localStorage
       localStorage.setItem("userData", JSON.stringify(userData));
-
-      // Redirigir a la página de usuario
-      window.location.href = "usuario.html";
+//si el login es admin redirigir a la pagina respectiva
+      if (userData.isAdmin) {
+        window.location.href = "administrador.html";  // Redirigir a la página de administrador
+      }
+      else {
+        // Si no es admin, redirigir a la página de usuario
+        window.location.href = "usuario.html";  // Redirigir a la página de usuario
+      }
     });
   }
 
@@ -278,10 +292,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const usernameButton = document.getElementById("usernameButton");
   const userInfo = document.getElementById("userInfo");
 
+  //Obtiene los datos guardados como una cadena JSON y los guarda en una variable
   const userData = JSON.parse(localStorage.getItem("userData"));
 
+ //Se comprueba si existe el objeto userData y si tiene una propiedad username. Esto indica que el usuario está logeado y tiene un nombre de usuario registrado.
   if (userData && userData.username) {
-    // Si el usuario está logueado, mostrar el nombre de usuario
+    // Si el usuario está logueado, muestra el nombre de usuario y quita el icon de login.
     if (loginButton && userInfo && usernameButton) {
       loginButton.style.display = "none";
       userInfo.style.display = "block";
@@ -293,14 +309,14 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   } else {
-    // Si no está logueado, mostrar el icono del login
+    // Si no está logeado, mostrar el icono del login
     if (loginButton && userInfo && usernameButton) {
       loginButton.style.display = "block";
       userInfo.style.display = "none";
     }
   }
 
-  // Manejar la carga de datos en usuario.html
+  // Manejar la carga de datos en usuario.html y cambia los valores a los guardados en el localstorage
   if (window.location.pathname.includes("usuario.html")) {
     const usernameDisplay = document.getElementById("username-display");
     const passwordDisplay = document.getElementById("current-password");
@@ -380,11 +396,7 @@ document.getElementById("increment1").addEventListener("click", () => {
   });
 
   
-
-
-
-
-  //popup rebajas
+  //SCRIPT POPUP REBAJAS
 
   document.addEventListener("DOMContentLoaded", () => {
     const popupRebajas = document.getElementById("popupRebajas");
@@ -399,7 +411,7 @@ document.getElementById("increment1").addEventListener("click", () => {
     });
 });
 
-  //script para la barra de NAVEGACION
+  //SCRIPT NAVEGACION
   document.addEventListener("DOMContentLoaded", () => {
     const navegacion = document.querySelector(".navegacion");
     const header = document.querySelector("header"); 
@@ -416,7 +428,7 @@ document.getElementById("increment1").addEventListener("click", () => {
     });
 });
 
-//script para los FILTROS
+//SCRIPT FILTROS
 
 document.addEventListener("DOMContentLoaded", function () {
     const toggleButton = document.querySelector(".filters-tittle");
@@ -479,32 +491,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-
-
-
-  //historial de pedidos
-
- document.addEventListener('DOMContentLoaded', () => {
-    const buttons = document.querySelectorAll('.toggle-details');
-
-    buttons.forEach(button => {
-      button.addEventListener('click', () => {
-        const orderDetails = button.closest('.order').querySelector('.order-details');
-        orderDetails.classList.toggle('show'); // Alterna la clase 'show'
-
-        // Cambia el texto del botón
-        if (orderDetails.classList.contains('show')) {
-          button.textContent = 'Ocultar detalles';
-        } else {
-          button.textContent = 'Ver detalles';
-        }
-      });
-    });
-  });
-
-
-  
-
+//NAHIA SCRIPT FIN
 
 //Volver arriba inicio
 document.addEventListener('DOMContentLoaded', function() {

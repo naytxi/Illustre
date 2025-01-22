@@ -313,6 +313,20 @@ h3 {
     color: var(--secundario);
     cursor: pointer;
   }
+  .user-button {
+    background-color: var(--secundario);
+    color: white;          
+    padding: 10px 15px;       
+    font-size: 20px;          
+    border: none;            
+    border-radius: 5px;       
+    cursor: pointer;   
+    transition: background-color 0.3s ease; 
+}
+
+.user-button:hover {
+    background-color:var(--secundarioOscuro);
+}
 
 /*popup cart*/
 

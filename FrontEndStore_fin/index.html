@@ -75,7 +75,7 @@
         <a class="navegacion__enlace navegacion__enlace--activo" href="index.html" data-translate="store-titulo">Tienda</a>
         <a class="navegacion__enlace " href="contacto.html" data-translate="contacto">Contacto</a>
         <div class="filter_wrapper">
-            <button class="filters-tittle">Filtros</button>
+            <button class="filters-tittle" data-translate="filtros" >Filtros</button>
             <div class="filter_container hidden">
                 <div class="filter-price">
                     <label for="price-range">Precio:</label>
@@ -83,9 +83,9 @@
                     <span id="price-value">8€</span>
                 </div>
                 <div class="filter-category">
-                    <label><input type="checkbox" value="pendientes" class="filter-option"> Pendientes</label>
-                    <label><input type="checkbox" value="collares" class="filter-option"> Collares</label>
-                    <label><input type="checkbox" value="pulseras" class="filter-option"> Pulseras</label>
+                    <label><input type="checkbox" value="pendientes" class="filter-option" data-translate="pendientes"> Pendientes</label>
+                    <label><input type="checkbox" value="collares" class="filter-option" data-translate="collares"> Collares</label>
+                    <label><input type="checkbox" value="pulseras" class="filter-option" data-translate="pulseras"> Pulseras</label>
                 </div>
             </div>
         </div>
@@ -104,9 +104,9 @@
         <div id="popupRebajas" class="popup visible">
             <div class="popup_contenido">
                 <span class="cerrar" id ="rebajasclose">&times;</span>
-                <h2>¡Oferta Especial!</h2>
-                <p>Aprovecha nuestro 3x2 en toda la web.</p>
-                <p>Hasta fin de mes.</p>
+                <h2 data-translate="ofertaEspecial">¡Oferta Especial!</h2>
+                <p data-translate="fraseOferta">Aprovecha nuestro 3x2 en toda los articulos.</p>
+                <p data-translate="promoFin">Hasta fin de mes.</p>
             </div>
         </div>
         
@@ -133,8 +133,8 @@
                                 <option data-translate="purpinaNaranja">Purpurina naranja</option>
                                 <option data-translate="purpinaAmarillo">Purpurina amarillo</option>
                             </select>
-                            <input class="producto_cantidad" type="number" placeholder="Cantidad" min="1">
-                            <input class="producto_submit" type="submit" value="Agregar al Carrito"> 
+                            <input class="producto_cantidad" type="number"  placeholder="Cantidad" min="1" data-translate="cantidad">
+                            <input class="producto_submit" type="submit" value="Agregar al Carrito" data-translate="carrito" > 
 
                         </div>
                     

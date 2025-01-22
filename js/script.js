@@ -28,14 +28,23 @@ function updateDateTime() {
 }
 
 function updateTranslations(selectedLanguage) {
-    for (const key in globalTranslations[selectedLanguage]) {
-        const elements = document.querySelectorAll(`[data-translate="${key}"]`);
-        elements.forEach(element => {
-            element.textContent = globalTranslations[selectedLanguage][key];
-        });
-    }
-    updateDateTime();
+  for (const key in globalTranslations[selectedLanguage]) {
+      const elements = document.querySelectorAll(`[data-translate="${key}"]`);
+      elements.forEach(element => {
+          if (element.tagName === 'INPUT') {
+              if (element.type === 'submit') {
+                  element.value = globalTranslations[selectedLanguage][key];
+              } else {
+                  element.placeholder = globalTranslations[selectedLanguage][key];
+              }
+          } else {
+              element.textContent = globalTranslations[selectedLanguage][key];
+          }
+      });
+  }
+  updateDateTime();
 }
+
 
 loadTranslations().then(() => {
     updateDateTime();

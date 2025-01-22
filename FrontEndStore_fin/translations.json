@@ -1,5 +1,12 @@
 {
-    "es": {
+"es": {
+        "cantidad" : "Cantidad",
+        "carrito": "Agregar al Carrito",
+        "promoFin":"Hasta fin de mes",
+        "fraseOferta":"Aprovecha nuestro 3x2 en toda los articulos",
+        "ofertaEspecial":"Oferta Especial",
+        "pendientes": "pendientes",
+        "filtros": "filtros",
         "palmier": "Palmier",
         "purpinaRosa": "Purpurina rosa",
         "purpinaAzul": "Purpurina azul",
@@ -42,6 +49,13 @@
         "store": "Tienda"
     },
     "en": {
+        "cantidad" : "Quantity",
+        "carrito": "Add to Cart",
+        "promoFin":"Until the end of the month",
+        "fraseOferta":"Take advantage of our 3 for 2 offer on all items",
+        "ofertaEspecial": "Special Offer",
+        "pendientes":"Earrings",
+        "filtros":"Filters",
          "palmier": "palm tree",
         "purpinaRosa": "Pink glitter",
         "purpinaAzul": "Blue glitter",
@@ -83,7 +97,14 @@
         "home": "Home",
         "store": "Store"
     },
-    "fr": { 
+    "fr": {
+        "cantidad" : "Quantité",
+        "carrito":"Ajouter au Panier",
+        "promoFin":"Jusqu'à la fin du mois",
+        "fraseOferta": "Profitez de notre offre 3 pour 2 sur tout les articles",
+        "ofertaEspecial": "Offre Spéciale",
+        "pendientes": "bucles",
+        "filtros": "filtres",
         "palmier": "Palmier",
         "purpinaRosa": "Paillettes roses",
         "purpinaAzul": "Paillettes bleues",
@@ -126,6 +147,13 @@
         "store": "Boutique"
     },
     "eu": {
+        "cantidad" : "Kopurua",
+        "carrito":"Saskira Gehitu",
+        "promoFin": "Hilabete bukaerara arte",
+        "fraseOferta":"Baliatu gure 3x2 eskaintza artikulu guztietan",
+        "ofertaEspecial": "Eskaintza Berezia",
+        "pendientes":"Belarritakoak",
+        "filtros":"Iragazkiak",
         "palmier": "palmondo",
         "purpinaRosa": "Purpurina arrosa",
         "purpinaAzul": "Purpurina urdina",

@@ -58,12 +58,15 @@ La página consta de 3 secciones y 3 subsecciones:
 #### Página principal, Tienda:
 Aqui se encuentran las fotografias de modelo y la sección de productos.
 
+![readmeinicio](https://github.com/user-attachments/assets/e832bf2d-77cb-48aa-8f21-2ae28b82dcd6)
 
 
 
 #### Página producto:
 Seleccionando la imagen de un producto se genera la pagina detalle del mismo.
 
+![readmecatalogo](https://github.com/user-attachments/assets/06cd5272-f4ac-49a4-9489-ace21d5c2581)
+![readmeproducto](https://github.com/user-attachments/assets/40b56806-f3f8-424b-9490-2b6aece05577)
 
 
 
@@ -76,18 +79,21 @@ En esta seccion se realiza una breve presentación del grupo, junto con los bene
 #### Página Contacto:
 En este apartado podemos encontrar los enlaces a diferentes redes, un mapa y un formulario de contacto, esta vez mas extenso.
 
-
+![readmecontacto2](https://github.com/user-attachments/assets/dee151f8-92e6-4146-bcfb-789921f64a50)
 
 
 #### Página usuario:
 Una vez logueado, el usuario podra acceder a su pagina personal al clickar en el boton de su propio nombre.
 
+![readmelogin](https://github.com/user-attachments/assets/697e431c-0546-4a21-af71-63c65a7288c2)
+![readmeusuario2](https://github.com/user-attachments/assets/d41524df-aaa9-469e-96bc-2c4dc5454326)
 
 
 
 #### Página administrador:
 Al igual que el usuario, el administrador podra acceder a su pagina personal al loguearse.
 
+![readmeadmin](https://github.com/user-attachments/assets/028bcc63-1e7f-4423-ac1a-24c1a8e9e661)
 
 
 #### Página Checkout:

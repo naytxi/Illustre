@@ -530,12 +530,11 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 
-  
-
-
 //Volver arriba inicio
 document.addEventListener("DOMContentLoaded", function () {
   const scrollToTopButton = document.getElementById("scrollToTop");
+
+  
 
   // Mostrar/ocultar botón
   window.addEventListener("scroll", function () {

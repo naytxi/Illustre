@@ -250,9 +250,7 @@ closePopup.addEventListener("click", () => {
   loginPopup.style.display = "none";
 });
 
-ojito.addEventListener('click', function(event) {
-  event.preventDefault();
-  
+ojito.addEventListener('click', function() {
     if (password.type === "password") {
         password.type = "text";
         imagen.src = "../fonts/Imagenes/ojoAbierto1.jpg";
@@ -267,8 +265,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const loginForm = document.getElementById("loginForm");
   if (loginForm) {
     loginForm.addEventListener("submit", function (event) {
-      event.preventDefault();
-
+      
       const username = document.getElementById("username").value;
       const passwordValue = document.getElementById("password").value;
  //recogemos los datos puestos en el form del login, esto es lo que enviaremos al localStorage
@@ -396,19 +393,18 @@ cartClose.addEventListener('click', () => {
     cartPopup.style.display = 'none';
 });
 
-document.getElementById("increment1").addEventListener("click", () => {
-    counter1Value++;
-    counter1Display.textContent = counter1Value;
-  });
+// document.getElementById("increment1").addEventListener("click", () => {
+//     counter1Value++;
+//     counter1Display.textContent = counter1Value;
+//   });
   
-  document.getElementById("decrement1").addEventListener("click", () => {
-    if (counter1Value > 0) {
-      counter1Value--;
-      counter1Display.textContent = counter1Value;
-    }
-  });
+//   document.getElementById("decrement1").addEventListener("click", () => {
+//     if (counter1Value > 0) {
+//       counter1Value--;
+//       counter1Display.textContent = counter1Value;
+//     }
+//   });
 
-  
 
   //popup rebajas
 
@@ -439,6 +435,57 @@ document.addEventListener("DOMContentLoaded", () => {
       // Si está antes del header, posición inicial
       navegacion.classList.remove("fija");
     }
+  });
+});
+
+const cartItems = document.getElementById("cartItems");
+const totalPrice = document.getElementById("totalPrice");
+let cart = [];
+
+function agregarCarrito(producto) {
+  const existingItem = cart.find(item => item.nombre === producto.nombre && item.color === producto.color);
+  
+  if (existingItem) {
+    existingItem.cantidad += producto.cantidad;
+  } else {
+    cart.push(producto);
+  }
+  
+  actualizarCartPopup();
+}
+
+function actualizarCartPopup() {
+  cartItems.innerHTML = "";
+  let total = 0;
+  
+  cart.forEach(item => {
+    const li = document.createElement("li");
+    li.textContent = `${item.nombre} - ${item.color} - Cantidad: ${item.cantidad} - Precio: ${item.precio * item.cantidad}€`;
+    cartItems.appendChild(li);
+    total += item.precio * item.cantidad;
+  });
+  
+  totalPrice.textContent = `${total}€`;
+  counter1Value = cart.reduce((sum, item) => sum + item.cantidad, 0);
+  counter1Display.textContent = counter1Value;
+}
+
+document.querySelectorAll('.producto_submit').forEach(button => {
+  button.addEventListener('click', (e) => {
+    const producto = e.target.closest('.producto');
+    const nombre = producto.querySelector('.producto__nombre').textContent;
+    const precio = parseFloat(producto.querySelector('.producto__precio').textContent);
+    const color = producto.querySelector('.producto_color').value;
+    const cantidad = parseInt(producto.querySelector('.producto_cantidad').value);
+    
+    if (color === '-- Seleccionar Color --' || isNaN(cantidad) || cantidad <= 0) {
+      alert('Por favor, selecciona un color y una cantidad válida.');
+      return;
+    }
+    
+    cartPopup.style.display = "block";
+    agregarCarrito({nombre, precio, color, cantidad});
+
   });
 });
 

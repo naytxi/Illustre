@@ -34,7 +34,7 @@ La página consta de 3 secciones y 3 subsecciones:
 
     1-Cada integrante desarrolla una parte del proyecto.
     2-Puesta en comun y unificacion de secciones.
-    3- Juntos se realiza script de las diferentes categorias.    
+    3-Juntos se realiza script de las diferentes categorias.    
 
 <h3>Stack a tener en cuenta</h3>
 

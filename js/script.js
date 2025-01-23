@@ -27,6 +27,8 @@ function updateDateTime() {
   dateTimeDisplay.textContent = `${day}, ${hours}:${minutes} - ${date} ${month} ${year}`;
 }
 
+
+//traduc
 function updateTranslations(selectedLanguage) {
   for (const key in globalTranslations[selectedLanguage]) {
     const elements = document.querySelectorAll(`[data-translate="${key}"]`);

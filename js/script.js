@@ -250,7 +250,9 @@ closePopup.addEventListener("click", () => {
   loginPopup.style.display = "none";
 });
 
-ojito.addEventListener('click', function() {
+ojito.addEventListener('click', function(event) {
+  event.preventDefault();
+
     if (password.type === "password") {
         password.type = "text";
         imagen.src = "../fonts/Imagenes/ojoAbierto1.jpg";
@@ -265,6 +267,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const loginForm = document.getElementById("loginForm");
   if (loginForm) {
     loginForm.addEventListener("submit", function (event) {
+      event.preventDefault();
       
       const username = document.getElementById("username").value;
       const passwordValue = document.getElementById("password").value;

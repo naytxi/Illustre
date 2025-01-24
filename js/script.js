@@ -36,6 +36,14 @@ function updateTranslations(selectedLanguage) {
       if (element.tagName === "INPUT") {
         if (element.type === "submit") {
           element.value = globalTranslations[selectedLanguage][key];
+        } else if (element.type === "checkbox") {
+          const label = element.closest('label');
+          if (label) {
+            const textNode = Array.from(label.childNodes).find(node => node.nodeType === Node.TEXT_NODE);
+            if (textNode) {
+              textNode.nodeValue = ' ' + globalTranslations[selectedLanguage][key];
+            }
+          }
         } else {
           element.placeholder = globalTranslations[selectedLanguage][key];
         }

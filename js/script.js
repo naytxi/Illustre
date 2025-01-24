@@ -238,7 +238,89 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+// Función para agregar productos al carrito
+function agregarCarritoProducto(producto) {
 
+  // Busca si el producto ya existe en el carrito
+  const existingItem = cart.find(item => item.nombre === producto.nombre && item.color === producto.color);
+  
+  // Si el producto ya existe, incrementa su cantidad
+  if (existingItem) {
+    existingItem.cantidad += producto.cantidad;
+  }
+  // Si no existe, lo agrega al carrito
+  else {
+    cart.push(producto);
+  }
+  
+  actualizarCartPopupProducto();
+}
+
+// Función para actualizar la visualización del carrito
+function actualizarCartPopupProducto() {
+
+  // Limpia los items actuales del carrito
+  cartItems.innerHTML = "";
+  let total = 0; // Variable para calcular el precio total
+  
+  // Recorre cada producto en el carrito
+  cart.forEach((item, index) => {
+
+    // Crear un nuevo elemento como lista por cada producto
+    const li = document.createElement("li");
+
+    //  Texto del elemento con los detalles del producto
+
+    li.style.fontSize = "16px"; // Ajusta el número según el tamaño deseado
+    li.textContent = `${item.nombre} - ${item.color} - Cantidad: ${item.cantidad} - Precio: ${item.precio * item.cantidad}€`;
+
+    // Se crea un botón de "Eliminar" para este producto
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "X";
+    deleteButton.style.marginLeft = "10px"; // Espaciado para que quede bien visualmente
+    
+    // Agrega un evento al botón para eliminar este producto
+    deleteButton.addEventListener("click", () => {
+      eliminarProducto(index); // Llama a la función para eliminar este producto por su índice
+    });
+    
+    // Agrega el botón al elemento de lista
+    li.appendChild(deleteButton);
+    
+    // Agrega el elemento al contenedor de items
+    cartItems.appendChild(li);
+    // Calcula el precio total
+    total += item.precio * item.cantidad;
+  });
+  
+  // Actualiza el precio total mostrado
+  totalPrice.textContent = `${total}€`;
+
+  // Actualiza el contador de items del carrito
+  counter1Value = cart.reduce((sum, item) => sum + item.cantidad, 0);
+  counter1Display.textContent = counter1Value;
+}
+
+document.querySelectorAll('.formulario__submit').forEach(button => {
+  button.addEventListener('click', (e) => {
+    const producto = e.target.closest('.detalle-producto'); // Encuentra el contenedor del producto
+    // Capturar la informacion del producto
+    const nombre = producto.querySelector('.producto__nombre').textContent; 
+    const precio = parseFloat(producto.querySelector('.producto__precio').textContent);
+    const color = producto.querySelector('.formulariocampo').value;
+    const cantidad = parseInt(producto.querySelector('.cantidadScript').value);
+    
+    // Valida que el producto tenga collor y cantidad válidos
+    if (color === '-- Seleccionar Color --' || isNaN(cantidad) || cantidad <= 0) {
+      alert('Por favor, selecciona un color y una cantidad válida.'); //Alerta si la validación falla
+      return;
+    }
+    
+    cartPopup.style.display = "block";
+    agregarCarritoProducto({nombre, precio, color, cantidad}); // Agregar el producto al carrito
+
+  });
+});
 
 // SCRIPT LOGIN //
 const userInfo = document.getElementById("user-info");

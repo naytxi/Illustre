@@ -311,6 +311,7 @@ document.addEventListener("DOMContentLoaded", () => {
  //Se comprueba si existe el objeto userData y si tiene una propiedad username. Esto indica que el usuario está logeado y tiene un nombre de usuario registrado.
   if (userData && userData.username) {
     // Si el usuario está logueado, muestra el nombre de usuario y quita el icon de login.
+    //verificamos que las tres cosas existen en el DOM y despues se cambia al boton de usuario con la info de localStorage.
     if (loginButton && userInfo && usernameButton) {
       loginButton.style.display = "none";
       userInfo.style.display = "block";
@@ -490,7 +491,7 @@ function actualizarCartPopup() {
     
     // Se crea un botón de "Eliminar" para este producto
     const deleteButton = document.createElement("button");
-    deleteButton.textContent = "X";
+    deleteButton.textContent = "Eliminar";
     deleteButton.style.marginLeft = "10px"; // Espaciado para que quede bien visualmente
     
     // Agrega un evento al botón para eliminar este producto
@@ -551,10 +552,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //para que se desplieguen los filtros al darle al boton
   toggleButton.addEventListener("click", () => {
-    filtersContainer.classList.toggle("hidden");
-    toggleButton.textContent = filtersContainer.classList.contains("hidden")
-      ? "Filtros"
-      : "Filtros";
+    filtersContainer.classList.toggle("hidden"); //Quita el hidden o lo añade del contenedor donde se encuentran los detalles de los pedidos.
   });
 });
 
@@ -568,15 +566,15 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   function filterProducts() {
-    const selectedCategories = Array.from(checkboxes)
-      .filter((checkbox) => checkbox.checked)
-      .map((checkbox) => checkbox.value);
+    const selectedCategories = Array.from(checkboxes)//aqui crea un array con las categorias del checkbox
+      .filter((checkbox) => checkbox.checked)//con esto filtramos las que estan seleccionadas
+      .map((checkbox) => checkbox.value);// y aqui crea un array con solamente las que hemos seleccionado usando map
 
-    products.forEach((product) => {
-      const category = product.getAttribute("data-category");
+    products.forEach((product) => { //comenzamos a hacer un bucle recorriendo todos los productos
+      const category = product.getAttribute("data-category"); //guardamos la categoria
       if (
-        selectedCategories.length === 0 ||
-        selectedCategories.includes(category)
+        selectedCategories.length === 0 || //si no hay ninguna seleccionada muestra todas
+        selectedCategories.includes(category) //si hay coincidencia muestra el producto y sino lo oculta
       ) {
         product.style.display = "block"; // Mostrar producto
       } else {
@@ -594,39 +592,16 @@ document.addEventListener("DOMContentLoaded", function () {
   
     // Actualiza el texto del precio al mover la barra
     priceRange.addEventListener("input", function () {
-      const selectedPrice = priceRange.value;
-      priceValue.textContent = `${selectedPrice}€`;
+      const selectedPrice = priceRange.value;//guardamos el valor seleccionado en la barra dentro de una variable
+      priceValue.textContent = `${selectedPrice}€`;//cambia el texto del precio de la barra 
   
       // Filtra los productos
-      products.forEach((product) => {
-        const productPrice = product.getAttribute("data-price");
-        if (productPrice === selectedPrice) {
+      products.forEach((product) => { //creamos un bucle esta vez para verificar los precios de los productos
+        const productPrice = product.getAttribute("data-price"); 
+        if (productPrice === selectedPrice) { //si hay coincidencia entre el valor guardado en variable de seleccion y el del producto
           product.style.display = "block"; // Muestra el producto
         } else {
           product.style.display = "none"; // Oculta el producto
-        }
-      });
-    });
-  });
-
-
-
-
-  //historial de pedidos
-
- document.addEventListener('DOMContentLoaded', () => {
-    const buttons = document.querySelectorAll('.toggle-details');
-
-    buttons.forEach(button => {
-      button.addEventListener('click', () => {
-        const orderDetails = button.closest('.order').querySelector('.order-details');
-        orderDetails.classList.toggle('show'); // Alterna la clase 'show'
-
-        // Cambia el texto del botón
-        if (orderDetails.classList.contains('show')) {
-          button.textContent = 'Ocultar detalles';
-        } else {
-          button.textContent = 'Ver detalles';
         }
       });
     });
@@ -638,7 +613,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const scrollToTopButton = document.getElementById("scrollToTop");
 
   
-
   // Mostrar/ocultar botón
   window.addEventListener("scroll", function () {
     if (window.pageYOffset > 300) {

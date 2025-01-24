@@ -80,44 +80,62 @@
   <div class="container"> 
 
     <form action="checkout">
-
         <label for="nombre">Nombre</label>
-        <input type="text" id="nombre" placeholder="Nombre" name="nombre">
-
+        <input type="text" id="nombre" placeholder="Nombre" name="nombre" required>
+    
         <label for="apellido">Apellido</label>
-        <input type="text" id="Apellido" placeholder="Apellido" name="apellido">
-
+        <input type="text" id="apellido" placeholder="Apellido" name="apellido" required>
+    
         <label for="email">Email</label>
-        <input type="email" placeholder="Email" id="email" name="email">
-
+        <input type="email" placeholder="Email" id="email" name="email" required>
+    
         <label for="telefono">Teléfono</label>
-        <input type="tel" placeholder="Teléfono" id="telefono" name="telefono">
-
+        <input type="tel" placeholder="Teléfono" id="telefono" name="telefono" required>
+    
         <label for="direccion">Dirección</label>
-        <input type="text" name="direccion" id="direccion">
-
-
-
+        <input type="text" name="direccion" id="direccion" required>
+    
         <div>
             <p>Método de pago:</p>
             <div class="metodoPago">
-              <input type="radio" id="tarjeta" name="metodoPago" value="tarjeta">
-              <label for="tarjeta">Tarjeta</label>
-              <input type="radio" id="paypal" name="metodoPago" value="paypal">
-              <label for="paypal">PayPal</label>
+                <input type="radio" id="tarjeta" name="metodoPago" value="tarjeta">
+                <label for="tarjeta">Tarjeta</label>
+                <input type="radio" id="paypal" name="metodoPago" value="paypal">
+                <label for="paypal">PayPal</label>
+            </div>
+        </div>
+    
+        <div id="datosTarjeta" style="display:none;">
+            <div class="numeroTarjeta">
+            <label for="numeroTarjeta">Número de Tarjeta</label>
+            <input type="text" id="numeroTarjeta" name="numeroTarjeta" placeholder="1234 5678 9012 3456">
+        </div>
+        <div class="fechaExpiracion">
+            <label for="fechaExpiracion">Fecha de Expiración</label>
+            <input type="text" id="fechaExpiracion" name="fechaExpiracion" placeholder="MM/AA">
         </div>
 
-          
-          
+        <div class="Cvv">
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" placeholder=" 257" name="cvv">
+        </div>
+    </div>
+        <button type="submit">Realizar Pago</button>
     </form>
+    
 
-    <!-- <div id="infoProducto" class="detalle-producto producto_info">
-        <img class="producto__imagen" src="" alt="Imagen del Producto">
-        <div class="test">
-        <p class="producto__nombre"></p>
-        <p class="producto_contenido"></p>
-        <p class="producto__precio"></p>
-    </div> -->
+    <script>
+    document.getElementById('tarjeta').addEventListener('change', function() {
+        document.getElementById('datosTarjeta').style.display = this.checked ? 'block' : 'none';
+    });
+    
+    document.getElementById('paypal').addEventListener('change', function(event) {
+    event.preventDefault();
+    window.location.href = 'https://www.paypal.com/checkout';
+});
+    </script>
+    
+
   
      </div>   
     

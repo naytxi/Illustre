@@ -186,6 +186,7 @@ function mostrarProducto(producto) {
 
   // Configurar los colores
   const selectColores = detalleProducto.querySelector(".formulariocampo");
+  selectColores.innerHTML = '';
   producto.colores.forEach((color) => {
     const option = document.createElement("option");
     option.value = color;
@@ -193,6 +194,8 @@ function mostrarProducto(producto) {
     selectColores.appendChild(option);
   });
 }
+
+
 //Script producto por detalle producto fin
 
 //Página de productos
@@ -252,7 +255,7 @@ function agregarCarritoProducto(producto) {
   else {
     cart.push(producto);
   }
-  
+  guardarCarrito();
   actualizarCartPopupProducto();
 }
 
@@ -484,50 +487,7 @@ cartClose.addEventListener('click', () => {
     cartPopup.style.display = 'none';
 });
 
-// document.getElementById("increment1").addEventListener("click", () => {
-//     counter1Value++;
-//     counter1Display.textContent = counter1Value;
-//   });
   
-//   document.getElementById("decrement1").addEventListener("click", () => {
-//     if (counter1Value > 0) {
-//       counter1Value--;
-//       counter1Display.textContent = counter1Value;
-//     }
-//   });
-
-
-  //popup rebajas
-
-document.addEventListener("DOMContentLoaded", () => {
-  const popupRebajas = document.getElementById("popupRebajas");
-  const closePopup = document.getElementById("rebajasclose");
-
-  // Mostrar el popup al cargar la página
-  popupRebajas.classList.add("visible");
-
-  // Cerrar el popup cuando se haga clic en la X
-  closePopup.addEventListener("click", () => {
-    popupRebajas.classList.remove("visible");
-  });
-});
-
-  //script para la barra de NAVEGACION
-  document.addEventListener("DOMContentLoaded", () => {
-    const navegacion = document.querySelector(".navegacion");
-    const header = document.querySelector("header"); 
-
-
-  window.addEventListener("scroll", () => {
-    if (window.scrollY >= header.offsetHeight) {
-      // Si se ha desplazado más allá del header, fija la navegación
-      navegacion.classList.add("fija");
-    } else {
-      // Si está antes del header, posición inicial
-      navegacion.classList.remove("fija");
-    }
-  });
-});
 
 // AGREGANDO PRODUCTOS AL CARRITO
 
@@ -537,7 +497,28 @@ const cartItems = document.getElementById("cartItems"); // Contenedor de items d
 const totalPrice = document.getElementById("totalPrice"); // Elemento para mostrar precio total
 let cart = [];
 
+// Función para guardar el carrito en localStorage
+function guardarCarrito() {
+  localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+// Función para cargar el carrito desde localStorage
+function cargarCarrito() {
+  const savedCart = localStorage.getItem('cart');
+  if (savedCart) {
+      cart = JSON.parse(savedCart);
+  }
+}
+
+// Llama a esta función al inicio de tu script
+cargarCarrito();
+
 // Función para agregar productos al carrito
+document.addEventListener('DOMContentLoaded', function() {
+  cargarCarrito();
+  actualizarCartPopup(); // O actualizarCartPopupProducto(), según corresponda
+});
+
 function agregarCarrito(producto) {
 
   // Busca si el producto ya existe en el carrito
@@ -551,7 +532,7 @@ function agregarCarrito(producto) {
   else {
     cart.push(producto);
   }
-  
+  guardarCarrito(); 
   actualizarCartPopup();
 }
 
@@ -602,6 +583,7 @@ function actualizarCartPopup() {
 // Función para eliminar un producto del carrito por su índice
 function eliminarProducto(index) {
   cart.splice(index, 1); // Elimina el producto del array `cart` en la posición `index`
+  guardarCarrito();
   actualizarCartPopup(); // Actualiza la visualización del carrito después de eliminarlo
 }
 
@@ -690,32 +672,63 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  //popup rebajas
 
-//Volver arriba inicio
-document.addEventListener("DOMContentLoaded", function () {
-  const scrollToTopButton = document.getElementById("scrollToTop");
+document.addEventListener("DOMContentLoaded", () => {
+  const popupRebajas = document.getElementById("popupRebajas");
+  const closePopup = document.getElementById("rebajasclose");
 
-  
-  // Mostrar/ocultar botón
-  window.addEventListener("scroll", function () {
-    if (window.pageYOffset > 300) {
-      scrollToTopButton.style.display = "block";
+  // Mostrar el popup al cargar la página
+  popupRebajas.classList.add("visible");
+
+  // Cerrar el popup cuando se haga clic en la X
+  closePopup.addEventListener("click", () => {
+    popupRebajas.classList.remove("visible");
+  });
+});
+
+  //script para la barra de NAVEGACION
+  document.addEventListener("DOMContentLoaded", () => {
+    const navegacion = document.querySelector(".navegacion");
+    const header = document.querySelector("header"); 
+
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY >= header.offsetHeight) {
+      // Si se ha desplazado más allá del header, fija la navegación
+      navegacion.classList.add("fija");
     } else {
-      scrollToTopButton.style.display = "none";
+      // Si está antes del header, posición inicial
+      navegacion.classList.remove("fija");
     }
   });
-
-  // Scroll suave
-  scrollToTopButton.addEventListener("click", function () {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  });
-
-  // Ocultar inicialmente
-  scrollToTopButton.style.display = "none";
 });
+
+//Volver arriba inicio
+// document.addEventListener("DOMContentLoaded", function () {
+//   const scrollToTopButton = document.getElementById("scrollToTop");
+
+  
+// //   Mostrar/ocultar botón
+//   window.addEventListener("scroll", function () {
+//     if (window.pageYOffset > 300) {
+//       scrollToTopButton.style.display = "block";
+//     } else {
+//       scrollToTopButton.style.display = "none";
+//     }
+//   });
+
+//   Scroll suave
+//   scrollToTopButton.addEventListener("click", function () {
+//     window.scrollTo({
+//       top: 0,
+//       behavior: "smooth",
+//     });
+//   });
+
+//   Ocultar inicialmente
+//   scrollToTopButton.style.display = "none";
+// });
 
 //volver arriba fin
 

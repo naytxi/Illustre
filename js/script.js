@@ -239,9 +239,8 @@ const loginButton = document.getElementById('loginButton');
 const loginPopup = document.getElementById('loginPopup');
 const closePopup = document.getElementById('loginClose');
 const ojito = document.getElementById('ojito');
-const imagen = document.getElementById('imagen');
 const password = document.getElementById('password');
-
+//este script maneja elmevento del popup, para que cuando hagamos click aparezca.
 loginButton.addEventListener('click', () => {
     loginPopup.style.display = 'block';
 });
@@ -249,7 +248,7 @@ loginButton.addEventListener('click', () => {
 closePopup.addEventListener("click", () => {
   loginPopup.style.display = "none";
 });
-
+//este en cambio es para el boton de ojo, cambia el estado del password a texto normal.
 ojito.addEventListener('click', function(event) {
   event.preventDefault();
 
@@ -267,11 +266,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const loginForm = document.getElementById("loginForm");
   if (loginForm) {
     loginForm.addEventListener("submit", function (event) {
-      event.preventDefault();
-      
+      event.preventDefault(); //tenemos que quitar el evento que tiene el DOM por defecto al enviar un formulario.
+
       const username = document.getElementById("username").value;
       const passwordValue = document.getElementById("password").value;
- //recogemos los datos puestos en el form del login, esto es lo que enviaremos al localStorage
+ //recogemos los datos puestos en el form del login en una variable, esto es lo que enviaremos al localStorage.
       const userData = {
         username: username,
         password: passwordValue,
@@ -280,7 +279,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (username === "nahia" && passwordValue === "Nahia") {
           userData.isAdmin = true;  // Marcar al usuario como administrador
       }
-   
   //guardamos el userData dentro del localStorage
       localStorage.setItem("userData", JSON.stringify(userData));
 //si el login es admin redirigir a la pagina respectiva
@@ -296,7 +294,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //aqui manejamos el icono y el boton del usuario, cambiando de uno a otro cuando logeamos
   // Verificar el estado del usuario para mostrar login o nombre de usuario
-  const loginButton = document.getElementById("loginButton");
   const usernameButton = document.getElementById("usernameButton");
   const userInfo = document.getElementById("userInfo");
 

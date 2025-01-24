@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="../fonts/imagenes/favicon.ico" type="imagen.ico">
+    <title>Checkout</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="lema">PETITE TOUCHE</div>
+
+        <a href="index.html">
+          <img class="header__logo" src="../fonts/Imagenes/ILLUSTRE.png" /*src="../fonts/Imagenes/illustre.png"*/ alt="Logotipo">
+        </a>
+        
+        <div class="lema2">BELLES HISTOIRES</div>
+        <div class="header-right">
+       
+            <div class="language-selector">
+                <select id="language-select">
+                    <option selected disabled>Idioma</option>
+                    <option value="es">Español</option>
+                    <option value="eu">Euskara</option>
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                </select>
+            </div>            
+      
+          <div class="icons">
+            <button id="loginButton" type="button" class="icon"><i class="fas fa-user"></i></button>
+            <div id="userInfo" style="display: none;">
+              <button id="usernameButton" class ="user-button">Usuario</button>
+            </div>
+            <div id="loginPopup" class="loginpopup">
+                <div class="popup-content">
+                  <span id ="loginClose" class="close">&times;</span>
+                  <h2>Login</h2>
+                  <form id="loginForm">
+                    <label for="username">User</label>
+                    <input type="text" id="username" name="username" required>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                    <button id ="ojito" ><img id ="imagen" src="../fonts/Imagenes/ojoCerrado1.jpg" /></button>
+                    <button id="Submit" type="submit">Submit</button>
+                  </form>
+                </div>
+              </div>
+            <button id="cartButton" href="/store" class="icon"><i class="fas fa-shopping-cart"></i></button>
+            <div id="cartPopup" class="cartpopup">
+                <div class="popup-contentcart">
+                    <span id="cartClose" class="close">&times;</span>
+                    <h2>Cart</h2>
+                    <ul id="cartItems"></ul>
+                    <div class="counter-controls">
+                        <button id="decrement1" class="counter-button decrement">-</button>
+                        <span id="counter1" class="counter-display">0</span>
+                        <button id="increment1" class="counter-button increment">+</button>
+                      </div>
+                    <div class="total">
+                        <p>Total: <span id="totalPrice">0€</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </header>
+    <nav class="navegacion">
+        <a class="navegacion__enlace" href="home.html" data-translate="titulo-nav">Inicio</a>
+        <a class="navegacion__enlace navegacion__enlace--activo" href="index.html" data-translate="store-titulo">Tienda</a>
+        <a class="navegacion__enlace " href="contacto.html" data-translate="contacto">Contacto</a>
+    </nav> 
+        <main class="contenedor">
+          <div id="dateTimeDisplay">Cargando...</div>
+  <div class="container"> 
+
+    <form action="checkout">
+
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" placeholder="Nombre" name="nombre">
+
+        <label for="apellido">Apellido</label>
+        <input type="text" id="Apellido" placeholder="Apellido" name="apellido">
+
+        <label for="email">Email</label>
+        <input type="email" placeholder="Email" id="email" name="email">
+
+        <label for="telefono">Teléfono</label>
+        <input type="tel" placeholder="Teléfono" id="telefono" name="telefono">
+
+        <label for="direccion">Dirección</label>
+        <input type="text" name="direccion" id="direccion">
+
+
+
+        <div>
+            <p>Método de pago:</p>
+            <div class="metodoPago">
+              <input type="radio" id="tarjeta" name="metodoPago" value="tarjeta">
+              <label for="tarjeta">Tarjeta</label>
+              <input type="radio" id="paypal" name="metodoPago" value="paypal">
+              <label for="paypal">PayPal</label>
+        </div>
+
+          
+          
+    </form>
+
+    <!-- <div id="infoProducto" class="detalle-producto producto_info">
+        <img class="producto__imagen" src="" alt="Imagen del Producto">
+        <div class="test">
+        <p class="producto__nombre"></p>
+        <p class="producto_contenido"></p>
+        <p class="producto__precio"></p>
+    </div> -->
+  
+     </div>   
+    
+  </div>
+</main>
+    <footer class="footer">
+        <div class="footer__contenedor">
+            <div class="footer__seccion">
+                <h3 class="footer__titulo">Redes Sociales</h3>
+                    <div class="footer__iconos">
+                        <ul class="list-unstyled social-icons">
+                            <li><a href="#" target="_blank"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
+                            <li class="twitter"><a href="#" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+                            <li><a href="#" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+                            <li><a href="#" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                          </ul>
+                    </div>
+            </div>
+            <div class="footer__seccion">
+                <h3 class="footer__titulo">Contacto</h3>
+                <p class="footer__texto"><i class="fas fa-phone"></i> +34 634 567 890</p>
+                <p class="footer__texto"><i class="fas fa-envelope"></i> info@quintessence</p>
+            </div>
+            <div class="footer__seccion">
+                <h3 class="footer__titulo">Dirección</h3>
+                <p class="footer__texto"><i class="fas fa-map-marker-alt"></i>c/ Serrano 76 Madrid España</p>
+            </div>
+        </div>
+        <p class="footer__derechos" data-translate="derechos">Todos los derechos Reservados © 2025</p>
+    </footer>
+      <script src="../js/flecha.js"></script>
+<script src="../js/script.js"></script>
+</body>
+</html>

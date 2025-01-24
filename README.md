@@ -106,7 +106,7 @@ Una vez finalizado la adquisición de productos, estos apareceran en el popup de
 <h2>👥TEAM</h2>
 
 **Scrum Master**
-[DAVID](https://github.com/Davis-10)
+[DAVID](https://github.com/Davis-10)🍅
 
 **Product Owner**
 [ÉRIKA](https://github.com/Erika-Fullstack)

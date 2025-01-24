@@ -303,8 +303,15 @@ h3 {
     width: 5rem;
     top: 10px;
     left: 10px;
-}
+  }
 
+  .submitButton{
+  font-size: 10rem;
+  }
+
+.submitButton:hover{
+  color: var(--secundarioOscuro);
+}
   .close {
     position: absolute;
     top: 10px;

@@ -398,6 +398,34 @@ h3 {
   text-align: center; 
 }
 
+/* Boton Pagar */
+.passpay {
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+.buttonPay {
+  min-width: 130px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  background-size: 120% auto;
+  background: radial-gradient(#f588d8, #c0a3e5);
+}
+.buttonPay:hover {
+  background-position: right center;
+}
+.buttonPay:active {
+  top: 2px;
+}
+
 /** Navegacion **/
 .navegacion {
   background-color: var(--primarioOscuro);

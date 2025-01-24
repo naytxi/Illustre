@@ -490,7 +490,7 @@ function actualizarCartPopup() {
     
     // Se crea un botón de "Eliminar" para este producto
     const deleteButton = document.createElement("button");
-    deleteButton.textContent = "Eliminar";
+    deleteButton.textContent = "X";
     deleteButton.style.marginLeft = "10px"; // Espaciado para que quede bien visualmente
     
     // Agrega un evento al botón para eliminar este producto

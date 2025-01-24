@@ -411,6 +411,7 @@ h3 {
   margin-top: 2rem;
 }
 .buttonPay {
+  text-decoration: none;
   min-width: 130px;
   height: 40px;
   color: #fff;

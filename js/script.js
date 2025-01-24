@@ -569,6 +569,7 @@ function actualizarCartPopup() {
     const li = document.createElement("li");
 
     //  Texto del elemento con los detalles del producto
+    li.style.fontSize = "16px"; // Ajusta el número según el tamaño deseado
     li.textContent = `${item.nombre} - ${item.color} - Cantidad: ${item.cantidad} - Precio: ${item.precio * item.cantidad}€`;
     
     // Se crea un botón de "Eliminar" para este producto

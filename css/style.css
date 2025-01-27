@@ -1046,14 +1046,9 @@ color: var(--secundario);
 }
 .formulario__submit:hover {
   cursor: pointer;
-<<<<<<< HEAD
   background-color: var(--secundario);
  
-=======
-  background-color: var(--primarioOscuro);
->>>>>>> e93145d (estilos a pagina productos)
 }
-
 
 /*inicio footer*/
 

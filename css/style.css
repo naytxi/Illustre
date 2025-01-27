@@ -1019,11 +1019,16 @@ margin-bottom: 10rem;
 .formulario__campo {
    border: 1rem solid var(--primarioOscuro);
    background-color: transparent;
-   color: var(--secundario);
+   color: var(--secundarioOscuro);
    font-size: 2rem;
    font-family: Arial, Helvetica, sans-serif;
    padding: 1rem;
    appearance: none;
+}
+.formulario__campo:hover {
+  cursor:pointer;
+  background-color: var(--blanco);
+  color: var(--secundario);
 }
 
 .formulario__submit {
@@ -1037,7 +1042,8 @@ margin-bottom: 10rem;
 }
 .formulario__submit:hover {
     cursor: pointer;
-    background-color: var(--secundarioOscuro);
+    background-color: var(--secundario);
+   
 }
 
 

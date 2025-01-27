@@ -2,7 +2,12 @@ let globalTranslations;
 
 async function loadTranslations() {
   const response = await fetch("translations.json");
+  // loadTranslations es asíncrona. Esto significa que la función puede realizar operaciones que
+  //  tardan tiempo (como solicitudes de red) sin bloquear el hilo principal de ejecución.
+  // await se utiliza para esperar a que la promesa devuelta por fetch se resuelva.
   if (!response.ok) {
+
+    //es una instrucción  para generar y lanzar un error personalizado cuando ocurre un problema
     throw new Error("Error al cargar las traducciones");
   }
   globalTranslations = await response.json();
@@ -31,22 +36,39 @@ function updateDateTime() {
 //traduc
 function updateTranslations(selectedLanguage) {
   for (const key in globalTranslations[selectedLanguage]) {
+    /* Se utiliza un bucle for...in para recorrer cada clave (key) 
+     en el objeto de traducciones correspondiente al idioma seleccionado*/
     const elements = document.querySelectorAll(`[data-translate="${key}"]`);
+    //recorrer cada elemento encontrado con ForEach
     elements.forEach((element) => {
       if (element.tagName === "INPUT") {
         if (element.type === "submit") {
+          // Si el tipo del input es "submit", se establece su valor (value) con la traducción correspondiente.
           element.value = globalTranslations[selectedLanguage][key];
         } else if (element.type === "checkbox") {
-          const label = element.closest('label');
+          // Si el tipo del input es "checkbox", se busca el elemento <label> más cercano asociado al checkbox.
+
+          const label = element.closest('label'); //closest sirve para encontrar el primer elemento ancestro <label>/par buscar el padre directo del label
           if (label) {
+           
+           
             const textNode = Array.from(label.childNodes).find(node => node.nodeType === Node.TEXT_NODE);
+           /*label.childNodes : 1-Devuelve una colección de todos los nodos hijos del elemento <label>
+              2- find(...) : busca el primer nudo de tipo texto */           
+           
+              //Verifica si se encontró un nodo de texto
             if (textNode) {
+              /*nodeValue : Propiedad que permite acceder y modificar el contenido de texto de un nodo de texto
+              establece su valor (value) con la traducción correspondiente.*/
               textNode.nodeValue = ' ' + globalTranslations[selectedLanguage][key];
             }
           }
+          /*Para otros tipos de inputs (como text o textarea), 
+          se actualiza su atributo placeholder con la traducción correspondiente.*/
         } else {
           element.placeholder = globalTranslations[selectedLanguage][key];
         }
+        // Si el elemento no es un input, se actualiza su contenido textual (textContent) con la traducción correspondiente.
       } else {
         element.textContent = globalTranslations[selectedLanguage][key];
       }

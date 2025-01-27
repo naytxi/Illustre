@@ -704,3 +704,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+/*Script para boton de registro*/
+const registro = document.getElementById("Register");
+     registro.addEventListener("click", () => {
+        window.location.href = "registro.html";
+      });
+  

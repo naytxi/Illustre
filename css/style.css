@@ -1328,11 +1328,12 @@ margin-bottom: 10rem;
 }
  
 /* Formularios de usuario */
-form {
+.form-checkout {
   display: flex;
   flex-direction: column; 
   align-items: center; 
   gap: 15px; 
+  padding: 3rem;
 }
 
 form label {
@@ -1444,6 +1445,10 @@ button.toggle-details:hover {
 .cvv1 {
   width: 20%;
 }
+.metodoPago{
+  display: flex;
+  gap: 1rem;
+}
 
 
 /* flecha volver arriba*/
@@ -1480,6 +1485,3 @@ button.toggle-details:hover {
   font-size: 24px;
 }
 
-.metodoPago{
-  display: flex;
-}

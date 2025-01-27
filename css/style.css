@@ -670,13 +670,18 @@ h3 {
   font-size: 2.8rem;
   color: var(--secundario);
 }
+
+.producto__nombre{
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
 .producto__nombre,
 .producto__precio {
     font-family: var(--fuentePrincipal);
     margin: 1rem 0;
     text-align: center;
     line-height: 1.2;
-    color: #000;
 }
 .producto_inputs {
   display: flex;

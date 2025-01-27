@@ -224,6 +224,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+
 document.addEventListener("DOMContentLoaded", function () {
   // Recuperar los datos del localStorage
   const imagen = localStorage.getItem("producto_imagen");
@@ -353,6 +354,8 @@ ojito.addEventListener('click', function(event) {
         imagen.src = "../fonts/Imagenes/ojoCerrado1.jpg";
     }
 });
+
+
 
 //aqui manejamos el evento del formulario del login, guardamos el user y el password en el localstorage
 document.addEventListener("DOMContentLoaded", () => {
@@ -687,6 +690,15 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+
+/*script para boton de REGISTRO*/
+const registro =document.getElementById("Register");
+registro.addEventListener("click", (event) => {
+  event.preventDefault();
+  window.location.href = "registro.html"; 
+});
+
+
   //script para la barra de NAVEGACION
   document.addEventListener("DOMContentLoaded", () => {
     const navegacion = document.querySelector(".navegacion");
@@ -803,4 +815,7 @@ function mostrarArticulosEnCheckout() {
   checkoutItemsList.appendChild(resumen);
 }
 
-  
+
+
+   
+     

@@ -724,6 +724,7 @@ h3 {
     margin: 1rem 0;
     text-align: center;
     line-height: 1.2;
+    color: #000;
 }
 @media (min-width: 720px) {
   .producto_submit, .producto_color, .producto_cantidad {

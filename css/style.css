@@ -933,6 +933,7 @@ margin-bottom: 10rem;
    padding: 1rem;
    appearance: none;
 }
+
 .formulario__submit {
     background-color: var(--secundario);
     border: none;

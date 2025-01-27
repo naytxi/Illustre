@@ -1403,6 +1403,45 @@ button.toggle-details:hover {
   background-color: var(--primarioOscuro);/
 }
 
+/* ------------- Pagina de checkout - Articulos --------------- */
+
+.checkout-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.checkout-table th, .checkout-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.checkout-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.checkout-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.checkout-summary {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.checkout-summary h3 {
+  margin-top: 0;
+}
+
+#checkoutTotal {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+
 /* flecha volver arriba*/
 .scroll-top-btn {
   position: fixed;

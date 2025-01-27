@@ -740,7 +740,6 @@ if (document.getElementById('checkoutItemsList')) {
 }
 
 
-// Función para mostrar los artículos en la página de checkout
 function mostrarArticulosEnCheckout() {
   const checkoutItemsList = document.getElementById('checkoutItemsList');
   const checkoutTotal = document.getElementById('checkoutTotal');
@@ -753,30 +752,55 @@ function mostrarArticulosEnCheckout() {
   checkoutItemsList.innerHTML = '';
   let total = 0;
 
+  // Crear tabla
+  const table = document.createElement('table');
+  table.className = 'checkout-table';
+  
+  // Crear encabezado de la tabla
+  const thead = document.createElement('thead');
+  thead.innerHTML = `
+      <tr>
+          <th>Producto</th>
+          <th>Color</th>
+          <th>Cantidad</th>
+          <th>Precio</th>
+          <th>Subtotal</th>
+      </tr>
+  `;
+  table.appendChild(thead);
+
+  // Crear cuerpo de la tabla
+  const tbody = document.createElement('tbody');
   cart.forEach(item => {
-      const li = document.createElement('li');
-      li.textContent = `${item.nombre} - ${item.color} - Cantidad: ${item.cantidad} - Precio: ${item.precio * item.cantidad}€`;
-      checkoutItemsList.appendChild(li);
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+          <td>${item.nombre}</td>
+          <td>${item.color}</td>
+          <td>${item.cantidad}</td>
+          <td>${item.precio}€</td>
+          <td>${item.precio * item.cantidad}€</td>
+      `;
+      tbody.appendChild(tr);
       total += item.precio * item.cantidad;
   });
+  table.appendChild(tbody);
 
-  checkoutTotal.textContent = `${total}€`;
+  // Agregar tabla al contenedor
+  checkoutItemsList.appendChild(table);
+
+  // Mostrar total
+  checkoutTotal.textContent = `${total.toFixed(2)}€`;
+
+  // Agregar resumen de la compra
+  const resumen = document.createElement('div');
+  resumen.className = 'checkout-summary';
+  resumen.innerHTML = `
+      <h3>Resumen de la compra</h3>
+      <p>Subtotal: ${total.toFixed(2)}€</p>
+      <p>IVA (21%): ${(total * 0.21).toFixed(2)}€</p>
+      <p><strong>Total a pagar: ${(total * 1.21).toFixed(2)}€</strong></p>
+  `;
+  checkoutItemsList.appendChild(resumen);
 }
 
-// Función para inicializar la página de checkout
-function inicializarCheckout() {
-  cargarCarrito();
-  mostrarArticulosEnCheckout();
-}
-
-// Verifica si estamos en la página de checkout
-if (document.getElementById('checkoutItemsList')) {
-  document.addEventListener('DOMContentLoaded', inicializarCheckout);
-}
-
-/*Script para boton de registro*/
-const registro = document.getElementById("Register");
-     registro.addEventListener("click", () => {
-        window.location.href = "registro.html";
-      });
   

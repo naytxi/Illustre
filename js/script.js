@@ -539,60 +539,49 @@ function agregarCarrito(producto) {
   actualizarCartPopup();
 }
 
+// Función para actualizar la visualización del carrito
 function actualizarCartPopup() {
+
+  // Limpia los items actuales del carrito
   cartItems.innerHTML = "";
-  let total = 0;
+  let total = 0; // Variable para calcular el precio total
+  
+  // Recorre cada producto en el carrito
+  cart.forEach((item, index) => {
 
-  if (cart.length === 0) {
-    cartItems.innerHTML = `
-      <div class="cart-empty">
-        <p>Tu carrito está vacío</p>
-        <i class="fas fa-shopping-cart"></i>
-      </div>
-    `;
-  } else {
-    cart.forEach((item, index) => {
-      const cartItem = document.createElement("div");
-      cartItem.className = "cart-item";
-      
-      const itemSubtotal = item.precio * item.cantidad;
-      
-      cartItem.innerHTML = `
-        <div class="cart-item-info">
-          <span class="cart-item-name">${item.nombre}</span>
-          <span class="cart-item-color">${item.color}</span>
-        </div>
-        <div class="cart-item-details">
-          <span class="cart-item-quantity">Cant: ${item.cantidad}</span>
-          <span class="cart-item-price">${itemSubtotal.toFixed(2)}€</span>
-          <button class="delete-btn" data-index="${index}">
-            <i class="fas fa-trash"></i>
-          </button>
-        </div>
-      `;
-      
-      cartItems.appendChild(cartItem);
-      total += itemSubtotal;
+    // Crear un nuevo elemento como lista por cada producto
+    const li = document.createElement("li");
+
+    //  Texto del elemento con los detalles del producto
+    li.style.fontSize = "16px"; // Ajusta el número según el tamaño deseado
+    li.textContent = `${item.nombre} - ${item.color} - Cantidad: ${item.cantidad} - Precio: ${item.precio * item.cantidad}€`;
+    
+    // Se crea un botón de "Eliminar" para este producto
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "X";
+    deleteButton.style.marginLeft = "10px"; // Espaciado para que quede bien visualmente
+    
+    // Agrega un evento al botón para eliminar este producto
+    deleteButton.addEventListener("click", () => {
+      eliminarProducto(index); // Llama a la función para eliminar este producto por su índice
     });
-  }
+    
+    // Agrega el botón al elemento de lista
+    li.appendChild(deleteButton);
+    
+    // Agrega el elemento al contenedor de items
+    cartItems.appendChild(li);
+    // Calcula el precio total
+    total += item.precio * item.cantidad;
+  });
+  
+  // Actualiza el precio total mostrado
+  totalPrice.textContent = `${total}€`;
 
-  totalPrice.textContent = `${total.toFixed(2)}€`;
+  // Actualiza el contador de items del carrito
   counter1Value = cart.reduce((sum, item) => sum + item.cantidad, 0);
   counter1Display.textContent = counter1Value;
 }
-
-// Agregar un solo event listener al contenedor del carrito
-cartItems.addEventListener('click', function(e) {
-  if (e.target.classList.contains('delete-btn') || e.target.closest('.delete-btn')) {
-    const button = e.target.closest('.delete-btn');
-    if (button) {
-      const index = parseInt(button.getAttribute('data-index'));
-      eliminarProducto(index);
-    }
-  }
-});
-
-
 
 // Función para eliminar un producto del carrito por su índice
 function eliminarProducto(index) {

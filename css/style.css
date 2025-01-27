@@ -1441,6 +1441,10 @@ button.toggle-details:hover {
   font-weight: bold;
 }
 
+.cvv1 {
+  width: 20%;
+}
+
 
 /* flecha volver arriba*/
 .scroll-top-btn {

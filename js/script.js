@@ -801,7 +801,7 @@ function mostrarArticulosEnCheckout() {
   checkoutItemsList.appendChild(table);
 
   // Mostrar total
-  checkoutTotal.textContent = `${total.toFixed(2)}€`;
+  // checkoutTotal.textContent = `${total.toFixed(2)}€`;
 
   // Agregar resumen de la compra
   const resumen = document.createElement('div');

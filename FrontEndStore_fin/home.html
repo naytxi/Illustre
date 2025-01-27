@@ -13,68 +13,66 @@
 
 </head>
 <body>
-    <header class="header">
-        <div class="lema">PETITE TOUCHE</div>
+  <header class="header">
+    <div class="lema">PETITE TOUCHE</div>
 
-        <a href="index.html">
-          <img class="header__logo" src="../fonts/Imagenes/ILLUSTRE.png" /*src="../fonts/Imagenes/illustre.png"*/ alt="Logotipo">
-        </a>
-        
-        <div class="lema2">BELLES HISTOIRES</div>
+    <a href="index.html">
+      <img class="header__logo" src="../fonts/Imagenes/ILLUSTRE.png" /*src="../fonts/Imagenes/illustre.png"*/ alt="Logotipo">
+    </a>
+    
+    <div class="lema2">BELLES HISTOIRES</div>
+
   
-      
-        <div class="header-right">
-       
-            <div class="language-selector">
-                <select id="language-select">
-                    <option selected disabled>Idioma</option>
-                    <option value="es">Español</option>
-                    <option value="eu">Euskara</option>
-                    <option value="en">English</option>
-                    <option value="fr">Français</option>
-                </select>
-            </div>            
-      
-          <div class="icons">
-            <button id="loginButton" href="/login" class="icon"><i class="fas fa-user"></i></button>
-            <div id="userInfo" style="display: none;">
-              <button id="usernameButton" class ="user-button">Usuario</button>
+    <div class="header-right">
+   
+        <div class="language-selector">
+            <select id="language-select">
+                <option selected disabled>Idioma</option>
+                <option value="es">Español</option>
+                <option value="eu">Euskara</option>
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+            </select>
+        </div>            
+  
+      <div class="icons">
+        <button id="loginButton" type="button" class="icon"><i class="fas fa-user"></i></button>
+        <div id="userInfo" style="display: none;">
+            <button id="usernameButton" class ="user-button">Usuario</button>
+          </div>
+        <div id="loginPopup" class="loginpopup">
+            <div class="popup-content">
+              <span id ="loginClose" class="close">&times;</span>
+              <h2>Login</h2>
+              <form id="loginForm">
+                <label for="username">User</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                <button id ="ojito" ><img id ="imagen" src="../fonts/Imagenes/ojoCerrado1.jpg" /></button>
+                <button id="Submit" class="submitButton" type="submit">Submit</button>
+                <button id="Register" class="registerButton" type="submit">Register</button>
+              </form>
             </div>
-            <div id="loginPopup" class="loginpopup">
-                <div class="popup-content">
-                  <span id ="loginClose" class="close">&times;</span>
-                  <h2>Login</h2>
-                  <form id="loginForm">
-                    <label for="username">User</label>
-                    <input type="text" id="username" name="username" required>
-                    
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required>
-                    <button id ="ojito" ><img id ="imagen" src="../fonts/Imagenes/ojoCerrado1.jpg" /></button>
-                    <button id="Submit" type="submit">Submit</button>
-                    <button id="Register" class="registerButton" type="submit">Register</button>
-                  </form>
+          </div>
+        <button id="cartButton" href="/store" class="icon"><i class="fas fa-shopping-cart"></i></button>
+        <div id="cartPopup" class="cartpopup">
+            <div class="popup-contentcart">
+                <span id="cartClose" class="close">&times;</span>
+                <h2>Cart</h2>
+                <ul id="cartItems"></ul>
+                <div class="total">
+                    <p>Total: <span id="totalPrice">0€</span></p>
                 </div>
-              </div>
-            <button id="cartButton" href="/store" class="icon"><i class="fas fa-shopping-cart"></i></button>
-            <div id="cartPopup" class="cartpopup">
-                <div class="popup-contentcart">
-                    <span id="cartClose" class="close">&times;</span>
-                    <h2>Cart</h2>
-                    <ul id="cartItems"></ul>
-                    <div class="counter-controls">
-                        <button id="decrement1" class="counter-button decrement">-</button>
-                        <span id="counter1" class="counter-display">0</span>
-                        <button id="increment1" class="counter-button increment">+</button>
-                      </div>
-                    <div class="total">
-                        <p>Total: <span id="totalPrice">0€</span></p>
-                    </div>
+                <!-- Boton pagar -->
+                <div class="passpay">
+                    <button id="payButton" class="buttonPay"><a href="checkout.html">Pagar</a></button>
                 </div>
+             </div>
             </div>
         </div>
     </div>
-      </header>
+  </header>
     <nav class="navegacion">
         <a class="navegacion__enlace navegacion__enlace--activo" href="home.html" data-translate="titulo-nav">Inicio</a>
         <a class="navegacion__enlace" href="index.html" data-translate="store-titulo">Tienda</a>

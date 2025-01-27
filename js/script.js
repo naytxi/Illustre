@@ -242,6 +242,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+
 // Función para agregar productos al carrito
 function agregarCarritoProducto(producto) {
 

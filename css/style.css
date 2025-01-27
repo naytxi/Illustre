@@ -916,17 +916,19 @@ margin-bottom: 10rem;
     gap: 2rem;
 }
 .formulario__campo {
-   border: 1rem solid var(--primarioOscuro);
+   border: 0.3rem solid var(--secundario);
    background-color: transparent;
-   color: var(--blanco);
+   color: var(--secundarioOscuro);
    font-size: 2rem;
    font-family: Arial, Helvetica, sans-serif;
    padding: 1rem;
    appearance: none;
+   margin-bottom: 2rem;
 }
 .formulario__submit {
     background-color: var(--secundario);
     border: none;
+    border-radius: 2rem;
     font-size: 2rem;
     font-family: var(--fuentePrincipal);
     padding: 2rem;

@@ -36,7 +36,7 @@
             </div>            
       
           <div class="icons">
-            <button id="loginButton" href="/login" class="icon"><i class="fas fa-user"></i></button>
+            <button id="loginButton" type="button" class="icon"><i class="fas fa-user"></i></button>
             <div id="userInfo" style="display: none;">
               <button id="usernameButton" class ="user-button">Usuario</button>
             </div>
@@ -47,7 +47,6 @@
                   <form id="loginForm">
                     <label for="username">User</label>
                     <input type="text" id="username" name="username" required>
-                    
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password" required>
                     <button id ="ojito" ><img id ="imagen" src="../fonts/Imagenes/ojoCerrado1.jpg" /></button>
@@ -72,92 +71,63 @@
                 </div>
             </div>
         </div>
-    </div>
       </header>
     <nav class="navegacion">
-        <a class="navegacion__enlace navegacion__enlace--activo" href="home.html" data-translate="titulo-nav">Inicio</a>
-        <a class="navegacion__enlace" href="index.html" data-translate="store-titulo">Tienda</a>
-        <a class="navegacion__enlace" href="contacto.html" data-translate="contacto">Contacto</a>
-    </nav>
+        <a class="navegacion__enlace" href="home.html" data-translate="titulo-nav">Inicio</a>
+        <a class="navegacion__enlace navegacion__enlace--activo" href="index.html" data-translate="store-titulo">Tienda</a>
+        <a class="navegacion__enlace " href="contacto.html" data-translate="contacto">Contacto</a>
+    </nav> 
+        <main class="contenedor">
+          <div id="dateTimeDisplay">Cargando...</div>
+  <div class="container">
+   <!--imagen usuario-->
+    <div class="profile">
+      <h2>Mi Cuenta</h2>
+         <img id="profile-picture" src="../fonts/Imagenes/user.jpeg" alt="Foto de perfil">
+            <input type="file" id="upload-photo" accept="image/*">
+        <button id="save-photo" class="button">Guardar Foto</button>
+     </div>
+     <!--datos de ususario-->     
+    <section class="section personal-info">
+       <h3>Datos Personales</h3>
+         <form id="edit-form">
+          <label for="name">Nombre de usuario:</label>
+          <input type="text" id="newusername" name="newusername" value="" required><br>
 
-    <main class="contenedor">
-      <div class="date-container">
-        <div id="dateTimeDisplay" class="date-container">Cargando...</div>
-      </div>
-        <h1 data-translate="title">Nosotros</h1>
-        <div class="nosotros">
-            <div class="nosotros__contenido">
-              <p data-translate="description">
-                Bienvenidos a Quintessence.<br>
-                En Quintessence, cada pieza cuenta una historia. Desde hace más de cinco años, hemos dedicado nuestro arte y pasión a la creación de joyas y complementos artesanales que reflejan la esencia de quienes las llevan.<br><br>
-                Diseñamos con cuidado, creamos con propósito y, sobre todo, respetamos el mundo que nos rodea.<br>
-                Nuestro compromiso con el medio ambiente nos inspira a trabajar con materiales sostenibles y a diseñar piezas que perduren en el tiempo.<br><br>
-                Cada joya no es solo un accesorio, es una expresión única de tu personalidad, cuidadosamente elaborada por manos expertas.<br><br>
-                Ahora, damos un paso hacia el futuro. Con esta web, queremos acercar nuestra esencia a todos aquellos que buscan más que una joya: un vínculo, una historia, una obra de arte que puedan llevar consigo.<br><br>
-                Gracias por ser parte de nuestra historia.
-            </p>
+              <label for="name">Nombre:</label>
+              <input type="text" id="name" name="name" value="" required><br>
+          
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" value="" required><br>
+          
+              <label for="phone">Teléfono:</label>
+              <input type="tel" id="phone" name="phone" value="" required><br>
+          
+          <button type="submit" class="button">Guardar Cambios</button>
+       </form>
+    </section>
+       <!--cambio contraseña-->   
+    <section class="section change-password">
+       <h3>Contraseña</h3>
+          <form id="password-form">
+              <label for="current-password">Contraseña:</label>
+              <input type="password" id="current-password" name="current-password" required autocomplete="current-password"><br>
+      
+              <label for="confirm-password">Repetir Contraseña:</label>
+              <input type="password" id="confirm-password" name="confirm-password" required autocomplete="new-password"><br>
+          
+            <button type="submit" class="button">Guardar Contraseña</button>
+         </form>
+     </section>
+      <!--boton cerrar sesion-->   
+    <section class="section options">
+      <h3>Opciones</h3>
+        <button id="logout-button" class="button logout">Cerrar sesión</button>
+   </section>
+   </div>
+  </main>
 
-            </div>
-            <img class="nosotros__imagen" src="../fonts/Imagenes/Quintessence.png" alt="imagen nosotros">
-        </div>
-           
- 
-    </main>
-
-    <section class="contenedor-comprar">
-        <h2 data-translate="buyTitle" class="comprar__titulo">¿Porqué Comprar con nosotros?</h2>
-
-        <div class="bloques">
-            <div class="bloque1">
-                <h3 data-translate="bestPrice" class="bloque__titulo">El Mejor Precio</h3>
-                <p data-translate='bestPriceDescription'>Nuestros precios son muy competitivos, <br>ademas si te registras en la pagina conseguiras descuentos<br> y ofertas exclusivas.</p>
-            </div>
-
-            <div class="bloque2">
-                <h3 data-translate='forDevs' class='bloque__titulo'>detalles personalizables</h3>
-                <p data-translate='forDevsDescription'>Estas buscando algo concreto, puedes utilizar el formulario de contacto,<br>nuestro equipo trabaja para ofrecer piezas unicas y totalmente personalizables.</p>
-            </div>
-
-            <div class="bloque3">
-                <h3 data-translate='freeShipping' class='bloque__titulo'>Envío Gratis</h3>
-                <p data-translate='freeShippingDescription'>Consulta nuestras tarifas de envio, 
-                <p>todos los pedidos superires a 30 euros disfrutan de envios gratis.</p>
-            </div>
-
-            <div class="bloque4">
-                <h3 data-translate='bestQuality' class='bloque__titulo'>La Mejor Calidad</h3>
-                <p data-translate='bestQualityDescription'>Nos encargamos de realizar todos nuestros productos con materiales de la mas alta calidad, teniendo en cuenta la sostenibilidad y el impacto medioambiental.</p>
-            </div>
-        </div>
-        <div class="formu-card1">
-          <h2 data-translate="formularioDeContacto">Formulario de Contacto</h2>
-          <div class="formu-card2">
-            <div class="formu">
-    
-              <div class="formu-field">
-                <input required="" placeholder="Nombre" class="input-field" type="text" data-translate="nombre"/>
-              </div>
-    
-              <div class="formu-field">
-                <input required="" placeholder="Email" class="input-field" type="email" />
-              </div>
-    
-              <div class="formu-field">
-                <input required="" placeholder="Numero contacto" class="input-field" type="text" data-translate="numeroContact"/>
-              </div>
-    
-              <div class="formu-field">
-                <textarea required="" cols="30" rows="3" class="input-field"></textarea>
-              </div>
-    
-              <button class="sendMessage-btn" data-translate="enviarMensaje">Enviar mensaje</button>
-    
-            </div>
-          </div>
-     
-    </section> 
-
-
+ <!--footer-->
     <footer class="footer">
         <div class="footer__contenedor">
             <div class="footer__seccion">
@@ -174,7 +144,7 @@
             <div class="footer__seccion">
                 <h3 class="footer__titulo">Contacto</h3>
                 <p class="footer__texto"><i class="fas fa-phone"></i> +34 634 567 890</p>
-                <p class="footer__texto"><i class="fas fa-envelope"></i> info@quintessence</p>
+                <p class="footer__texto"><i class="fas fa-envelope"></i> info@quintessence.com</p>
             </div>
             <div class="footer__seccion">
                 <h3 class="footer__titulo">Dirección</h3>
@@ -184,9 +154,9 @@
         <p class="footer__derechos" data-translate="derechos">Todos los derechos Reservados © 2025</p>
     </footer>
     <button class="scroll-top-btn" id="scrollTopBtn">
-      <i class="fas fa-chevron-up" style="color: white;"></i>
-    </button>      
+      <i class="fas fa-chevron-up"></i>
+    </button>
     <script src="../js/flecha.js"></script>
-    <script src="../js/script.js"></script>
+   <script src="../js/script.js"></script>
 </body>
 </html>

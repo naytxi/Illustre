@@ -312,6 +312,9 @@ h3 {
 .submitButton:hover{
   color: var(--secundarioOscuro);
 }
+.registerButton:hover{
+  color: var(--secundarioOscuro);
+}
   .close {
     position: absolute;
     top: 10px;
@@ -369,34 +372,6 @@ h3 {
   font-size: 1.2rem;
 }
 
-.counter-controls {
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  gap: 0.3rem; /* Espacio entre los botones */
-}
-
-.counter-button {
-  background-color: var(--secundario);
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  font-size: 1.5rem;
-  font-weight: bold;
-  width: 3rem;
-  height: 3rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  outline: none;
-}
-
-.counter-button:hover {
-  background-color: var(--secundarioOscuro);
-  transform: scale(0.9);
-}
 
 .total {
   margin-top: 2rem;
@@ -656,67 +631,35 @@ h3 {
       opacity: 1;
   }
 }
-/* Contenido del popup */
-.popup_contenido {
-  background-color: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-  text-align: center;
-  max-width: 400px;
-  width: 90%;
-  position: relative;
-}
 
-.popup_contenido h2 {
-  color: var(--primarioOscuro);
-  margin-bottom: 1rem;
-}
-
-.popup_contenido p {
-  color: var(--secundarioOscuro);
-  margin-bottom: 2rem;
-}
-
-.cerrar {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font-size: 3rem;
-  cursor: pointer;
-  color: var(--secundario);
-}
 
 
 /** Productos **/
+
 .producto {
-    background-color: var(--primarioOscuro);
-    padding: 1rem;
-    border-radius: 1rem;
-    padding: 1.8rem;
+  background: radial-gradient(#f588d8, #c0a3e5); /*var(--secundario);*/
+  padding: 1rem;
+  border-radius: 1rem;
+  padding: 1.8rem;
 }
 
 .producto__imagen {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 .producto__imagen:hover {
-    transform: scale(1.04);
-    transition: 2s;
+  transform: scale(1.04);
+  transition: 2s;
 }
 .producto__informacion {
-    border-radius: 1rem;
+  border-radius: 1rem;
 }
 
-.producto__nombre {
-    font-size: 3rem;
-    font-weight: 600;
-}
 .producto__precio {
-    font-size: 2.8rem;
-    color: var(--secundario);
+  font-size: 2.8rem;
+  color: var(--secundario);
 }
 .producto__nombre,
 .producto__precio {
@@ -726,28 +669,51 @@ h3 {
     line-height: 1.2;
     color: #000;
 }
-@media (min-width: 720px) {
-  .producto_submit, .producto_color, .producto_cantidad {
-    font-size: 1.4rem; /* Reduce el tamaño de la fuente de los botones y selectores */
-}
-}
-
-
-/** Nosotros 
-.nosotros {
-    display: grid;
-    grid-template-rows: repeat(2, auto);
-    margin-top: 6rem;
-}
-.nosotros__contenido {
+.producto_inputs {
   display: flex;
   flex-direction: column;
-  margin: 5rem 0 0 6rem;
+  margin: 0 auto;
+}
+.producto_submit {
+  font-size: 1.5rem;
+  padding: 1rem;
+  border-radius: 1.3rem;
+  cursor: pointer;
+}
+.producto_color, .producto_submit {
+  background-color: var(--primario);
+}
+.producto_color, .producto_cantidad {
+  margin-bottom: 1.3rem;
+  padding: 0.4rem;
+  border-radius: 1rem;
+  font-size: 1.5rem;
 }
 
-.nosotros__imagen{
-  width: 50rem;
-}*/
+.producto__agregar-carrito {
+  background-color: var(--secundario);
+  color: var(--blanco);
+  padding: 10px;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.producto__agregar-carrito:hover {
+  background-color: var(--primario);
+}
+
+
+
+@media (min-width: 768px) {
+  .producto_inputs {
+     max-width: 65%;
+     font-size: 1.3rem;
+  }
+}
+
+/*  Nosotros Pagina  */
+
 .nosotros {
   display: flex; 
   justify-content: center; 
@@ -800,22 +766,47 @@ h3 {
       column-gap: 2rem;
   }
 }
- /** Fromulario de contacto **/ 
- .container-center {
-  display: flex;
-  justify-content: center; 
-  align-items: center;             
-  background-color: var(--primario); 
-  padding: 1rem;
-  box-sizing: border-box;
-  margin-top: 6rem;
+
+/** Bloques **/
+
+.bloques {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+  margin: 4rem;
 }
+.comprar__titulo {
+margin-top: 10rem;
+margin-bottom: 10rem;
+}
+@media (min-width: 768px) {
+  .bloques {
+      grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.bloque {
+  text-align: center;
+}
+
+.bloque__titulo {
+  margin: 0;
+}
+
+
+ /** Fromulario de contacto **/ 
+
  .formu-card1 {
   background-image: linear-gradient(163deg, #ecbceeff 0%,#ecbceeff 100%);
   border-radius: 20px;
   transition: all 0.3s;
   padding: 1em; 
   box-shadow: 0px 4px 20px #ec598cff(100, 255, 218, 0.2);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+ 
 
 }
 @media (min-width: 429px) {
@@ -902,33 +893,10 @@ h3 {
   color: var(--primario);
   box-shadow: inset 2px 5px 10px rgba(5, 5, 5, 0.5);
 }
-/** Bloques **/
 
-.bloques {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 4rem;
-    margin: 4rem;
-}
-.comprar__titulo {
-  margin-top: 10rem;
-  margin-bottom: 10rem;
-}
-@media (min-width: 768px) {
-    .bloques {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
 
-.bloque {
-    text-align: center;
-}
+/** ---------------Pagina de Productos------------- **/
 
-.bloque__titulo {
-    margin: 0;
-}
-
-/** Pagina del Producto **/
 @media (min-width: 768px) {
     .producto_info {
         display: grid;
@@ -965,36 +933,24 @@ h3 {
     background-color: var(--secundarioOscuro);
 }
 
-.footer {
-    background-color: var(--primarioOscuro);
-    padding: 3rem 0;
-    margin-top: 2rem;
-}
-
-.footer__contenedor {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 2rem;
-    max-width: 120rem;
-    margin: 0 auto;
-    padding: 0 3rem;
-}
-
-@media (min-width: 768px) {
-    .footer__contenedor {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-
 
 /*inicio footer*/
+
 .footer {
   background-color: var(--primarioOscuro);
   padding: 1rem 0;
   margin-top: 2rem;
  
 }
+.footer__contenedor {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
 .footer__texto {
   font-family: var(--fuentePrincipal);
   text-align: center;
@@ -1072,87 +1028,13 @@ h3 {
     margin-bottom: 10px; 
 }
 
-
-
-
-/* David*/
-
-/** Productos **/
-.producto {
-  background: radial-gradient(#f588d8, #c0a3e5); /*var(--secundario);*/
-  padding: 1rem;
-  border-radius: 1rem;
-  padding: 1.8rem;
-}
-
-.producto__imagen {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-.producto__imagen:hover {
-  transform: scale(1.04);
-  transition: 2s;
-}
-.producto__informacion {
-  border-radius: 1rem;
-}
-
-.producto__precio {
-  font-size: 2.8rem;
-  color: var(--secundario);
-}
-.producto__nombre,
-.producto__precio {
-  font-family: var(--fuentePrincipal);
-  margin: 1rem 0;
-  text-align: center;
-  line-height: 1.2;
-}
-.producto_inputs {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-}
-.producto_submit {
-  font-size: 1.5rem;
-  padding: 1rem;
-  border-radius: 1.3rem;
-  cursor: pointer;
-}
-.producto_color, .producto_submit {
-  background-color: var(--primario);
-}
-.producto_color, .producto_cantidad {
-  margin-bottom: 1.3rem;
-  padding: 0.4rem;
-  border-radius: 1rem;
-  font-size: 1.5rem;
-}
-
-.producto__agregar-carrito {
-  background-color: var(--secundario);
-  color: var(--blanco);
-  padding: 10px;
-  border-radius: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.producto__agregar-carrito:hover {
-  background-color: var(--primario);
-}
-
-
-
 @media (min-width: 768px) {
-  .producto_inputs {
-     max-width: 65%;
-     font-size: 1.3rem;
+  .footer__contenedor {
+      grid-template-columns: repeat(3, 1fr);
   }
 }
-/* Layout principal */
+
+/* ------- Pagina COntacto ------------  */
 
 
 .contact-layout {
@@ -1195,7 +1077,8 @@ h3 {
   background-color: var(--secundarioOscuro);
 }
 
-/* Formulario */
+/* --------Pagina Contacto Formulario ------------  */
+
 .right-column { 
   max-width: 500px; 
 }
@@ -1386,6 +1269,8 @@ h3 {
     padding: 0.8rem 1.5rem;
   }
 }
+
+/*Pagina usuario*/
 .container {
   max-width: 900px;
   margin: 20px auto;
@@ -1438,7 +1323,7 @@ h3 {
   background: var(--primarioOscuro);
 }
  
-/* Formularios */
+/* Formularios de usuario */
 form {
   display: flex;
   flex-direction: column; 

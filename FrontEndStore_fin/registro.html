@@ -44,7 +44,7 @@
             <div class="popup-content">
               <span id ="loginClose" class="close">&times;</span>
               <h2>Login</h2>
-              <form id="loginForm">
+              <form id="loginForm" class="form-login">
                 <label for="username">User</label>
                 <input type="text" id="username" name="username" required>
                 <label for="password">Password</label>
@@ -91,7 +91,7 @@
      <!--datos de ususario-->     
     <section class="section personal-info">
        <h3>Datos Personales</h3>
-         <form id="edit-form">
+         <form class="form-checkout" id="edit-form">
           <label for="name">Nombre de usuario:</label>
           <input type="text" id="newusername" name="newusername" value="" required><br>
 
@@ -108,18 +108,18 @@
        </form>
     </section>
        <!--cambio contraseña-->   
-    <section class="section change-password">
-       <h3>Contraseña</h3>
-          <form id="password-form">
-              <label for="current-password">Contraseña:</label>
-              <input type="password" id="current-password" name="current-password" required autocomplete="current-password"><br>
-      
-              <label for="confirm-password">Repetir Contraseña:</label>
-              <input type="password" id="confirm-password" name="confirm-password" required autocomplete="new-password"><br>
-          
-            <button type="submit" class="button">Guardar Contraseña</button>
-         </form>
-     </section>
+       <section class="section change-password">
+        <h3>Registra una Contraseña</h3>
+           <form id="password-form" class="form-checkout">
+               <label for="current-password">Contraseña:</label>
+               <input type="password" id="current-password" name="current-password" required autocomplete="current-password"><br>
+           
+               <label for="new-password"> Repetir Contraseña:</label>
+               <input type="password" id="new-password" name="new-password" required autocomplete="new-password"><br>
+
+             <button type="submit" class="button">Guardar Contraseña</button>
+          </form>
+      </section>
       <!--boton cerrar sesion-->   
     <section class="section options">
       <h3>Opciones</h3>

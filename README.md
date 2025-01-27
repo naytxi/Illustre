@@ -1,7 +1,5 @@
 ![headerillustre](https://github.com/user-attachments/assets/b6d56950-6e20-49d0-87e4-7824d2f8405c)
 
-<img src="https://i.pinimg.com/originals/ae/04/be/ae04bed538cfc114dc560a12cf50adeb.gif" width="900" height="300" alt="gif">
-
 <h1>👋HI! WE ARE</h1>
 
 ![Quintessence](https://github.com/user-attachments/assets/6f496b40-a523-4a28-9eee-df2813c5c65b)
@@ -52,6 +50,8 @@ La página consta de 3 secciones y 3 subsecciones:
     3-Responsive
     4-Login
     5-Carrito
+
+<img src="https://i.pinimg.com/originals/ae/04/be/ae04bed538cfc114dc560a12cf50adeb.gif" width="900" height="300" alt="gif">
 
 <h2>💎ILLUSTRE💎</h2>
 

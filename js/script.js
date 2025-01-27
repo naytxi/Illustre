@@ -704,6 +704,76 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+
+// Función para mostrar los artículos en la página de checkout
+function mostrarArticulosEnCheckout() {
+  const checkoutItemsList = document.getElementById('checkoutItemsList');
+  const checkoutTotal = document.getElementById('checkoutTotal');
+  
+  if (!checkoutItemsList || !checkoutTotal) {
+      console.error('Elementos de checkout no encontrados');
+      return;
+  }
+
+  checkoutItemsList.innerHTML = '';
+  let total = 0;
+
+  cart.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = `${item.nombre} - ${item.color} - Cantidad: ${item.cantidad} - Precio: ${item.precio * item.cantidad}€`;
+      checkoutItemsList.appendChild(li);
+      total += item.precio * item.cantidad;
+  });
+
+  checkoutTotal.textContent = `${total}€`;
+}
+
+// Función para inicializar la página de checkout
+function inicializarCheckout() {
+  cargarCarrito();
+  mostrarArticulosEnCheckout();
+}
+
+// Verifica si estamos en la página de checkout
+if (document.getElementById('checkoutItemsList')) {
+  document.addEventListener('DOMContentLoaded', inicializarCheckout);
+}
+
+
+// Función para mostrar los artículos en la página de checkout
+function mostrarArticulosEnCheckout() {
+  const checkoutItemsList = document.getElementById('checkoutItemsList');
+  const checkoutTotal = document.getElementById('checkoutTotal');
+  
+  if (!checkoutItemsList || !checkoutTotal) {
+      console.error('Elementos de checkout no encontrados');
+      return;
+  }
+
+  checkoutItemsList.innerHTML = '';
+  let total = 0;
+
+  cart.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = `${item.nombre} - ${item.color} - Cantidad: ${item.cantidad} - Precio: ${item.precio * item.cantidad}€`;
+      checkoutItemsList.appendChild(li);
+      total += item.precio * item.cantidad;
+  });
+
+  checkoutTotal.textContent = `${total}€`;
+}
+
+// Función para inicializar la página de checkout
+function inicializarCheckout() {
+  cargarCarrito();
+  mostrarArticulosEnCheckout();
+}
+
+// Verifica si estamos en la página de checkout
+if (document.getElementById('checkoutItemsList')) {
+  document.addEventListener('DOMContentLoaded', inicializarCheckout);
+}
+
 /*Script para boton de registro*/
 const registro = document.getElementById("Register");
      registro.addEventListener("click", () => {

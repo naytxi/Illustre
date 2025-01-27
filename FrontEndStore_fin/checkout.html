@@ -96,6 +96,13 @@
         <label for="direccion">Dirección</label>
         <input type="text" name="direccion" id="direccion" required>
     
+        <div id="checkoutItems">
+            <h2>Artículos seleccionados:</h2>
+            <ul id="checkoutItemsList"></ul>
+            <p>Total: <span id="checkoutTotal"></span></p>
+        </div>
+        
+
         <div>
             <p>Método de pago:</p>
             <div class="metodoPago">
@@ -126,6 +133,7 @@
     
 
     <script>
+
     document.getElementById('tarjeta').addEventListener('change', function() {
         document.getElementById('datosTarjeta').style.display = this.checked ? 'block' : 'none';
     });

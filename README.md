@@ -58,6 +58,8 @@ La página consta de 3 secciones y 3 subsecciones:
 #### Página principal, Tienda:
 Aqui se encuentran las fotografias de modelo y la sección de productos.
 
+![boton idioma](https://github.com/user-attachments/assets/9eeef314-621c-4c94-9c92-5aea9939235b)
+
 ![readmeinicio](https://github.com/user-attachments/assets/e832bf2d-77cb-48aa-8f21-2ae28b82dcd6)
 
 
@@ -100,6 +102,7 @@ Al igual que el usuario, el administrador podra acceder a su pagina personal al 
 Una vez finalizado la adquisición de productos, estos apareceran en el popup del carrito, finaliza dando click al pagar, el cual te llevara a la pagina de checkout.
 
 
+![captura checkout](https://github.com/user-attachments/assets/23c06779-b8e9-45a8-8a35-bf7ea082dfa5)
 
 
 

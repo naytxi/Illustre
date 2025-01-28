@@ -37,7 +37,9 @@ a {
 img {
   width: 100%;
   border-radius: 1rem;
-}
+}   
+/*display fecha y hora*/
+
 .contenedor {
   max-width: 100%;
   margin: 0 auto;

@@ -14,7 +14,7 @@ async function loadTranslations() {
   return globalTranslations;
 }
 
-//script date
+//script fecha y hora
 function updateDateTime() {
   const dateTimeDisplay = document.getElementById("dateTimeDisplay");
   const now = new Date();

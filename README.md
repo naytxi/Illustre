@@ -55,54 +55,68 @@ La página consta de 3 secciones y 3 subsecciones:
 
 <h2>💎ILLUSTRE💎</h2>
 
-#### Página principal, Tienda:
-Aqui se encuentran las fotografias de modelo y la sección de productos.
+Al acceder por primera vez a nuestra página, te damos la bienvenida con un popup dinámico que anuncia nuestras últimas rebajas.
 
-![boton idioma](https://github.com/user-attachments/assets/9eeef314-621c-4c94-9c92-5aea9939235b)
+Este popup incluye una animación atractiva que capta la atención del usuario, asegurándose de que no pase desapercibido.
 
-![readmeinicio](https://github.com/user-attachments/assets/e832bf2d-77cb-48aa-8f21-2ae28b82dcd6)
+Una vez cerrado el popup, te encontrarás con una galería fotográfica cuidadosamente diseñada que muestra ejemplos destacados de nuestros productos.
 
+Cada imagen está acompañada de botones interactivos que permiten seleccionar el producto y ajustar la cantidad deseada, proporcionando una experiencia de compra sencilla y personalizada.
 
-
-#### Página producto:
-Seleccionando la imagen de un producto se genera la pagina detalle del mismo.
-
-![readmecatalogo](https://github.com/user-attachments/assets/06cd5272-f4ac-49a4-9489-ace21d5c2581)
-![readmeproducto](https://github.com/user-attachments/assets/40b56806-f3f8-424b-9490-2b6aece05577)
+Esta combinación de animaciones y opciones interactivas ha sido creada para ofrecerte una navegación intuitiva y fluida desde el primer momento.
 
 
-
-#### Página Nosotros:
-En esta seccion se realiza una breve presentación del grupo, junto con los beneficios de adquisición de producto en nuestra tienda y un breve formulario de contacto.
+https://github.com/user-attachments/assets/691593b4-8e6f-47be-9b52-5d604073dccc
 
 
+Nuestra página está diseñada para ser multilingüe, lo que permite a los usuarios cambiar fácilmente el idioma con solo presionar el botón de cambio de idioma.
+
+Esto garantiza que nuestra plataforma sea accesible y comprensible para una audiencia global.
+
+Además, contamos con dos botones clave en la interfaz: Login y Carrito.
+
+    El botón de Login abre un popup dedicado al inicio de sesión, donde los usuarios pueden ingresar sus credenciales de forma segura y acceder a sus cuentas personalizadas.
+    El botón de Carrito, por su parte, activa otro popup diseñado para gestionar la adquisición de productos. Aquí los usuarios pueden revisar, modificar y confirmar los artículos que desean comprar de manera práctica.
+
+**Añadir productos al carrito:**
+Mediante un script personalizado, hemos desarrollado un sistema que permite a los usuarios seleccionar productos y añadirlos al carrito de manera sencilla. Los usuarios pueden ajustar la cantidad de cada producto antes de confirmarlo, y el sistema actualiza automáticamente el estado del carrito. Este proceso es completamente dinámico y asegura que cada selección se almacene correctamente para ser gestionada en el popup del carrito.
+
+**Login de usuario con LocalStorage:**
+Para la funcionalidad de inicio de sesión, hemos utilizado LocalStorage. Al momento de que un usuario introduce sus credenciales, nuestro script las valida y las almacena temporalmente en el navegador para gestionar la sesión. Esto nos permite recordar al usuario durante su navegación y brindarles una experiencia personalizada. Si el usuario cierra sesión, los datos se eliminan del almacenamiento, garantizando la privacidad.
 
 
-#### Página Contacto:
-En este apartado podemos encontrar los enlaces a diferentes redes, un mapa y un formulario de contacto, esta vez mas extenso.
-
-![readmecontacto2](https://github.com/user-attachments/assets/dee151f8-92e6-4146-bcfb-789921f64a50)
+https://github.com/user-attachments/assets/d09b41a6-5021-4ce9-bd8d-987612953240
 
 
-#### Página usuario:
-Una vez logueado, el usuario podra acceder a su pagina personal al clickar en el boton de su propio nombre.
+Nuestra tienda en línea está organizada en varias páginas, tanto visibles como secundarias, para ofrecer una experiencia completa y funcional a todos los usuarios:
+Páginas visibles:
 
-![readmelogin](https://github.com/user-attachments/assets/697e431c-0546-4a21-af71-63c65a7288c2)
-![readmeusuario2](https://github.com/user-attachments/assets/d41524df-aaa9-469e-96bc-2c4dc5454326)
+    Catálogo:
+    Esta es nuestra página principal, donde se presentan todos los productos disponibles. Incluye un diseño visualmente atractivo con imágenes, precios y botones interactivos que permiten añadir productos al carrito o explorar más detalles.
 
+    Nosotros:
+    En esta sección, presentamos nuestra historia, valores y compromiso con los clientes. Es una página dedicada a mostrar quiénes somos y qué nos inspira a ofrecer productos únicos y de calidad.
 
+    Contacto:
+    Una página donde los usuarios pueden encontrar información para comunicarse con nosotros, como correo electrónico, teléfono y formulario de contacto. Aquí pueden resolver dudas o solicitar información adicional.
 
-#### Página administrador:
-Al igual que el usuario, el administrador podra acceder a su pagina personal al loguearse.
+Páginas secundarias con JavaScript:
 
-![readmeadmin](https://github.com/user-attachments/assets/028bcc63-1e7f-4423-ac1a-24c1a8e9e661)
+    Detalle del producto:
+    Esta página se genera dinámicamente cuando el usuario hace clic en la imagen de un producto. Con JavaScript y archivo json obtenemos los datos del producto seleccionado y los mostramos detalladamente, incluyendo su descripción, imágenes ampliadas      y opciones de personalización.
 
+    Usuario:
+    Al ingresar las credenciales en el popup de login, un script en JavaScript valida los datos e identifica si son correctos, redirigiendo al usuario a esta página personalizada. Aquí, JavaScript gestiona la visualización de la información del            usuario y permite acceder a su historial de compras.
 
-#### Página Checkout:
-Una vez finalizado la adquisición de productos, estos apareceran en el popup del carrito, finaliza dando click al pagar, el cual te llevara a la pagina de checkout.
+    Administrador:
+    Exclusiva para usuarios con credenciales de administración, esta página se carga al validar las credenciales mediante un script de JavaScript. Una vez dentro, el administrador puede interactuar con un panel de control dinámico donde gestionar          productos, pedidos y usuarios, todo implementado mediante funciones avanzadas de JavaScript.
 
+    Checkout:
+    Se accede al presionar el boton de pago en el popup del carrito una vez queremos adquirir los productos seleccionados, se carga un formulario y la vista del desglose de cada producto, añadiendo el IVA. Utlizando funciones de filtrado por la            identificación del producto se genera una lista de la selección.
 
-![captura checkout](https://github.com/user-attachments/assets/23c06779-b8e9-45a8-8a35-bf7ea082dfa5)
+    
+
+https://github.com/user-attachments/assets/89be4827-c626-4b13-8fb0-aee834903736
 
 
 
